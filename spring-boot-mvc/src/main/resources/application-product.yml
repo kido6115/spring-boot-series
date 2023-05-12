@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: product
+  freemarker:
+    suffix: .ftl
+    cache: false
+    template-loader-path: classpath:/templates/
+  h2:
+    console:
+      enabled: true

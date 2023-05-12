@@ -1,0 +1,20 @@
+{
+  "requests": [
+    {
+      "features": [
+        {
+          "type": "TEXT_DETECTION"
+        }
+      ],
+      "image": {
+        "content": "base64"
+      },
+      "imageContext": {
+        "languageHints": [
+          "en",
+          "zh"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,337 @@
+* {
+    font-family: '微軟正黑體', 'FontAwesome';
+}
+
+*:before {
+    font-family: 'FontAwesome', '微軟正黑體';
+    font-style: normal;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /*列印自動包含底圖icon圖片*/
+    -webkit-print-color-adjust: exact;
+}
+
+/*sidebar*/
+.map-feature {
+    min-width: 60px;
+    top: 42px !important;
+    overflow: hidden;
+    padding: .5em .5em 36px .5em;
+    transition: .2s height, .2s left, .2s right;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+#map-features.open {
+    left: 380px !important;
+}
+
+#map-features.slideup {
+    height: 30px !important;
+    left: 0 !important;
+}
+
+#map2-features.open {
+    right: 380px !important;
+}
+
+#map2-features.slideup {
+    height: 30px !important;
+    right: 0 !important;
+}
+
+.sidebar-btn {
+    cursor: pointer;
+    padding: 10px 10px 5px 10px;
+    margin-bottom: .5em;
+    display: block;
+    color: #818A91;
+    user-select: none;
+    text-align: center;
+    border: 1px solid;
+    background: #fff;
+    font-size: 16px;
+}
+
+.sidebar-btn.click {
+    background: #3EAAFD;
+    color: #fff;
+}
+
+.map-feature.slideup .sidebar-btn {
+    display: none !important
+}
+
+.sidebar-btn span {
+    line-height: 1.8;
+}
+
+/*圖資列印按鈕*/
+.btn-print {
+    margin-bottom: 6px;
+    width: 100%;
+}
+
+.map-feature.slideup .btn-print {
+    display: none !important
+}
+
+/*摺疊按鈕*/
+.sidebar-fold {
+    width: 86px;
+    line-height: 1;
+}
+
+.sidebar-fold.click:before {
+    display: block;
+    transform: rotate(180deg);
+}
+
+.map-tools, .map2-tools {
+    position: absolute;
+    background-color: #FFF;
+    overflow-y: auto;
+    width: 385px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    padding: .5em;
+    box-shadow: 3px 0 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.map2-tools {
+    box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.3);
+    left: unset;
+    right: 0;
+}
+
+/*scrollbar*/
+.map-tools::-webkit-scrollbar, .map2-tools::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.map-tools::-webkit-scrollbar-track, .map2-tools::-webkit-scrollbar-track {
+    background-color: #bebebe;
+    border-radius: 10px;
+}
+
+.map-tools::-webkit-scrollbar-thumb, .map2-tools::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #333;
+}
+
+/*#service2-tool,
+#service-tool {}
+
+#draw2-tool,
+#draw-tool {}
+
+#chart-tool {}
+
+#other2-tool,
+#other1-tool {}*/
+
+
+/*視窗模式 radio button*/
+#mode-selector {
+    top: -1px;
+    left: calc(50vw - 186px) !important;
+    clear: both;
+    display: inline-block;
+    position: absolute;
+    cursor: pointer;
+    /*width: 373px;*/
+    transition: left .2s, width .2s;
+    z-index: 4;
+}
+
+#mode-selector.hide {
+    left: calc(50vw + 3px) !important;
+    width: 0;
+    display: initial !important;
+}
+
+#mode-selector::before {
+    content: '\f0d9';
+    display: block;
+    width: 1.2em;
+    height: 30px;
+    background: #6c757d;
+    position: absolute;
+    left: -1.2em;
+    top: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 2;
+}
+
+#mode-selector::after {
+    content: '\f0da';
+    display: block;
+    width: 1.2em;
+    height: 30px;
+    background: #6c757d;
+    position: absolute;
+    left: 99.5%;
+    top: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 1.9;
+    font-family: '微軟正黑體', 'FontAwesome';
+}
+
+#mode-selector [type='radio'] {
+    position: absolute;
+    left: -9999em;
+    top: -9999em;
+}
+
+#mode-selector label:before {
+    content: '\f058';
+    /*margin-right:.5em;*/
+    border: unset;
+    background-color: unset;
+}
+
+#mode-selector label {
+    padding: .5em 1em;
+    cursor: pointer;
+    border: 1px solid #818A91;
+    margin-right: -1px;
+    color: #818A91;
+    background-color: #fff;
+    opacity: 1;
+    transition: opacity cubic-bezier(1, -0.23, 1, 0.67) .2s;
+}
+
+#mode-selector.hide label {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#mode-selector label:first-of-type {
+    border-radius: 0 0 0 .3em;
+}
+
+#mode-selector label:last-of-type {
+    border-radius: 0 0 .3em 0;
+}
+
+#mode-selector [type='radio']:checked + label {
+    background-color: #3EAAFD;
+    color: #fff;
+}
+
+/*sidebar 功能模板*/
+.srvcElement .card-header {
+    border-bottom: 0;
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+}
+
+.srvcElement .card-header:after {
+    content: '\f078';
+    float: right;
+    font-family: '微軟正黑體', 'FontAwesome';
+
+}
+
+.SearchElement label {
+    font-weight: bold;
+}
+
+.SearchElement .star {
+    color: #A94442;
+}
+
+.checkGroup .form-check {
+    margin-bottom: .5em;
+}
+
+/*treetoolbar*/
+.tree-toolbar {
+    padding: .5em;
+}
+
+.tree-toolbar-icon {
+    margin-right: .5em;
+}
+
+.tree-search-container {
+    padding: .5em;
+}
+
+.tree-item-list {
+    padding: .5em;
+}
+
+.tree-item {
+    font-size: 1rem;
+    margin-bottom: .5em;
+    width: 100%;
+    text-align: left;
+}
+
+.tree-item.btn {
+    padding-left: .8em;
+}
+
+.tree-item.btn:before {
+    content: '\f10c';
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.tree-item.btn[data-state="open"] {
+    background: #3EAAFD;
+    color: #fff;
+}
+
+.tree-item.btn[data-state="open"]:before {
+    content: '\f192';
+}
+
+.tree-content-icon {
+    float: right;
+}
+
+.highlight {
+    opacity: 0;
+    position: absolute;
+}
+
+/*圖資列印按鈕
+.printPg{
+    position:absolute;z-index:4;bottom:0;left:calc(50vw - 55px) !important;
+    border-radius:3px 3px 0 0;background:#fff;
+}*/
+#mutilwindow-control-bar {
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    background-color: grey;
+    z-index: 3;
+    cursor: col-resize;
+}
+
+#layer-tool, #layer-tool2 {
+
+    width: 385px;
+    height: 100vh;
+    position: absolute;
+    background-color: #FFF;
+    z-index: 999;
+    user-select: none;
+    overflow: hidden;
+    display: none;
+}
+
+.d-none {
+    display: none !important;;
+}
