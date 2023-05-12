@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <#include "meta.ftl" />
+    <#include "component/meta.ftl" />
 </head>
 <h1>認證後才允許訪問</h1>
 </html>

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <#include "meta.ftl" />
+    <#include "component/meta.ftl" />
     <link href="<@spring.url "/webjars/font-awesome/4.7.0/css/font-awesome.min.css" />"
           rel="stylesheet"/>
 

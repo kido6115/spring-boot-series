@@ -66,13 +66,7 @@ public class AuthenticationController {
     }
 
     @GetMapping("google-map")
-    public String googleMap() {
-        return "google-map-index";
-    }
-
-
-    @PostMapping("google-map")
-    public String googleMapDemo(@RequestParam("key") String key, Model model) {
+    public String googleMap(Model model) {
         model.addAttribute("key", this.key);
         return "google-map";
     }

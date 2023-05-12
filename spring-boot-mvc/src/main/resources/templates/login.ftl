@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <#include "meta.ftl" />
+    <#include "component/meta.ftl" />
     <script src="https://www.google.com/recaptcha/api.js"></script>
 
 </head>
