@@ -42,10 +42,15 @@
                     </button>
                 </div>
             </div>
-            <h2>Controller</h2>
-            <p>透過SpringMVC註解快速註冊Controller並以Freemarker進行頁面渲染, 選擇Freemarker則是因其支援embedded Tomcat,
-                除輕量化在分散式或者容器化上較易應用
+            <p>使用Dialogflow平台製作簡易任務型機器人, 透過平台NLP處理來找出意圖, 並回答定義內容或者Web Hook:
             </p>
+            <ul>
+                <li>意圖 : 擅長技術</li>
+                <li>意圖 : 擅長的領域</li>
+                <li>線性對話 : 還沒作</li>
+                <li>Web Hook : 還沒作</li>
+
+            </ul>
             <df-messenger
                     intent="WELCOME"
                     chat-title="忍不助"
