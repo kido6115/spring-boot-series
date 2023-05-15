@@ -108,6 +108,10 @@ public class AuthenticationController {
         return "dialogflow";
     }
 
+    @GetMapping("recaptcha")
+    public String recaptcha() {
+        return "recaptcha";
+    }
 
     private byte[] getQRCodeImage(String text, int width, int height) {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();

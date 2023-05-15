@@ -49,54 +49,54 @@
                 <li>CORS同源設定</li>
                 <li>ACL設定</li>
                 還沒作
-                <li>自訂義多因子驗證</li>
+                <li>自訂義多因子驗證 : e.g. <a href="<@spring.url '/auth/recaptcha'/>">recaptcha實作</a></li>
                 <li>資料庫勾稽使用者</li>
+                <li>透過PasswordEncoder hash/crypt使用者密碼</li>
+
             </ol>
             <pre>
                 <code data-language="java">
-                           @Configuration
-                           @EnableWebSecurity
-                           public class SecurityConfig {
-                               @Resource
-                               private UserDetailsService userDetailsService;
+        @Configuration
+        @EnableWebSecurity
+        public class SecurityConfig {
 
-                               @Bean("backendFilterChain")
-                               public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-                                   http.authorizeHttpRequests(a -> a.requestMatchers("/auth/**").authenticated()
-                                                   .requestMatchers("/h2/**").permitAll()
-                                                   .anyRequest().permitAll())
-                                           .formLogin()
-                                           .loginPage("/login").permitAll()
-                                           .loginProcessingUrl("/login/process").permitAll()
-                                           .defaultSuccessUrl("/index")
-                                           .failureUrl("/login")
+            @Resource
+            private CustomProvider provider;
 
+            @Bean("backendFilterChain")
+            public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+                http.authorizeHttpRequests(a -> a.requestMatchers("/auth/**").authenticated()
+                                .requestMatchers("/h2/**").permitAll()
+                                .anyRequest().permitAll())
+                        .formLogin()
+                        .loginPage("/login").permitAll()
+                        .loginProcessingUrl("/login/process").permitAll()
+                        .defaultSuccessUrl("/index")
+                        .failureUrl("/login")
+                        .authenticationDetailsSource(new RecaptchaAuthenticationDetailsSource())
+                        .and()
+                        .logout()
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/login")
+                        .and()
+                        .exceptionHandling()
+                        .and()
+                        .authenticationProvider(provider)
+                        .csrf()
+                        .and()
+                        .headers().frameOptions().sameOrigin()
+                        .xssProtection().headerValue(XXssProtectionHeaderWriter.HeaderValue.ENABLED_MODE_BLOCK);
 
-                           //                .authenticationDetailsSource(detailsSource)
-                                           .and()
-                                           .logout()
-                                           .logoutUrl("/logout")
-                                           .logoutSuccessUrl("/login")
-                                           .and()
-                                           .exceptionHandling()
-                                           .and()
-                           //                .authenticationProvider(provider)
-                                           .csrf()
-                                           .and()
-                                           .userDetailsService(userDetailsService)
-                                           .headers().frameOptions().sameOrigin()
-                                           .xssProtection().headerValue(XXssProtectionHeaderWriter.HeaderValue.ENABLED_MODE_BLOCK);
+                return http.build();
+            }
 
-                                   return http.build();
-                               }
-
-                               @Bean
-                               public PasswordEncoder passwordEncoder() {
-                                   return new BCryptPasswordEncoder();
-                               }
+            @Bean
+            public PasswordEncoder passwordEncoder() {
+                return new BCryptPasswordEncoder();
+            }
 
 
-                           }
+        }
                     </code>
             </pre>
         </main>

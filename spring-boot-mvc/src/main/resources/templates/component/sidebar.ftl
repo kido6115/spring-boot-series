@@ -6,10 +6,9 @@
 {"title":"MVC","path":"/auth/mvc"},
 {"title":"JPA","path":"/auth/jpa"},
 {"title":"Security","path":"/auth/security"},
-{"title":"Authorization/Resource Server","path":"/auth/security"},
-{"title":"Web Socket","path":"/auth/security"}
-
-
+{"title":"Authorization/Resource Server","path":"/auth/authorization"},
+{"title":"Restful/Swagger/SpringDoc","path":"/auth/swagger"},
+{"title":"Web Socket","path":"/auth/socket"}
 ]
 },
 {
@@ -19,24 +18,22 @@
 {"title":"Goolge Map API","path":"/auth/google-map"},
 {"title":"Cloud Vision API","path":"/auth/cloud-vision"},
 {"title":"Dialogflow","path":"/auth/dialogflow"},
-{"title":"Recaptcha API","path":"/auth/security"}
+{"title":"Recaptcha API","path":"/auth/recaptcha"}
 ]
 },
 {
 "title":"Other",
 "item":
 [
-{"title":"OAuth","path":"/auth/mvc"},
-{"title":"Line","path":"/auth/jpa"},
-{"title":"分析文件","path":"/auth/security"},
-{"title":"Asciidoc","path":"/auth/security"},
+{"title":"OpenID","path":"/auth/open-id"},
+{"title":"Line","path":"/auth/line"},
+{"title":"分析文件","path":"/auth/static"},
+{"title":"Asciidoc","path":"/auth/asciidoc"},
 {"title":"TOTP","path":"/auth/authenticator"},
 {"title":"WebRTC","path":"/auth/rtc"}
-
 ]
 }
 ]
-
 >
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
     <div class="sidebar-sticky pt-3">
