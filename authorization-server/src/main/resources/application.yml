@@ -25,12 +25,5 @@ logging:
     org.springframework.security: DEBUG
     org.springframework.web: DEBUG
 debug: true
-google:
-  api:
-    key: "AIzaSyBote7e630I7WkqFUUY9GjbT20fIPiUdmI"
-  vision:
-    key: ${google.api.key}
-  recaptcha:
-    site: "6Lc8bwImAAAAAHnng3IjN3iPf2K1rLKFdYQYb_w8"
-    secret: "6Lc8bwImAAAAAIf2sqKos_sfnnLmHeIVo9NtFcpL"
-
+server:
+  port: 8081
