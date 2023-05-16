@@ -16,4 +16,8 @@ public class OauthController {
         return "oauth-login";
     }
 
+    @GetMapping("/index")
+    private String index() {
+        return "index";
+    }
 }

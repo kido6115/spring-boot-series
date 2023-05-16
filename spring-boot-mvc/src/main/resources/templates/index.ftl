@@ -3,6 +3,8 @@
 <html lang="zh-Hant">
 <head>
     <#include "component/meta.ftl" />
+    <script>
+    </script>
 </head>
 <body>
 <#include "component/nav.ftl" />

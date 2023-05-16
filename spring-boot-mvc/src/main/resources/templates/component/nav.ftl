@@ -9,7 +9,19 @@
     <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign out</a>
+            <#if SPRING_SECURITY_CONTEXT??>
+                <form method="post" action="/logout">
+                    <input type="hidden" name="${(_csrf.parameterName)!}" value="${(_csrf.token)!}"/>
+                    <button class="btn btn-primary">Sign
+                        out
+                    </button>
+                </form>
+            <#else>
+                <form method="get" action="/login">
+                    <button class="btn btn-primary">Sign in</button>
+                </form>
+            </#if>
+
         </li>
     </ul>
 </nav>

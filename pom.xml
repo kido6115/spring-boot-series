@@ -21,6 +21,7 @@
         <module>cloud-vision-api</module>
         <module>totp-authenticator</module>
         <module>recaptcha</module>
+        <module>authorization-server</module>
     </modules>
     <properties>
         <java.version>17</java.version>
@@ -50,6 +51,11 @@
             <dependency>
                 <groupId>com.sungyeh</groupId>
                 <artifactId>recaptcha</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sungyeh</groupId>
+                <artifactId>authorization-server</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

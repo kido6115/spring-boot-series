@@ -39,7 +39,7 @@ public class SecurityConfig {
                 .and()
                 .logout()
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/login")
+                .logoutSuccessUrl("/index")
                 .and()
                 .exceptionHandling()
                 .and()
