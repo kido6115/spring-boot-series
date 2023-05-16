@@ -24,4 +24,6 @@ public class RestDemoController {
     public List<String> list() {
         return List.of("a", "b", "c");
     }
+
+
 }

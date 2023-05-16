@@ -1,0 +1,10 @@
+server:
+  port: 8081
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+debug: true
+spring:
+  jpa:
+    show-sql: true
