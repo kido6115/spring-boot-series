@@ -1,15 +1,19 @@
 package com.sungyeh.web;
 
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
+import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
+import com.google.api.client.http.javanet.NetHttpTransport;
+import com.google.api.client.json.gson.GsonFactory;
 import com.sungyeh.config.CaptchaConfig;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -52,6 +56,30 @@ public class IndexController {
             }
         }
         return acl;
+    }
+
+    @PostMapping("/google/gsi")
+    public String gsi(@RequestParam("credential") String credential, @RequestParam("g_csrf_token") String gToken) {
+        GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(new NetHttpTransport(), new GsonFactory())
+                // Specify the CLIENT_ID of the app that accesses the backend:
+                .setAudience(Collections.singletonList("329193090490-5phkddntmnd815q9edcurgr4tc92csfs.apps.googleusercontent.com"))
+                // Or, if multiple clients access the backend:
+                //.setAudience(Arrays.asList(CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3))
+                .build();
+        try {
+            GoogleIdToken idToken = verifier.verify(credential);
+            System.out.println(idToken);
+        } catch (GeneralSecurityException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+//        Authentication authentication =
+//                new UsernamePasswordAuthenticationToken(userDetails, null,
+//                        userDetails.getAuthorities());
+//        SecurityContextHolder.getContext().setAuthentication(authentication);
+        return "index";
     }
 
 }

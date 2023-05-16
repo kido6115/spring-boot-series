@@ -1,5 +1,6 @@
 package com.sungyeh.config;
 
+import com.sungyeh.security.CsrfRequestMatcher;
 import com.sungyeh.security.CustomProvider;
 import com.sungyeh.security.RecaptchaAuthenticationDetailsSource;
 import jakarta.annotation.Resource;
@@ -28,6 +29,9 @@ public class SecurityConfig {
 
     @Bean("backendFilterChain")
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        CsrfRequestMatcher csrfRequestMatcher = new CsrfRequestMatcher();
+        csrfRequestMatcher.addExcludeUrl("/google/**");
+        csrfRequestMatcher.addExcludeUrl("/line/**");
         http.authorizeHttpRequests(a -> a.requestMatchers("/auth/**").authenticated()
                         .anyRequest().permitAll())
                 .formLogin()
@@ -44,7 +48,7 @@ public class SecurityConfig {
                 .exceptionHandling()
                 .and()
                 .authenticationProvider(provider)
-                .csrf()
+                .csrf().requireCsrfProtectionMatcher(csrfRequestMatcher)
                 .and()
                 .headers().frameOptions().sameOrigin()
                 .xssProtection().headerValue(XXssProtectionHeaderWriter.HeaderValue.ENABLED_MODE_BLOCK);

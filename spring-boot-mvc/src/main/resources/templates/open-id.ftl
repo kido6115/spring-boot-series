@@ -3,6 +3,7 @@
 <html lang="zh-Hant">
 <head>
     <#include "component/meta.ftl" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
 <#include "component/nav.ftl" />
@@ -40,7 +41,28 @@
                     </button>
                 </div>
             </div>
-            <a href="https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=329193090490-5phkddntmnd815q9edcurgr4tc92csfs.apps.googleusercontent.com&scope=openid email&redirect_uri=http://localhost:8080/auth/google&state=${state}&nonce=${nonce}">按我</a>
+            <h1>GSI</h1>
+            <div id="g_id_onload"
+                 data-client_id="329193090490-5phkddntmnd815q9edcurgr4tc92csfs.apps.googleusercontent.com"
+                 data-context="signin"
+                 data-ux_mode="popup"
+                 data-login_uri="http://localhost:8080/google/gsi"
+                 data-auto_prompt="false">
+            </div>
+
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="signin_with"
+                 data-size="large"
+                 data-logo_alignment="left">
+            </div>
+            <h1>Google OpenID Connect</h1>
+            <a href="https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=329193090490-5phkddntmnd815q9edcurgr4tc92csfs.apps.googleusercontent.com&scope=openid email&redirect_uri=http://localhost:8080/google/auth&state=${state}&nonce=${nonce}">按我</a>
+            <h1>Line OpenID Connect</h1>
+            <a href="https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=1661142035&redirect_uri=http://localhost:8080/line/auth&state=${state}&scope=profile openid&nonce=${nonce}">按我</a>
+
         </main>
     </div>
 </div>
