@@ -18,9 +18,10 @@ public class ResourceServerConfig {
 
     @Bean
     public SecurityFilterChain resourceServerSecurityFilterChain(HttpSecurity http) throws Exception {
-        http
+        http.securityMatcher("/rest/**")
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/rest/**").authenticated()
+                        .anyRequest().permitAll()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
                         .jwt().decoder(NimbusJwtDecoder.withJwkSetUri("http://127.0.0.1:8081" + "/oauth2/jwks").build())
