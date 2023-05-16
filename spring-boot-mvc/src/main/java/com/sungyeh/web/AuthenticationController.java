@@ -11,6 +11,7 @@ import com.sungyeh.repository.PersonRepository;
 import com.sungyeh.service.CloudVisionService;
 import com.sungyeh.service.TotpAuthenticatorService;
 import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -19,7 +20,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.util.Base64;
+import java.util.UUID;
 
 /**
  * 需要驗證服務
@@ -111,6 +115,15 @@ public class AuthenticationController {
     @GetMapping("recaptcha")
     public String recaptcha() {
         return "recaptcha";
+    }
+
+    @GetMapping("open-id")
+    public String openid(Model model, HttpServletRequest request) {
+        String state = new BigInteger(130, new SecureRandom()).toString(32);
+        request.getSession().setAttribute("state", state);
+        model.addAttribute("state", state);
+        model.addAttribute("nonce", UUID.randomUUID().toString());
+        return "open-id";
     }
 
     private byte[] getQRCodeImage(String text, int width, int height) {
