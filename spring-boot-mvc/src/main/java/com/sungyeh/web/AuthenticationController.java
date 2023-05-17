@@ -6,6 +6,10 @@ import com.google.zxing.client.j2se.MatrixToImageConfig;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
+import com.sungyeh.config.GoogleConfig;
+import com.sungyeh.config.LineConfig;
+import com.sungyeh.config.OauthConfig;
+import com.sungyeh.config.SystemConfig;
 import com.sungyeh.repository.DepartmentRepository;
 import com.sungyeh.repository.PersonRepository;
 import com.sungyeh.service.CloudVisionService;
@@ -49,30 +53,16 @@ public class AuthenticationController {
 
     @Value("${google.api.key}")
     private String key;
+    @Resource
+    private GoogleConfig googleConfig;
+    @Resource
+    private LineConfig lineConfig;
 
-    @Value("${google.oauth.id}")
-    private String clientId;
+    @Resource
+    private OauthConfig oauthConfig;
 
-    @Value("${google.oauth.secret}")
-    private String clientSecret;
-
-    @Value("${google.oauth.redirect}")
-    private String redirect;
-
-    @Value("${line.oauth.id}")
-    private String lineClientId;
-
-    @Value("${line.oauth.secret}")
-    private String lineClientSecret;
-
-    @Value("${line.oauth.redirect}")
-    private String lineRedirect;
-
-    @Value("${oauth.authorization-server}")
-    private String authorizationServer;
-
-    @Value("${oauth.redirect}")
-    private String oauthRedirect;
+    @Resource
+    private SystemConfig systemConfig;
 
 
     @GetMapping("jpa")
@@ -148,20 +138,20 @@ public class AuthenticationController {
         request.getSession().setAttribute("state", state);
         model.addAttribute("state", state);
         model.addAttribute("nonce", UUID.randomUUID().toString());
-        model.addAttribute("clientId", clientId);
-        model.addAttribute("clientSecret", clientSecret);
-        model.addAttribute("redirect", redirect);
-        model.addAttribute("lineClientId", lineClientId);
-        model.addAttribute("lineClientSecret", lineClientSecret);
-        model.addAttribute("lineRedirect", lineRedirect);
-
+        model.addAttribute("clientId", googleConfig.getId());
+        model.addAttribute("clientSecret", googleConfig.getSecret());
+        model.addAttribute("redirect", googleConfig.getRedirect());
+        model.addAttribute("lineClientId", lineConfig.getId());
+        model.addAttribute("lineClientSecret", lineConfig.getSecret());
+        model.addAttribute("lineRedirect", lineConfig.getRedirect());
+        model.addAttribute("systemUrl", systemConfig.getUrl());
         return "open-id";
     }
 
     @GetMapping("authorization")
     public String authorization(Model model) {
-        model.addAttribute("authorizationServer", authorizationServer);
-        model.addAttribute("redirect", oauthRedirect);
+        model.addAttribute("authorizationServer", oauthConfig.getAuthorizationServer());
+        model.addAttribute("redirect", oauthConfig.getRedirect());
         return "authorization";
     }
 

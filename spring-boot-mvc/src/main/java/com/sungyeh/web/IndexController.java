@@ -11,8 +11,10 @@ import com.sungyeh.bean.LineAuthorizationCodeResponse;
 import com.sungyeh.bean.LineUserinfo;
 import com.sungyeh.bean.OauthAuthorizationCodeResponse;
 import com.sungyeh.config.CaptchaConfig;
+import com.sungyeh.config.GoogleConfig;
+import com.sungyeh.config.LineConfig;
+import com.sungyeh.config.OauthConfig;
 import jakarta.annotation.Resource;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -43,35 +45,14 @@ public class IndexController {
     @Resource
     private CaptchaConfig captchaConfig;
 
-    @Value("${google.oauth.id}")
-    private String clientId;
+    @Resource
+    private GoogleConfig googleConfig;
 
-    @Value("${google.oauth.secret}")
-    private String clientSecret;
+    @Resource
+    private LineConfig lineConfig;
 
-    @Value("${google.oauth.redirect}")
-    private String redirect;
-
-    @Value("${line.oauth.id}")
-    private String lineClientId;
-
-    @Value("${line.oauth.secret}")
-    private String lineClientSecret;
-
-    @Value("${line.oauth.redirect}")
-    private String lineRedirect;
-
-    @Value("${oauth.id}")
-    private String oauthClientId;
-
-    @Value("${oauth.secret}")
-    private String oauthClientSecret;
-
-    @Value("${oauth.redirect}")
-    private String oauthRedirect;
-
-    @Value("${oauth.authorization-endpoint}")
-    private String endpoint;
+    @Resource
+    private OauthConfig oauthConfig;
 
     @GetMapping("/index")
     public String index() {
@@ -131,9 +112,9 @@ public class IndexController {
     public String googleOpenid(@RequestParam("code") String code, Model model) throws IOException {
 
         GoogleTokenResponse response = new GoogleAuthorizationCodeTokenRequest(new NetHttpTransport(), new GsonFactory(),
-                clientId,
-                clientSecret,
-                code, redirect)
+                googleConfig.getId(),
+                googleConfig.getSecret(),
+                code, googleConfig.getRedirect())
                 .execute();
 
         RestTemplate restTemplate = new RestTemplate();
@@ -156,9 +137,9 @@ public class IndexController {
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("grant_type", "authorization_code");
         map.add("code", code);
-        map.add("redirect_uri", lineRedirect);
-        map.add("client_id", lineClientId);
-        map.add("client_secret", lineClientSecret);
+        map.add("redirect_uri", lineConfig.getRedirect());
+        map.add("client_id", lineConfig.getId());
+        map.add("client_secret", lineConfig.getSecret());
 
         HttpEntity<MultiValueMap<String, String>> entity = new HttpEntity<>(map, headers);
         ResponseEntity<LineAuthorizationCodeResponse> authorization = restTemplate.exchange("https://api.line.me/oauth2/v2.1/token", HttpMethod.POST, entity, LineAuthorizationCodeResponse.class);
@@ -167,7 +148,7 @@ public class IndexController {
         userHeaders.add("Content-Type", "application/x-www-form-urlencoded");
         MultiValueMap<String, String> userMap = new LinkedMultiValueMap<>();
         map.add("id_token", authorization.getBody().getIdToken());
-        map.add("client_id", lineClientId);
+        map.add("client_id", lineConfig.getId());
 
         HttpEntity<MultiValueMap<String, String>> userEntity = new HttpEntity<>(userMap, userHeaders);
         ResponseEntity<LineUserinfo> result = restTemplate.exchange("https://api.line.me/oauth2/v2.1/verify", HttpMethod.POST, entity, LineUserinfo.class);
@@ -183,14 +164,14 @@ public class IndexController {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.add("Content-Type", "application/x-www-form-urlencoded");
-        headers.add("Authorization", "Basic " + Base64.getEncoder().encodeToString((oauthClientId + ":" + oauthClientSecret).getBytes()));
+        headers.add("Authorization", "Basic " + Base64.getEncoder().encodeToString((oauthConfig.getId() + ":" + oauthConfig.getSecret()).getBytes()));
         MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
         map.add("grant_type", "authorization_code");
         map.add("code", code);
-        map.add("redirect_uri", oauthRedirect);
+        map.add("redirect_uri", oauthConfig.getRedirect());
 
         HttpEntity<MultiValueMap<String, String>> entity = new HttpEntity<>(map, headers);
-        ResponseEntity<OauthAuthorizationCodeResponse> authorization = restTemplate.exchange(endpoint, HttpMethod.POST, entity, OauthAuthorizationCodeResponse.class);
+        ResponseEntity<OauthAuthorizationCodeResponse> authorization = restTemplate.exchange(oauthConfig.getAuthorizationEndpoint(), HttpMethod.POST, entity, OauthAuthorizationCodeResponse.class);
         model.addAttribute("authorization", authorization.getBody());
         return "oauth-openid";
     }

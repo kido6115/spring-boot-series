@@ -46,7 +46,7 @@
                  data-client_id="${clientId}"
                  data-context="signin"
                  data-ux_mode="popup"
-                 data-login_uri="http://localhost:8080/google/gsi"
+                 data-login_uri="${systemUrl}/google/gsi"
                  data-auto_prompt="false">
             </div>
 
