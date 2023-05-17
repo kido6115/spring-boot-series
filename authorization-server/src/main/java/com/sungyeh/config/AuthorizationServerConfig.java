@@ -6,6 +6,7 @@ import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
 import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
 import jakarta.annotation.Resource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -46,6 +47,16 @@ public class AuthorizationServerConfig {
 
     @Resource
     private UserDetailsService userDetailsService;
+
+    @Value("${oauth.id}")
+    private String clientId;
+
+    @Value("${oauth.secret}")
+    private String clientSecret;
+
+    @Value("${oauth.redirect}")
+    private String redirect;
+
 
     private static KeyPair generateRsaKey() {
         KeyPair keyPair;
@@ -125,13 +136,13 @@ public class AuthorizationServerConfig {
     @Bean
     public RegisteredClientRepository registeredClientRepository() {
         RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())
-                .clientId("client")
-                .clientSecret("$2a$12$AoUjb06SK5KLeGF4EVXsGexdQKYtcDEB8bHLhiTbGTW0FKo7lI9vy")
+                .clientId(clientId)
+                .clientSecret(clientSecret)
                 .clientAuthenticationMethod(ClientAuthenticationMethod.CLIENT_SECRET_BASIC)
                 .authorizationGrantType(AuthorizationGrantType.AUTHORIZATION_CODE)
                 .authorizationGrantType(AuthorizationGrantType.REFRESH_TOKEN)
                 .authorizationGrantType(AuthorizationGrantType.CLIENT_CREDENTIALS)
-                .redirectUri("http://127.0.0.1:8080/index")
+                .redirectUri(redirect)
                 .clientSettings(ClientSettings.builder().requireAuthorizationConsent(false).build())
                 .build();
 

@@ -68,6 +68,13 @@ public class AuthenticationController {
     @Value("${line.oauth.redirect}")
     private String lineRedirect;
 
+    @Value("${oauth.authorization-server}")
+    private String authorizationServer;
+
+    @Value("${oauth.redirect}")
+    private String oauthRedirect;
+
+
     @GetMapping("jpa")
     public String jpa(Model model) {
         model.addAttribute("persons", personRepository.findAll());
@@ -149,6 +156,13 @@ public class AuthenticationController {
         model.addAttribute("lineRedirect", lineRedirect);
 
         return "open-id";
+    }
+
+    @GetMapping("authorization")
+    public String authorization(Model model) {
+        model.addAttribute("authorizationServer", authorizationServer);
+        model.addAttribute("redirect", oauthRedirect);
+        return "authorization";
     }
 
     private byte[] getQRCodeImage(String text, int width, int height) {

@@ -32,6 +32,8 @@ public class SecurityConfig {
         CsrfRequestMatcher csrfRequestMatcher = new CsrfRequestMatcher();
         csrfRequestMatcher.addExcludeUrl("/google/**");
         csrfRequestMatcher.addExcludeUrl("/line/**");
+        csrfRequestMatcher.addExcludeUrl("/oauth/**");
+
         http.authorizeHttpRequests(a -> a.requestMatchers("/auth/**").authenticated()
                         .anyRequest().permitAll())
                 .formLogin()

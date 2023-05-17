@@ -4,3 +4,7 @@ google:
 line:
   oauth:
     redirect: "https://spring-boot-series-4vuktvrsua-de.a.run.app/line/openid"
+oauth:
+  authorization-server: "https://authorization-server-4vuktvrsua-de.a.run.app"
+  authorization-endpoint: "https://authorization-server-4vuktvrsua-de.a.run.app/oauth2/token"
+  redirect: "https://spring-boot-series-4vuktvrsua-de.a.run.app/oauth/openid"

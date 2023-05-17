@@ -31,3 +31,6 @@ line:
   oauth:
     id: "1661142035"
     secret: "91a042d425a12f11ee99bc67b4cc2190"
+oauth:
+  id: client
+  secret: password

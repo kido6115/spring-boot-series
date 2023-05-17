@@ -9,6 +9,7 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.sungyeh.bean.GoogleUserInfo;
 import com.sungyeh.bean.LineAuthorizationCodeResponse;
 import com.sungyeh.bean.LineUserinfo;
+import com.sungyeh.bean.OauthAuthorizationCodeResponse;
 import com.sungyeh.config.CaptchaConfig;
 import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Value;
@@ -26,6 +27,7 @@ import org.springframework.web.client.RestTemplate;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
 
@@ -58,6 +60,18 @@ public class IndexController {
 
     @Value("${line.oauth.redirect}")
     private String lineRedirect;
+
+    @Value("${oauth.id}")
+    private String oauthClientId;
+
+    @Value("${oauth.secret}")
+    private String oauthClientSecret;
+
+    @Value("${oauth.redirect}")
+    private String oauthRedirect;
+
+    @Value("${oauth.authorization-endpoint}")
+    private String endpoint;
 
     @GetMapping("/index")
     public String index() {
@@ -162,6 +176,23 @@ public class IndexController {
         model.addAttribute("authorization", authorization.getBody());
         model.addAttribute("result", result.getBody());
         return "line-openid";
+    }
+
+    @GetMapping("/oauth/openid")
+    public String oauthOpenid(@RequestParam("code") String code, Model model) {
+        RestTemplate restTemplate = new RestTemplate();
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("Content-Type", "application/x-www-form-urlencoded");
+        headers.add("Authorization", "Basic " + Base64.getEncoder().encodeToString((oauthClientId + ":" + oauthClientSecret).getBytes()));
+        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
+        map.add("grant_type", "authorization_code");
+        map.add("code", code);
+        map.add("redirect_uri", oauthRedirect);
+
+        HttpEntity<MultiValueMap<String, String>> entity = new HttpEntity<>(map, headers);
+        ResponseEntity<OauthAuthorizationCodeResponse> authorization = restTemplate.exchange(endpoint, HttpMethod.POST, entity, OauthAuthorizationCodeResponse.class);
+        model.addAttribute("authorization", authorization.getBody());
+        return "oauth-openid";
     }
 
 }
