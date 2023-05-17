@@ -30,9 +30,7 @@ public class SecurityConfig {
     @Bean("backendFilterChain")
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         CsrfRequestMatcher csrfRequestMatcher = new CsrfRequestMatcher();
-        csrfRequestMatcher.addExcludeUrl("/google/**");
-        csrfRequestMatcher.addExcludeUrl("/line/**");
-        csrfRequestMatcher.addExcludeUrl("/oauth/**");
+        csrfRequestMatcher.addExcludeUrl("/google/gsi");
 
         http.authorizeHttpRequests(a -> a.requestMatchers("/auth/**").authenticated()
                         .anyRequest().permitAll())

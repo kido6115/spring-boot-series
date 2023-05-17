@@ -85,27 +85,17 @@ public class IndexController {
     }
 
     @PostMapping("/google/gsi")
-    public String gsi(@RequestParam("credential") String credential, @RequestParam("g_csrf_token") String gToken) {
+    public String gsi(@RequestParam("credential") String credential, @RequestParam("g_csrf_token") String gToken, Model model) throws GeneralSecurityException, IOException {
         GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(new NetHttpTransport(), new GsonFactory())
-                // Specify the CLIENT_ID of the app that accesses the backend:
-                .setAudience(Collections.singletonList("329193090490-5phkddntmnd815q9edcurgr4tc92csfs.apps.googleusercontent.com"))
-                // Or, if multiple clients access the backend:
-                //.setAudience(Arrays.asList(CLIENT_ID_1, CLIENT_ID_2, CLIENT_ID_3))
+                .setAudience(Collections.singletonList(googleConfig.getId()))
                 .build();
-        try {
-            GoogleIdToken idToken = verifier.verify(credential);
-            System.out.println(idToken);
-        } catch (GeneralSecurityException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
+        GoogleIdToken idToken = verifier.verify(credential);
+        model.addAttribute("token", idToken.toString());
 //        Authentication authentication =
 //                new UsernamePasswordAuthenticationToken(userDetails, null,
 //                        userDetails.getAuthorities());
 //        SecurityContextHolder.getContext().setAuthentication(authentication);
-        return "index";
+        return "google-gsi";
     }
 
     @GetMapping("/google/openid")
