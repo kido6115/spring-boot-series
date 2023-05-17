@@ -3,3 +3,9 @@ logging:
     org.springframework.security: DEBUG
     org.springframework.web: DEBUG
 debug: true
+google:
+  oauth:
+    redirect: "http://localhost:8080/google/openid"
+line:
+  oauth:
+    redirect: "http://localhost:8080/line/openid"

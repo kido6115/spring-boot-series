@@ -24,4 +24,10 @@ google:
   recaptcha:
     site: "6Lc8bwImAAAAAHnng3IjN3iPf2K1rLKFdYQYb_w8"
     secret: "6Lc8bwImAAAAAIf2sqKos_sfnnLmHeIVo9NtFcpL"
-
+  oauth:
+    id: "329193090490-5phkddntmnd815q9edcurgr4tc92csfs.apps.googleusercontent.com"
+    secret: "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"
+line:
+  oauth:
+    id: "1661142035"
+    secret: "91a042d425a12f11ee99bc67b4cc2190"

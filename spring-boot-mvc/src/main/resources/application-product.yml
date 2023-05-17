@@ -1,0 +1,6 @@
+google:
+  oauth:
+    redirect: "https://spring-boot-series-4vuktvrsua-de.a.run.app/google/openid"
+line:
+  oauth:
+    redirect: "https://spring-boot-series-4vuktvrsua-de.a.run.app/line/openid"

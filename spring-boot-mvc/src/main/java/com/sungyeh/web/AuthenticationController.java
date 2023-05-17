@@ -50,6 +50,24 @@ public class AuthenticationController {
     @Value("${google.api.key}")
     private String key;
 
+    @Value("${google.oauth.id}")
+    private String clientId;
+
+    @Value("${google.oauth.secret}")
+    private String clientSecret;
+
+    @Value("${google.oauth.redirect}")
+    private String redirect;
+
+    @Value("${line.oauth.id}")
+    private String lineClientId;
+
+    @Value("${line.oauth.secret}")
+    private String lineClientSecret;
+
+    @Value("${line.oauth.redirect}")
+    private String lineRedirect;
+
     @GetMapping("jpa")
     public String jpa(Model model) {
         model.addAttribute("persons", personRepository.findAll());
@@ -123,6 +141,13 @@ public class AuthenticationController {
         request.getSession().setAttribute("state", state);
         model.addAttribute("state", state);
         model.addAttribute("nonce", UUID.randomUUID().toString());
+        model.addAttribute("clientId", clientId);
+        model.addAttribute("clientSecret", clientSecret);
+        model.addAttribute("redirect", redirect);
+        model.addAttribute("lineClientId", lineClientId);
+        model.addAttribute("lineClientSecret", lineClientSecret);
+        model.addAttribute("lineRedirect", lineRedirect);
+
         return "open-id";
     }
 
