@@ -155,6 +155,11 @@ public class AuthenticationController {
         return "authorization";
     }
 
+    @GetMapping("swagger")
+    public String swagger() {
+        return "swagger";
+    }
+
     private byte[] getQRCodeImage(String text, int width, int height) {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix = null;

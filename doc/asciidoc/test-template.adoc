@@ -1,0 +1,74 @@
+= 測試報告書樣板
+作者姓名 <kido6115@gmail.com>
+v0.1, yyyy-mm-dd
+:experimental:
+:icons: font
+:sectnums:
+:toc: left
+:toc-title: 大綱
+:imagesdir: ../../images
+:sourcedir: ../uml
+:saltdir: ../salt
+:page-background-image: image:/watermark.png[]
+:stylesheet: ../../stylesheets/colony.css
+
+== 測試說明
+
+|===
+|作業代號|XXXXXX|作業名稱|這是作業名稱
+|===
+
+=== 權限說明
+
+需要權限說明嗎？
+
+=== 測試項目
+
+[cols="a,a",options="header"]
+|===
+|測試項目
+|備註
+
+|身分證驗證
+|
+|===
+
+=== 測試項目說明
+
+==== 身分證驗證
+
+===== 測試成功結果
+
+[cols="a,a,a",options="header"]
+|===
+|測試項目
+|正確輸入值
+|備註
+
+|驗證是否為正確格式
+|A123456789
+|
+|===
+
+image::xx/xxx.png[成功畫面,300,title="成功畫面"]
+
+===== 測試錯誤結果
+
+[cols="a,a,a",options="header"]
+|===
+|測試項目
+|錯誤輸入值
+|備註
+
+|驗證是否為正確演算, 錯誤應呈現格式錯誤
+|A223456789
+|錯誤畫面1
+
+|驗證是否為正確碼數, 錯誤應呈現格式錯誤
+|A3234567890
+|錯誤畫面2
+|===
+
+image::xx/xxx.png[錯誤畫面1,300,title="錯誤畫面1"]
+
+image::xx/xxx.png[錯誤畫面2,300,title="錯誤畫面2"]

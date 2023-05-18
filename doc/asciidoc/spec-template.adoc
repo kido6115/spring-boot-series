@@ -1,0 +1,73 @@
+= 程式規格書樣板
+作者姓名 <kido6115@gmail.com>
+v0.1, yyyy-mm-dd
+:experimental:
+:icons: font
+:sectnums:
+:toc: left
+:toc-title: 大綱
+:imagesdir: ../../images
+:sourcedir: ../uml
+:saltdir: ../salt
+:page-background-image: image:/watermark.png[]
+:stylesheet: ../../stylesheets/colony.css
+== 作業說明
+
+|===
+|作業代號|XXXXXX|作業名稱|這是作業名稱
+|===
+
+=== 作業目的
+
+這是範本請不要亂改
+
+=== 權限說明
+
+需要權限說明嗎？
+
+=== 資料來源
+
+[[_XXXXXX]]
+* _XXXXXX: 資料表名稱
+
+=== 功能列表
+
+[format="csv",options="header"]
+|===
+include::wbs/wbs-template.csv[]
+|===
+
+== XX畫面
+
+[[image-xxxxxx-01]]
+image::xxxxxx/xxxxxx-01.png[??畫面,800,title="??畫面"]
+
+=== 欄位說明
+
+[cols="a,a,a,a",options="header"]
+|===
+|欄位名稱
+|表單欄位名稱
+|類型
+|備註
+
+|中文欄位說明
+|field1
+|text
+|必填
+
+|中文欄位說明
+|field1
+|text
+|必填
+
+|中文欄位說明
+|field1
+|text
+|必填
+|===
+
+=== 功能說明
+
+* [按鈕1]：做某些功能到<<_XXXXX>>
+* [按鈕2]：做某些功能，請參考<<image-xxxxxx-01>>

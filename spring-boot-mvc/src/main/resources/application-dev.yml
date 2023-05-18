@@ -1,8 +1,8 @@
-logging:
-  level:
-    org.springframework.security: DEBUG
-    org.springframework.web: DEBUG
-debug: true
+#logging:
+#  level:
+#    org.springframework.security: DEBUG
+#    org.springframework.web: DEBUG
+debug: false
 google:
   oauth:
     redirect: "http://localhost:8080/google/openid"

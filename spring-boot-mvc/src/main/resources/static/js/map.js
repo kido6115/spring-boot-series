@@ -111,7 +111,6 @@ function layerTool(map, toolId) {
             if (layer.selected) {
                 switch (layer.subtype) {
                     //環斑圖，範例為使用fusion圓結合marker
-                    //不使用fusion需傳遞circleOption給TistRingSpot
                     case 'ringspot':
                         //google circle option
                         var circleOption = {
@@ -173,7 +172,6 @@ function layerTool(map, toolId) {
                     case 'density':
                         switch (layer.id) {
                             case 7:
-                                //將geojson中各feature.properties.desity指定密度供TistDensity使用
                                 chcg.features.forEach(function (value) {
                                     value.properties.density = opacity[value.properties.TOWN_ID];
                                 });

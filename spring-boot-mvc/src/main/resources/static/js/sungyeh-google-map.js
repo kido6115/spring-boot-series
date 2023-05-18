@@ -146,7 +146,7 @@
 
             /**
              *Creates an instance of FusionExtendMap.
-             * @param {Config} config tist常數設定
+             * @param {Config} config 常數設定
              * @param {string} imgName
              * @param {google.maps.MapOptions} [mapOpts] 地圖物件選項
              * @memberof FusionExtendMap
@@ -643,7 +643,7 @@
             /**
              * Creates a map with a Mercator projection. This is the default projection
              * for the Maps API so we don't have to define the projection.
-             * @param config tist地圖常數設定
+             * @param config 地圖常數設定
              *    Parameters for setting up the map. If this  parameter is not passed
              *    in, default parameters are used.
              * @private

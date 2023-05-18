@@ -39,7 +39,7 @@ public class SpringdocApiInfo {
                         .description("範例Swagger")
                         .version("0.0.1")
                         .contact(new Contact().name(oasConfig.getOwner()).email(oasConfig.getMail()).url(""))
-                ).schemaRequirement("Client Credentials", new SecurityScheme()
+                ).schemaRequirement("clientCredentials", new SecurityScheme()
                         .description("請先透過認證伺服器取得 access token").type(SecurityScheme.Type.HTTP).scheme("bearer").bearerFormat("JWT"))
                 .addSecurityItem(securityItem);
     }
