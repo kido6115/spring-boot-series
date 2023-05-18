@@ -30,6 +30,7 @@ public class Department {
      */
     @Schema(description = "部門代號")
     private String no;
+
     public Department(com.sungyeh.domain.Department department) {
         this.id = department.getId();
         this.name = department.getName();
