@@ -12,7 +12,8 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * UserDetailsServiceImpl
+ * UserDetailsService 實作
+ * 進行帳號基本驗證
  *
  * @author sungyeh
  */

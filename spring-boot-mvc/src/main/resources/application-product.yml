@@ -10,3 +10,5 @@ oauth:
   redirect: "https://spring-boot-series-4vuktvrsua-de.a.run.app/oauth/openid"
 system:
   url: "https://spring-boot-series-4vuktvrsua-de.a.run.app"
+oas:
+  url: ${system.url}

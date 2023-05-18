@@ -15,3 +15,5 @@ oauth:
   redirect: "http://127.0.0.1:8080/oauth/openid"
 system:
   url: "http://localhost:8080"
+oas:
+  url: ${system.url}

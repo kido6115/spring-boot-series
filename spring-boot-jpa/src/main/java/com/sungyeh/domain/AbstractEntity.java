@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -16,6 +17,7 @@ import java.io.Serializable;
  */
 @MappedSuperclass
 @EqualsAndHashCode(of = "id")
+@Data
 public class AbstractEntity implements Serializable {
 
     private static final long serialVersionUID = 2698812789010477485L;

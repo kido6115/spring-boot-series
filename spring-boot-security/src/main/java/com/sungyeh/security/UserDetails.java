@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+/**
+ * 擴充UserDetails
+ */
 public class UserDetails extends org.springframework.security.core.userdetails.User {
 
     private static final long serialVersionUID = 6260992542369648223L;

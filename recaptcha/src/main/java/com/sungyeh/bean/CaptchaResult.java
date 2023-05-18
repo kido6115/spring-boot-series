@@ -3,7 +3,7 @@ package com.sungyeh.bean;
 import lombok.Data;
 
 /**
- * recaptcha驗證
+ * CaptchaResult
  *
  * @author sungyeh
  */

@@ -34,3 +34,6 @@ line:
 oauth:
   id: client
   secret: password
+oas:
+  owner: 許嵩業
+  mail: kido6115@gmail.com

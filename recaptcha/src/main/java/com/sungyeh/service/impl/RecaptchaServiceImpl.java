@@ -14,6 +14,11 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;
 
+/**
+ * RecaptchaService 實作
+ *
+ * @author sungyeh
+ */
 @Service
 public class RecaptchaServiceImpl implements RecaptchaService {
 
