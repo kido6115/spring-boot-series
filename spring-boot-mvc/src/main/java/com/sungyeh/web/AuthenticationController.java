@@ -160,6 +160,27 @@ public class AuthenticationController {
         return "swagger";
     }
 
+
+    @GetMapping("line")
+    public String line() {
+        return "line";
+    }
+
+    @GetMapping("static-analysis")
+    public String staticAnalysis() {
+        return "static-analysis";
+    }
+
+    @GetMapping("web-socket")
+    public String webSocket() {
+        return "web-socket";
+    }
+
+    @GetMapping("asciidoc")
+    public String asciidoc() {
+        return "asciidoc";
+    }
+
     private byte[] getQRCodeImage(String text, int width, int height) {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix = null;
