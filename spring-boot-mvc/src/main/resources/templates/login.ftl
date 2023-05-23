@@ -102,14 +102,14 @@
 
                     <div class="input-group mb-3">
                         <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            <span class="input-group-text"><i class="fa fa-user" aria-hidden="true"></i></span>
                         </div>
                         <input type="text" id="username" name="username" class="form-control input_user" value=""
                                placeholder="username">
                     </div>
                     <div class="input-group mb-2">
                         <div class="input-group-append">
-                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            <span class="input-group-text"><i class="fa fa-lock" aria-hidden="true"></i></span>
                         </div>
                         <input type="password" id="password" name="password" class="form-control input_pass" value=""
                                placeholder="password">
@@ -118,7 +118,7 @@
                         <div id="recaptcha" class="g-recaptcha" data-sitekey="${site}"></div>
                     </div>
                     <div class="d-flex justify-content-center mt-3 login_container">
-                        <button name="button" class="btn btn-info">Login</button>
+                        <button name="button" class="btn btn-info">Sign in</button>
                     </div>
                 </form>
             </div>

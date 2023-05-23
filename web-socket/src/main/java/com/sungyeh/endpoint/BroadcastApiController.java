@@ -34,6 +34,7 @@ public class BroadcastApiController {
     public OutputMessage broadcast(@PathVariable("user") String user, @RequestBody Message message) throws JsonProcessingException {
         OutputMessage outputMessage = new OutputMessage(Calendar.getInstance().getTimeInMillis(), message);
         ObjectMapper objectMapper = new ObjectMapper();
+        template.sendMsgToUser(user, outputMessage);
         return outputMessage;
     }
 }

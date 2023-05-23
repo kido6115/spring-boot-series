@@ -8,7 +8,7 @@
 {"title":"Security","path":"/auth/security"},
 {"title":"Authorization/Resource Server","path":"/auth/authorization"},
 {"title":"Restful/Swagger/SpringDoc","path":"/auth/swagger"},
-{"title":"Web Socket","path":"/auth/socket"}
+{"title":"WebSocket","path":"/auth/web-socket"}
 ]
 },
 {

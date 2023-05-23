@@ -31,5 +31,8 @@
         font-weight: unset;
     }
 </style>
-<style>
-</style>
+<script>
+    $(document).ajaxSend(function (event, jqXHR, ajaxOptions) {
+        jqXHR.setRequestHeader("${(_csrf.headerName)!}", "${(_csrf.token)!}");
+    });
+</script>

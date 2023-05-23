@@ -10,6 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * WebSocketSessions
+ * 考慮到使用者可能多個窗口或者重新連線socket session的改變，進行註冊以便找出對應接口
  *
  * @author sungyeh
  */
