@@ -13,10 +13,17 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer {
-
+    /**
+     * 通用interceptor
+     */
     @Resource
     private CommonInterceptor commonInterceptor;
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * 註冊interceptor
+     */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(commonInterceptor).addPathPatterns("/auth/**", "/oauth/**", "/google/**", "/line/**", "/", "/index");

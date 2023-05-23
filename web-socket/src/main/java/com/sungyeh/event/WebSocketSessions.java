@@ -16,14 +16,25 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @Component
 public class WebSocketSessions {
+    /**
+     * sessionUsers: sessionId, user
+     */
     private ConcurrentHashMap<String, String> sessionUsers = new ConcurrentHashMap<>();
-    private ConcurrentHashMap<String, String> serveMap = new ConcurrentHashMap<>();
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString() {
         return "[WebSocketSessions] sessionUsers: " + sessionUsers.size();
     }
 
+    /**
+     * 註冊sessionId
+     *
+     * @param user      使用者
+     * @param sessionId sessionId
+     */
     public synchronized void registerSessionId(String user, String sessionId) {
         Assert.notNull(user, "user must not be null");
         Assert.notNull(sessionId, "sessionId must not be null");
@@ -31,6 +42,11 @@ public class WebSocketSessions {
         sessionUsers.put(sessionId, user);
     }
 
+    /**
+     * 移除sessionId
+     *
+     * @param sessionId sessionId
+     */
     public synchronized void removeSessionId(String sessionId) {
         Assert.notNull(sessionId, "sessionId must not be null");
 
@@ -39,16 +55,29 @@ public class WebSocketSessions {
         }
     }
 
+    /**
+     * 取得全部使用者
+     *
+     * @return 使用者
+     */
     public List<String> getAllUsers() {
         return new ArrayList<>(sessionUsers.values());
     }
 
+    /**
+     * 取得全部sessionIds
+     *
+     * @return sessionIds
+     */
     public List<String> getAllSessionIds() {
         return new ArrayList<>(sessionUsers.keySet());
     }
 
     /**
      * 取得相同使用者的所有sessionIds
+     *
+     * @param user 使用者
+     * @return sessionIds
      */
     public List<String> getSessionIds(String user) {
         List<String> sessionIds = new ArrayList<>();
@@ -59,26 +88,6 @@ public class WebSocketSessions {
             }
         }
         return sessionIds;
-    }
-
-    public synchronized void registerServe(String ccs, String serve) {
-        Assert.notNull(ccs, "user must not be null");
-        Assert.notNull(serve, "sessionId must not be null");
-
-        serveMap.put(ccs, serve);
-    }
-
-    public synchronized void unregisterServe(String ccs) {
-        Assert.notNull(ccs, "user must not be null");
-        serveMap.remove(ccs);
-    }
-
-    public String getServeId(String ccs) {
-        return serveMap.get(ccs);
-    }
-
-    public List<String> getAllServeIds() {
-        return new ArrayList<>(serveMap.keySet());
     }
 
 }

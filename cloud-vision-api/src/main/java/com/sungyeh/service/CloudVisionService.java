@@ -6,5 +6,11 @@ package com.sungyeh.service;
  * @author sungyeh
  */
 public interface CloudVisionService {
-    public String send(String para);
+    /**
+     * 傳送圖片至cloud vision
+     *
+     * @param para image base64 string
+     * @return json string
+     */
+    String send(String para);
 }

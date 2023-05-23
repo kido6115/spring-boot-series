@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * GoogleConfig
+ * Google oauth 靜態資源
  *
  * @author sungyeh
  */
@@ -13,10 +13,16 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class GoogleConfig {
-
+    /**
+     * client id
+     */
     private String id;
-
+    /**
+     * client secret
+     */
     private String secret;
-
+    /**
+     * 重導向URL
+     */
     private String redirect;
 }

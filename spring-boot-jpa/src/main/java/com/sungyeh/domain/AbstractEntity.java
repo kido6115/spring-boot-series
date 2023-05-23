@@ -20,6 +20,10 @@ import java.io.Serializable;
 @Data
 public class AbstractEntity implements Serializable {
 
+    /**
+     * serialVersionUID
+     * 這個屬性是為了在反序列化時確保類版本的兼容性。
+     */
     private static final long serialVersionUID = 2698812789010477485L;
 
     /**

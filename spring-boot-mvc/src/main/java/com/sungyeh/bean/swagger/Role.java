@@ -29,12 +29,24 @@ public class Role {
     @Schema(description = "角色代號")
     private String no;
 
+    /**
+     * 建構子
+     *
+     * @param role 角色entity
+     * @see com.sungyeh.domain.Role
+     */
     public Role(com.sungyeh.domain.Role role) {
         this.id = role.getId();
         this.name = role.getName();
         this.no = role.getNo();
     }
 
+    /**
+     * 轉換成entity
+     *
+     * @return 角色entity
+     * @see com.sungyeh.domain.Role
+     */
     public com.sungyeh.domain.Role toEntity() {
         com.sungyeh.domain.Role role = new com.sungyeh.domain.Role();
         role.setId(this.id);

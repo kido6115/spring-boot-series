@@ -16,10 +16,19 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class ResourceServerConfig {
-
+    /**
+     * 認證伺服器
+     */
     @Value("${oauth.authorization-server}")
     private String authorizationServer;
 
+    /**
+     * 資源伺服器filter chain
+     *
+     * @param http a {@link org.springframework.security.config.annotation.web.builders.HttpSecurity} object
+     * @return a {@link org.springframework.security.web.SecurityFilterChain} object
+     * @throws java.lang.Exception if any.
+     */
     @Bean
     public SecurityFilterChain resourceServerSecurityFilterChain(HttpSecurity http) throws Exception {
         http.securityMatcher("/rest/**")

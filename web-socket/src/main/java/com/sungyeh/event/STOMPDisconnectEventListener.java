@@ -16,10 +16,18 @@ import org.springframework.web.socket.messaging.SessionDisconnectEvent;
 @Slf4j
 public class STOMPDisconnectEventListener implements ApplicationListener<SessionDisconnectEvent> {
 
+    /**
+     * WebSocketSessions
+     */
     @Resource
     private WebSocketSessions sessions;
 
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * 中斷websocket時觸發
+     */
     @Override
     public void onApplicationEvent(SessionDisconnectEvent event) {
         StompHeaderAccessor accessor = StompHeaderAccessor.wrap(event.getMessage());

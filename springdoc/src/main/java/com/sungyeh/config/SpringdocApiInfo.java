@@ -22,10 +22,17 @@ import java.util.Collections;
 @Component
 @Data
 public class SpringdocApiInfo {
-
+    /**
+     * 靜態資料
+     */
     @Resource
     private OasConfig oasConfig;
 
+    /**
+     * Swagger OAS 資訊 設定
+     *
+     * @return OpenAPI
+     */
     @Bean
     public OpenAPI openApi() {
         SecurityRequirement securityItem = new SecurityRequirement();

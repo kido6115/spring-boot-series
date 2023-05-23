@@ -10,10 +10,22 @@ import lombok.Data;
  */
 @Data
 public class GoogleUserInfo {
-    private String sub;
+    /**
+     * google openid
+     */
+    private String id;
+    /**
+     * 相片網址
+     */
     private String picture;
+    /**
+     * 信箱
+     */
     private String email;
-    @JsonProperty("email_verified")
+    /**
+     * 是否已認證過信箱
+     */
+    @JsonProperty("verified_email")
     private Boolean emailVerified;
 
 }

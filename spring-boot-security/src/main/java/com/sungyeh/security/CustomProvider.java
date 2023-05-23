@@ -20,13 +20,27 @@ import org.springframework.stereotype.Component;
 @Component
 public class CustomProvider extends AbstractUserDetailsAuthenticationProvider {
 
+    /**
+     * 驗證recaptcha
+     */
 
     @Resource
     private RecaptchaService recaptchaService;
+
+    /**
+     * 使用者資訊
+     */
     @Resource
     private UserDetailsService userDetailsService;
 
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * 同DaoAuthenticationProvider追加recaptcha驗證
+     *
+     * @see org.springframework.security.authentication.dao.DaoAuthenticationProvider
+     */
     @Override
     protected void additionalAuthenticationChecks(UserDetails userDetails, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
         if (authentication.getCredentials() == null) {
@@ -46,6 +60,13 @@ public class CustomProvider extends AbstractUserDetailsAuthenticationProvider {
         }
     }
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * 同DaoAuthenticationProvider獲得使用者資訊
+     *
+     * @see org.springframework.security.authentication.dao.DaoAuthenticationProvider
+     */
     @Override
     protected UserDetails retrieveUser(String username, UsernamePasswordAuthenticationToken authentication) throws AuthenticationException {
 

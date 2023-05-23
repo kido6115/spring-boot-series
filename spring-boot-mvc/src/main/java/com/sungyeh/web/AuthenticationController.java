@@ -38,33 +38,58 @@ import java.util.UUID;
 @RequestMapping("/auth")
 @Slf4j
 public class AuthenticationController {
+    /**
+     * 部門repository
+     */
     @Resource
     private DepartmentRepository departmentRepository;
-
+    /**
+     * 使用者repository
+     */
     @Resource
     private PersonRepository personRepository;
-
+    /**
+     * google cloud vision service
+     */
     @Resource
     private CloudVisionService cloudVisionService;
-
+    /**
+     * totp service
+     */
     @Resource
     private TotpAuthenticatorService totpAuthenticatorService;
-
-
+    /**
+     * google api key
+     */
     @Value("${google.api.key}")
     private String key;
+    /**
+     * Google靜態資源
+     */
     @Resource
     private GoogleConfig googleConfig;
+    /**
+     * Line靜態資源
+     */
     @Resource
     private LineConfig lineConfig;
-
+    /**
+     * 認證伺服器靜態資源
+     */
     @Resource
     private OauthConfig oauthConfig;
-
+    /**
+     * 系統設定靜態資源
+     */
     @Resource
     private SystemConfig systemConfig;
 
-
+    /**
+     * JPA頁面
+     *
+     * @param model 注入modelandview
+     * @return jpa.ftl
+     */
     @GetMapping("jpa")
     public String jpa(Model model) {
         model.addAttribute("persons", personRepository.findAll());
@@ -72,6 +97,12 @@ public class AuthenticationController {
         return "jpa";
     }
 
+    /**
+     * MVC頁面
+     *
+     * @param model 注入modelandview
+     * @return mvc.ftl
+     */
     @GetMapping("mvc")
     public String mvc(Model model) {
         model.addAttribute("persons", personRepository.findAll());
@@ -79,28 +110,56 @@ public class AuthenticationController {
         return "mvc";
     }
 
+    /**
+     * Spring Security頁面
+     *
+     * @return security.ftl
+     */
     @GetMapping("security")
     public String security() {
         return "security";
     }
 
+    /**
+     * Google map操作頁面
+     *
+     * @param model 注入modelandview
+     * @return google-map.ftl
+     */
     @GetMapping("google-map")
     public String googleMap(Model model) {
         model.addAttribute("key", this.key);
         return "google-map";
     }
 
+    /**
+     * Cloud vision頁面
+     *
+     * @return cloud-vision.ftl
+     */
     @GetMapping("cloud-vision")
     public String cloudVision() {
         return "cloud-vision";
     }
 
+    /**
+     * 偵測API
+     *
+     * @param para image base64 string
+     * @return json string
+     */
     @PostMapping("detect")
     @ResponseBody
     public String detect(@RequestParam("para") String para) {
         return cloudVisionService.send(para);
     }
 
+    /**
+     * TOTP頁面
+     *
+     * @param model 注入modelandview
+     * @return authenticator.ftl
+     */
     @GetMapping("authenticator")
     public String authenticator(Model model) {
         String url = totpAuthenticatorService.createUrl("PBCDIEBZ35BWWWAK", "user");
@@ -111,27 +170,55 @@ public class AuthenticationController {
         return "authenticator";
     }
 
+    /**
+     * 檢查TOTP
+     *
+     * @param code totp code
+     * @return boolean true/false
+     */
     @GetMapping("totp-check/{code}")
     @ResponseBody
     public boolean totpCheck(@PathVariable("code") String code) {
         return totpAuthenticatorService.valid(Integer.parseInt(code), "PBCDIEBZ35BWWWAK");
     }
 
+    /**
+     * WebRTC頁面
+     *
+     * @return rtc.ftl
+     */
     @GetMapping("rtc")
     public String rtc() {
         return "rtc";
     }
 
+    /**
+     * Dialogflow頁面
+     *
+     * @return dialogflow.ftl
+     */
     @GetMapping("dialogflow")
     public String dialogflow() {
         return "dialogflow";
     }
 
+    /**
+     * Recaptcha頁面
+     *
+     * @return recaptcha.ftl
+     */
     @GetMapping("recaptcha")
     public String recaptcha() {
         return "recaptcha";
     }
 
+    /**
+     * OpenID頁面
+     *
+     * @param model   注入modelandview
+     * @param request 注入request
+     * @return open-id.ftl
+     */
     @GetMapping("open-id")
     public String openid(Model model, HttpServletRequest request) {
         String state = new BigInteger(130, new SecureRandom()).toString(32);
@@ -148,6 +235,12 @@ public class AuthenticationController {
         return "open-id";
     }
 
+    /**
+     * 認證伺服器頁面
+     *
+     * @param model 注入modelandview
+     * @return authorization.ftl
+     */
     @GetMapping("authorization")
     public String authorization(Model model) {
         model.addAttribute("authorizationServer", oauthConfig.getAuthorizationServer());
@@ -155,32 +248,59 @@ public class AuthenticationController {
         return "authorization";
     }
 
+    /**
+     * Swagger頁面
+     *
+     * @return swagger.ftl
+     */
     @GetMapping("swagger")
     public String swagger() {
         return "swagger";
     }
 
-
+    /**
+     * Line頁面
+     *
+     * @return line.ftl
+     */
     @GetMapping("line")
     public String line() {
         return "line";
     }
 
+    /**
+     * 靜態分析頁面
+     *
+     * @return static-analysis.ftl
+     */
     @GetMapping("static-analysis")
     public String staticAnalysis() {
         return "static-analysis";
     }
 
+    /**
+     * Web Socket頁面
+     *
+     * @return web-socket.ftl
+     */
     @GetMapping("web-socket")
     public String webSocket() {
         return "web-socket";
     }
 
+    /**
+     * Asciidoc頁面
+     *
+     * @return asciidoc.ftl
+     */
     @GetMapping("asciidoc")
     public String asciidoc() {
         return "asciidoc";
     }
 
+    /**
+     * QRCode產生器
+     */
     private byte[] getQRCodeImage(String text, int width, int height) {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
         BitMatrix bitMatrix = null;

@@ -15,10 +15,17 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Component
 public class CommonInterceptor implements HandlerInterceptor {
-
+    /**
+     * httpSession
+     */
     @Resource
     private HttpSession httpSession;
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * preHandle
+     */
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
         HandlerInterceptor.super.postHandle(request, response, handler, modelAndView);

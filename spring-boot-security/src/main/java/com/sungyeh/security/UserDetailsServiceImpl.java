@@ -20,9 +20,17 @@ import java.util.List;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
+    /**
+     * 使用者資訊Repository
+     */
     @Resource
     private PersonRepository personRepository;
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * 透過帳號取得使用者資訊
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Person user = personRepository.findByUsername(username);

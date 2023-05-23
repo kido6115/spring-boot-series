@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * CaptchaConfig
+ * Google recaptcha 靜態資源
  *
  * @author sungyeh
  */
@@ -14,7 +14,13 @@ import org.springframework.context.annotation.Configuration;
 @Data
 public class CaptchaConfig {
 
+    /**
+     * site key
+     */
     private String site;
 
+    /**
+     * secret key
+     */
     private String secret;
 }

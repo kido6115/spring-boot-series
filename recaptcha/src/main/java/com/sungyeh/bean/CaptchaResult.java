@@ -10,6 +10,9 @@ import lombok.Data;
 @Data
 public class CaptchaResult {
 
+    /**
+     * 驗證是否成功
+     */
     private boolean success;
 
 }

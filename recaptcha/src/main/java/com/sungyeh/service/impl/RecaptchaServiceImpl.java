@@ -22,16 +22,32 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class RecaptchaServiceImpl implements RecaptchaService {
 
+    /**
+     * 驗證網址
+     */
     private static final String verify = "https://www.google.com/recaptcha/api/siteverify";
 
+    /**
+     * Captcha靜態參數
+     */
     @Resource
     private CaptchaConfig config;
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * 驗證 recaptcha
+     */
     @Override
     public boolean verify(String token) {
         return verify(new RestTemplate(), token);
     }
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * 驗證 recaptcha
+     */
     @Override
     public boolean verify(RestOperations restOperations, String token) {
         boolean result = false;

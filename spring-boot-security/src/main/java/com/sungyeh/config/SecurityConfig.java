@@ -24,9 +24,20 @@ import org.springframework.security.web.header.writers.XXssProtectionHeaderWrite
 @Order(1)
 public class SecurityConfig {
 
+    /**
+     * CustomProvider
+     * 自訂驗證
+     */
     @Resource
     private CustomProvider provider;
 
+    /**
+     * security filter chain
+     *
+     * @param http HttpSecurity
+     * @return SecurityFilterChain
+     * @throws java.lang.Exception java.lang.Exception
+     */
     @Bean("backendFilterChain")
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         CsrfRequestMatcher csrfRequestMatcher = new CsrfRequestMatcher();
@@ -56,6 +67,11 @@ public class SecurityConfig {
         return http.build();
     }
 
+    /**
+     * password encoder
+     *
+     * @return PasswordEncoder
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

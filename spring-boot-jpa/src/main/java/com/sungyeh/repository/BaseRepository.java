@@ -9,6 +9,7 @@ import org.springframework.data.repository.NoRepositoryBean;
  *
  * @param <T>  對應的Entity型態
  * @param <ID> Entity主鍵型態
+ * @author sungyeh
  */
 @NoRepositoryBean
 public interface BaseRepository<T, ID> extends JpaRepository<T, ID>, JpaSpecificationExecutor<T> {

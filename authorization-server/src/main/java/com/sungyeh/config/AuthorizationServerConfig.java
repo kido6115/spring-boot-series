@@ -45,19 +45,37 @@ import java.util.UUID;
 @Order(-5)
 public class AuthorizationServerConfig {
 
+    /**
+     * UserDetailsService
+     * 取得登入者資訊
+     */
     @Resource
     private UserDetailsService userDetailsService;
 
+    /**
+     * 註冊clientId
+     */
     @Value("${oauth.id}")
     private String clientId;
 
+    /**
+     * 註冊clientSecret
+     */
     @Value("${oauth.secret}")
     private String clientSecret;
 
+    /**
+     * 註冊redirect
+     */
     @Value("${oauth.redirect}")
     private String redirect;
 
 
+    /**
+     * 產生金鑰對
+     *
+     * @return KeyPair
+     */
     private static KeyPair generateRsaKey() {
         KeyPair keyPair;
         try {
@@ -70,6 +88,13 @@ public class AuthorizationServerConfig {
         return keyPair;
     }
 
+    /**
+     * 認證伺服器filter chain
+     *
+     * @param http HttpSecurity
+     * @return SecurityFilterChain
+     * @throws java.lang.Exception java.lang.Exception
+     */
     @Bean("authorizationServerSecurityFilterChain")
     public SecurityFilterChain authorizationServerSecurityFilterChain(HttpSecurity http)
             throws Exception {
@@ -86,6 +111,13 @@ public class AuthorizationServerConfig {
         return http.build();
     }
 
+    /**
+     * 預設filter chain
+     *
+     * @param http HttpSecurity
+     * @return SecurityFilterChain
+     * @throws java.lang.Exception java.lang.Exception
+     */
     @Bean
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
             throws Exception {
@@ -109,6 +141,11 @@ public class AuthorizationServerConfig {
         return http.build();
     }
 
+    /**
+     * JWKSource
+     *
+     * @return JWKSource
+     */
     @Bean
     public JWKSource<SecurityContext> jwkSource() {
         KeyPair keyPair = generateRsaKey();
@@ -122,17 +159,33 @@ public class AuthorizationServerConfig {
         return new ImmutableJWKSet<>(jwkSet);
     }
 
+    /**
+     * JwtDecoder
+     *
+     * @param jwkSource JWKSource
+     * @return JwtDecoder
+     */
     @Bean
     public JwtDecoder jwtDecoder(JWKSource<SecurityContext> jwkSource) {
         return OAuth2AuthorizationServerConfiguration.jwtDecoder(jwkSource);
     }
 
+    /**
+     * 端點設定
+     *
+     * @return OAuth2AuthorizationServerConfigurer
+     */
     @Bean
     public AuthorizationServerSettings authorizationServerSettings() {
         return AuthorizationServerSettings.builder().build();
     }
 
 
+    /**
+     * 註冊記憶體client
+     *
+     * @return RegisteredClientRepository
+     */
     @Bean
     public RegisteredClientRepository registeredClientRepository() {
         RegisteredClient registeredClient = RegisteredClient.withId(UUID.randomUUID().toString())

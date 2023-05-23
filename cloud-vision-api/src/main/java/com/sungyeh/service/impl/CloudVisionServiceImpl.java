@@ -26,11 +26,23 @@ import java.nio.charset.StandardCharsets;
 @Slf4j
 public class CloudVisionServiceImpl implements CloudVisionService {
 
+    /**
+     * cloud vision 請求JSON
+     */
     @Value("classpath:sample.json")
     org.springframework.core.io.Resource resourceFile;
+
+    /**
+     * cloud vision 參數
+     */
     @Resource
     private VisionConfig config;
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * 傳送圖片至cloud vision
+     */
     public String send(String para) {
         InputStream stream = null;
         InputStreamReader isReader = null;

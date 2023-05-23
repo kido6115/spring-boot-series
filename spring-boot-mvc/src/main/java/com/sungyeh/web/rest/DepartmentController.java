@@ -20,6 +20,9 @@ import java.util.List;
 @RequestMapping("/rest/department")
 @Tag(name = "部門")
 public class DepartmentController {
+    /**
+     * 部門Repository
+     */
     @Resource
     private DepartmentRepository departmentRepository;
 

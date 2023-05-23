@@ -264,6 +264,9 @@
                         <id>html</id>
                         <configuration>
                             <show>private</show>
+                            <sourceFileExcludes>
+                                <exclude>**/**_.java</exclude>
+                            </sourceFileExcludes>
                         </configuration>
                         <reports>
                             <report>javadoc</report>
@@ -307,15 +310,13 @@
         <developer>
             <id>sungyeh</id>
             <name>許嵩業</name>
-            <organization></organization>
-            <organizationUrl></organizationUrl>
             <email>kido6115@gmail.com</email>
         </developer>
     </developers>
     <distributionManagement>
         <site>
             <id>${project.artifactId}-site</id>
-            <url>https://stackoverflow.com/questions/10848715/multi-module-pom-creating-a-site-that-works</url>
+            <url>https://github.com/kido6115/spring-boot-series</url>
         </site>
     </distributionManagement>
 </project>

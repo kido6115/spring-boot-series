@@ -6,7 +6,8 @@
 <meta name="_csrf_parameter" content="${(_csrf.parameterName)!}"/>
 <meta name="_csrf_header" content="${(_csrf.headerName)!}"/>
 <meta name="_csrf" content="${(_csrf.token)!}"/>
-
+<link rel="shortcut icon" href="<@spring.url "/img/favicon.ico" />"/>
+<link rel="bookmark" href="<@spring.url "/img/favicon.ico" />"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 

@@ -20,7 +20,9 @@ import java.util.List;
 @RequestMapping("/rest/role")
 @Tag(name = "角色")
 public class RoleController {
-
+    /**
+     * 角色Repository
+     */
     @Resource
     private RoleRepository roleRepository;
 

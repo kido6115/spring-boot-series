@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * Config
+ * Cloud vision 靜態資源
  *
  * @author sungyeh
  */
@@ -14,5 +14,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class VisionConfig {
 
+    /**
+     * api key
+     */
     private String key;
 }

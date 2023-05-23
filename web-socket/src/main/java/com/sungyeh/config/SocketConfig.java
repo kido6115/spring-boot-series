@@ -22,6 +22,9 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @Configuration
 @EnableWebSocketMessageBroker
 public class SocketConfig implements WebSocketMessageBrokerConfigurer {
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
         config.enableSimpleBroker("/text-ccs/topic", "/text-ccs/user");
@@ -29,6 +32,9 @@ public class SocketConfig implements WebSocketMessageBrokerConfigurer {
         config.setApplicationDestinationPrefixes("/text-ccs/app");
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/text-ccs");
@@ -36,6 +42,8 @@ public class SocketConfig implements WebSocketMessageBrokerConfigurer {
     }
 
     /**
+     * {@inheritDoc}
+     * <p>
      * 收到連線建立時做的處理
      */
     @Override

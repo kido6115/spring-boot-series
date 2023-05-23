@@ -12,6 +12,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SpringdocConfig {
 
+    /**
+     * API 群組設定
+     *
+     * @return GroupedOpenApi
+     */
     @Bean
     public GroupedOpenApi sungyehApi() {
         return GroupedOpenApi.builder()

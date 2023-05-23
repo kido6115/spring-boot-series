@@ -16,9 +16,17 @@ import org.springframework.web.socket.messaging.SessionConnectEvent;
 @Slf4j
 public class STOMPConnectEventListener implements ApplicationListener<SessionConnectEvent> {
 
+    /**
+     * WebSocketSessions
+     */
     @Resource
     private WebSocketSessions sessions;
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * 連上websocket時觸發
+     */
     @Override
     public void onApplicationEvent(SessionConnectEvent event) {
         StompHeaderAccessor accessor = StompHeaderAccessor.wrap(event.getMessage());

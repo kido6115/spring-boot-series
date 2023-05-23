@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class TotpAuthenticatorServiceImpl implements TotpAuthenticatorService {
+    /**
+     * {@inheritDoc}
+     */
     public String createUrl(String secret, String userId) {
         String otpType = "totp";
         String issuer = "sungyeh-tech-note";
@@ -20,12 +23,20 @@ public class TotpAuthenticatorServiceImpl implements TotpAuthenticatorService {
         return String.format(googleAuthenticatorKeyUriFormat, otpType, account, secret, issuer);
     }
 
+    /**
+     * <p>createKey.</p>
+     *
+     * @return a {@link java.lang.String} object
+     */
     public String createKey() {
         GoogleAuthenticator googleAuthenticator = new GoogleAuthenticator();
         final GoogleAuthenticatorKey key = googleAuthenticator.createCredentials();
         return key.getKey();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public boolean valid(int code, String secret) {
         GoogleAuthenticator googleAuthenticator = new GoogleAuthenticator();
         return googleAuthenticator.authorize(secret, code);

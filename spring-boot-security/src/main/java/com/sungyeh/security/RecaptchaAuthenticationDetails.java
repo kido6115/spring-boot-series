@@ -13,10 +13,18 @@ import org.springframework.security.web.authentication.WebAuthenticationDetails;
 @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)
 public class RecaptchaAuthenticationDetails extends WebAuthenticationDetails {
 
+    /**
+     * token
+     */
     @Getter
     private String token;
 
 
+    /**
+     * 建構子
+     *
+     * @param request HttpServletRequest
+     */
     public RecaptchaAuthenticationDetails(HttpServletRequest request) {
         super(request);
         this.token = request.getParameter("g-recaptcha-response");

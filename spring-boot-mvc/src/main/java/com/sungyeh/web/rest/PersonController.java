@@ -26,7 +26,9 @@ import java.util.List;
 @RequestMapping("/rest/user")
 @Tag(name = "使用者功能")
 public class PersonController {
-
+    /**
+     * 使用者Repository
+     */
     @Resource
     private PersonRepository personRepository;
 

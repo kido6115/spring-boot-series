@@ -13,10 +13,16 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 public class LineConfig {
-
+    /**
+     * channel id
+     */
     private String id;
-
+    /**
+     * channel secret
+     */
     private String secret;
-
+    /**
+     * 重導向URL
+     */
     private String redirect;
 }
