@@ -300,6 +300,11 @@ public class AuthenticationController {
 
     /**
      * QRCode產生器
+     *
+     * @param text   文字
+     * @param width  寬度
+     * @param height 高度
+     * @return QRCode byte array
      */
     private byte[] getQRCodeImage(String text, int width, int height) {
         QRCodeWriter qrCodeWriter = new QRCodeWriter();
