@@ -15,4 +15,6 @@ import org.springframework.stereotype.Component;
 public class FirebaseInfoConfig {
 
     private String key;
+
+    private String serviceAccountUrl;
 }

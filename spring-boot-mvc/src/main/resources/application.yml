@@ -18,15 +18,15 @@ spring:
       ddl-auto: none
 google:
   api:
-    key: "AIzaSyBote7e630I7WkqFUUY9GjbT20fIPiUdmI"
+    key: ${GOOGLE_API_KEY}
   vision:
     key: ${google.api.key}
   recaptcha:
-    site: "6Lc8bwImAAAAAHnng3IjN3iPf2K1rLKFdYQYb_w8"
-    secret: "6Lc8bwImAAAAAIf2sqKos_sfnnLmHeIVo9NtFcpL"
+    site: ${RECAPTCHA_SITE}
+    secret: ${RECAPTCHA_SECRET}
   oauth:
-    id: "329193090490-5phkddntmnd815q9edcurgr4tc92csfs.apps.googleusercontent.com"
-    secret: "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"
+    id: ${GOOGLE_OAUTH_ID}
+    secret: ${GOOGLE_OAUTH_SECRET}
 oauth:
   id: client
   secret: password
@@ -35,6 +35,6 @@ oas:
   mail: kido6115@gmail.com
 line:
   oauth:
-    id: "1661142035"
-    secret: "91a042d425a12f11ee99bc67b4cc2190"
+    id: ${LINE_OAUTH_ID}
+    secret: ${LINE_OAUTH_SECRET}
 debug: true

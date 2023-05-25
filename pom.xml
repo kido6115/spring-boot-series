@@ -27,6 +27,8 @@
         <module>line</module>
     </modules>
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
     </properties>
     <dependencyManagement>
@@ -136,6 +138,12 @@
                 <artifactId>firebase-admin</artifactId>
                 <version>9.1.1</version>
             </dependency>
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>1.16.1</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
     <build>
