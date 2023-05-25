@@ -27,13 +27,14 @@ google:
   oauth:
     id: "329193090490-5phkddntmnd815q9edcurgr4tc92csfs.apps.googleusercontent.com"
     secret: "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"
-line:
-  oauth:
-    id: "1661142035"
-    secret: "91a042d425a12f11ee99bc67b4cc2190"
 oauth:
   id: client
   secret: password
 oas:
   owner: 許嵩業
   mail: kido6115@gmail.com
+line:
+  oauth:
+    id: "1661142035"
+    secret: "91a042d425a12f11ee99bc67b4cc2190"
+debug: true

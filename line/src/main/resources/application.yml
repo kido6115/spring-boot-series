@@ -1,0 +1,13 @@
+spring:
+  profiles:
+    active: product
+line:
+  bot:
+    channel-token: '6376TJZePh/SmLc5cq8XVFrDSSqosjgGgckgfX8BN8f5O3RgItNo5IkajboZlr55L4LAZPdPrn+RaP7wEilBQEZxnbGxzwL+lxop+9kC60iOWNE33wXQdZrECRG3eYGYxs1qb6JXh2A0sUv7+AHcjQdB04t89/1O/w1cDnyilFU='
+    channel-secret: 'd084de87db224b322d72b796ac0f2294'
+    handler:
+      path: /callback
+  custom:
+    channel-token: 'cor30FGOkZ7awWndC4rB+RE1F795CaxTRNT2RYDNSmN9pXy/Nt7mPJ5hOnuHhj2pCFih7xQmNzXHxmxtXTyMMODVq6/BoYOXOS68tKl22STclDV1iNg48NDOfVDFj8G/ZlWEA0hLvzjWqNTq7kAGGAdB04t89/1O/w1cDnyilFU='
+firebase:
+  key: 'AIzaSyBote7e630I7WkqFUUY9GjbT20fIPiUdmI'
