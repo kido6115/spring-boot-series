@@ -1,12 +1,5 @@
 package com.sungyeh.service.impl;
 
-import com.linecorp.bot.client.LineMessagingClient;
-import com.linecorp.bot.client.LineMessagingClientBuilder;
-import com.linecorp.bot.model.PushMessage;
-import com.linecorp.bot.model.action.URIAction;
-import com.linecorp.bot.model.message.TemplateMessage;
-import com.linecorp.bot.model.message.template.ImageCarouselColumn;
-import com.linecorp.bot.model.message.template.ImageCarouselTemplate;
 import com.sungyeh.config.LineCustomConfig;
 import com.sungyeh.service.CwbImageAlt;
 import com.sungyeh.service.CwbService;
@@ -18,12 +11,8 @@ import org.jsoup.nodes.Document;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 /**
  * CwbServiceImpl
@@ -59,37 +48,6 @@ public class CwbServiceImpl implements CwbService {
         );
     }
 
-    @Override
-    public void weatherForecast() {
-        List<String> images = getImage();
-        LineMessagingClientBuilder builder = LineMessagingClient.builder(lineCustomConfig.getChannelToken());
-        List<ImageCarouselColumn> columns = new ArrayList<>();
-
-        for (String image : images) {
-            ImageCarouselColumn imageCarouselColumn;
-            try {
-                imageCarouselColumn = new ImageCarouselColumn(new URI(image),
-                        new URIAction("查看",
-                                new URI("https://dokodemo.world/zh-Hant/item/"), null));
-            } catch (URISyntaxException e) {
-                log.error("URISyntaxException: {}", e.getMessage());
-                throw new RuntimeException(e);
-            }
-            columns.add(imageCarouselColumn);
-        }
-        ImageCarouselTemplate template = new ImageCarouselTemplate(columns);
-        TemplateMessage templateMessage = new TemplateMessage("近期氣象資訊", template);
-        List<String> users = firebaseService.getLineUsers();
-        users.forEach(u -> {
-                    try {
-                        builder.build().pushMessage(new PushMessage(u, templateMessage)).get();
-                    } catch (InterruptedException | ExecutionException e) {
-                        log.error("InterruptedException | ExecutionException: {}", e.getMessage());
-                        throw new RuntimeException(e);
-                    }
-                }
-        );
-    }
 
     private String getImageByAlt(Document document, CwbImageAlt alt) {
         String target = String.format("img[alt=\"%s\"]", alt.getAlt());

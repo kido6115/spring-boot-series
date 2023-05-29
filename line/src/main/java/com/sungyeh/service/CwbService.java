@@ -6,6 +6,5 @@ public interface CwbService {
 
     List<String> getImage();
 
-    void weatherForecast();
 
 }

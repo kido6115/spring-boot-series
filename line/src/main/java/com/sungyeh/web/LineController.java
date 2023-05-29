@@ -2,9 +2,11 @@ package com.sungyeh.web;
 
 import com.linecorp.bot.model.event.Event;
 import com.linecorp.bot.model.event.MessageEvent;
-import com.linecorp.bot.model.message.TextMessage;
+import com.linecorp.bot.model.message.Message;
 import com.linecorp.bot.spring.boot.annotation.EventMapping;
 import com.linecorp.bot.spring.boot.annotation.LineMessageHandler;
+import com.sungyeh.service.EventService;
+import jakarta.annotation.Resource;
 
 /**
  * LineController
@@ -14,16 +16,14 @@ import com.linecorp.bot.spring.boot.annotation.LineMessageHandler;
 @LineMessageHandler
 public class LineController {
 
+    @Resource
+    private EventService eventService;
 
     @EventMapping
-    public TextMessage handleTextMessageEvent(MessageEvent event) {
-        System.out.println(event);
-//        LineMessagingClientBuilder builder = LineMessagingClient.builder("");
-//        builder.build().multicast(
-//                event.getSource().getSenderId(),
-//                new TextMessage("Hello, world")
-        return new TextMessage(event.getMessage().toString());
+    public Message handleTextMessageEvent(MessageEvent event) {
+        return eventService.execute(event.getMessage());
     }
+
 
     @EventMapping
     public void handleDefaultMessageEvent(Event event) {
