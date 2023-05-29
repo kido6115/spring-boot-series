@@ -16,5 +16,5 @@ public class FirebaseInfoConfig {
 
     private String key;
 
-    private String serviceAccountUrl;
+    private String serviceAccount;
 }

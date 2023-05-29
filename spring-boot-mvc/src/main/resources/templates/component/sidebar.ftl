@@ -70,7 +70,6 @@
                     <#list title.item as topic>
                         <li class="nav-item">
                             <a class="nav-link <#if springMacroRequestContext.requestUri==topic.path>active</#if>"
-                               <#if '/auth/google-map'==topic.path>target="_blank" </#if>
                                href="${topic.path}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                      fill="none"

@@ -20,20 +20,23 @@
                     <div class=""></div>
                 </div>
             </div>
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <div class="d-flex flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">MVC</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="dropdown">
                         <a class="btn btn-sm btn-outline-secondary dropdown-toggle" href="#" role="button"
                            id="dropdownMenuLink"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown link
+                            原始碼
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item"
+                               target="_blank"
+                               href="https://github.com/kido6115/spring-boot-series/blob/master/spring-boot-mvc/src/main/java/com/sungyeh/web/AuthenticationController.java">Controller</a>
+                            <a class="dropdown-item"
+                               target="_blank"
+                               href="https://github.com/kido6115/spring-boot-series/blob/master/spring-boot-mvc/src/main/resources/templates/mvc.ftl">Freemarker</a>
                         </div>
                     </div>
                 </div>
@@ -86,6 +89,30 @@
                 </table>
                 </code>
             </pre>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th>帳戶名稱</th>
+                        <th>部門名稱</th>
+                        <th>身分</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <#list persons as item>
+                        <tr>
+                            <td>${item.username}</td>
+                            <td>${item.department.name}</td>
+                            <td><#list item.roles as role>
+                                    ${role.name}<#sep>, </#sep>
+                                </#list>
+                            </td>
+                        </tr>
+                    </#list>
+                    </tbody>
+                </table>
+            </div>
         </main>
     </div>
 </div>

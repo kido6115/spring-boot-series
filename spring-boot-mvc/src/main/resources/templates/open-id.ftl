@@ -21,24 +21,32 @@
                     <div class=""></div>
                 </div>
             </div>
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">MVC</h1>
+            <div class="d-flex  flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">OpenID</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
+
                     <div class="dropdown">
                         <a class="btn btn-sm btn-outline-secondary dropdown-toggle" href="#" role="button"
                            id="dropdownMenuLink"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown link
+                            原始碼
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item"
+                               target="_blank"
+                               href="https://github.com/kido6115/spring-boot-series/blob/master/spring-boot-mvc/src/main/resources/templates/open-id.ftl">
+                                頁面資訊 </a>
+                            <a class="dropdown-item"
+                               target="_blank"
+                               href="https://github.com/kido6115/spring-boot-series/blob/master/spring-boot-mvc/src/main/java/com/sungyeh/web/IndexController.java">
+                                轉址後處理</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <p>整合Google新的GSI來取得使用者資訊, 以及傳統的Oauth2.0進行登入獲得access token來取得基本資訊</p>
+
             <h1>GSI</h1>
             <div id="g_id_onload"
                  data-client_id="${clientId}"

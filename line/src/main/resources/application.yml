@@ -11,4 +11,4 @@ line:
     channel-token: ${LINE_CUSTOM_CHANNEL_TOKEN}
 firebase:
   key: ${FIREBASE_API_KEY}
-  service-account-url: 'https://drive.google.com/u/0/uc?id=1DCNmupTlOqdKg79VMZlXkMcdDgeLeP2O&export=download'
+  service-account: D:\\sungyeh-tech-note-35913de65507.json

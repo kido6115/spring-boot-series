@@ -6,13 +6,9 @@ import com.google.firebase.FirebaseOptions;
 import jakarta.annotation.Resource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.client.RestTemplate;
 
-import java.io.ByteArrayInputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.util.Objects;
 
 /**
  * FirebaseConfig
@@ -27,13 +23,10 @@ public class FirebaseConfig {
 
     @Bean
     FirebaseApp firebaseApp() throws IOException {
-        RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<String> response = restTemplate.getForEntity(firebaseInfoConfig.getServiceAccountUrl(), String.class);
-        InputStream inputStream = new ByteArrayInputStream(Objects.requireNonNull(response.getBody()).getBytes());
-
-
+        FileInputStream serviceAccount =
+                new FileInputStream(firebaseInfoConfig.getServiceAccount());
         FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(GoogleCredentials.fromStream(inputStream))
+                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                 .build();
 
         return FirebaseApp.initializeApp(options);

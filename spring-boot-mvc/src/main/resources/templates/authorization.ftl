@@ -20,20 +20,23 @@
                     <div class=""></div>
                 </div>
             </div>
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <div class="d-flex  flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                 <h1 class="h2">Authorization/Resource Server</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="dropdown">
                         <a class="btn btn-sm btn-outline-secondary dropdown-toggle" href="#" role="button"
                            id="dropdownMenuLink"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown link
+                            原始碼
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item"
+                               target="_blank"
+                               href="https://github.com/kido6115/spring-boot-series/blob/master/authorization-server/src/main/java/com/sungyeh/config/AuthorizationServerConfig.java">認證伺服器Config</a>
+                            <a class="dropdown-item"
+                               target="_blank"
+                               href="https://github.com/kido6115/spring-boot-series/blob/master/spring-boot-mvc/src/main/java/com/sungyeh/config/ResourceServerConfig.java">資源伺服器Config</a>
                         </div>
                     </div>
                 </div>

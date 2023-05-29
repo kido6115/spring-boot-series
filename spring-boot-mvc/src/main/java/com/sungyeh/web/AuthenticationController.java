@@ -126,10 +126,20 @@ public class AuthenticationController {
      * @param model 注入modelandview
      * @return google-map.ftl
      */
-    @GetMapping("google-map")
-    public String googleMap(Model model) {
+    @GetMapping("google-map-demo")
+    public String googleMapDemo(Model model) {
         model.addAttribute("key", this.key);
         return "google-map";
+    }
+
+    /**
+     * Google map操作頁面
+     *
+     * @return google-map-index.ftl
+     */
+    @GetMapping("google-map")
+    public String googleMap() {
+        return "google-map-index";
     }
 
     /**
