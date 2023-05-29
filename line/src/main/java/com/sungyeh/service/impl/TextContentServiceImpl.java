@@ -21,6 +21,7 @@ public class TextContentServiceImpl implements TextContentService {
 
     private final List<TextContentResponseService> responseServiceList;
     private Map<String, TextContentResponseService> responseServiceMap;
+
     public TextContentServiceImpl(List<TextContentResponseService> responseServiceList) {
         this.responseServiceList = responseServiceList;
         this.responseServiceMap = new HashMap<>();
@@ -33,6 +34,9 @@ public class TextContentServiceImpl implements TextContentService {
     public Message dispatch(MessageContent messageContent) {
         if (messageContent instanceof TextMessageContent) {
             String text = ((TextMessageContent) messageContent).getText();
+            if (text.startsWith("！")) {
+                text = "!" + text.substring(1);
+            }
             return responseServiceMap.get(text) == null ? defaultMessage(messageContent) : responseServiceMap.get(text).bulidMessage();
         } else {
             throw new RuntimeException("MessageContent is not TextMessageContent");

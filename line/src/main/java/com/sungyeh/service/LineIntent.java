@@ -7,7 +7,7 @@ package com.sungyeh.service;
  */
 public enum LineIntent {
 
-    WEATHER("!天氣");
+    WEATHER("!天氣"), ASK("!你會甚麼");
 
     private final String intent;
 

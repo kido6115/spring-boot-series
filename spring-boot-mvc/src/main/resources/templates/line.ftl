@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">MVC</h1>
+                <h1 class="h2">Line</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="dropdown">
                         <a class="btn btn-sm btn-outline-secondary dropdown-toggle" href="#" role="button"
@@ -38,54 +38,63 @@
                     </div>
                 </div>
             </div>
-            <h2>Controller</h2>
-            <p>透過SpringMVC註解快速註冊Controller並以Freemarker進行頁面渲染, 選擇Freemarker則是因其支援embedded Tomcat,
-                除輕量化在分散式或者容器化上較易應用
+            <h2>Line bot</h2>
+            <p>透過Line Messaging API 來實作Line bot進行訊息的收發
             </p>
-            <pre>
-                <code data-language="java">
-                        @Controller
-                        @RequestMapping("/auth")
-                        public class AuthenticationController {
-                            @Resource
-                            private DepartmentRepository departmentRepository;
-
-                            @Resource
-                            private PersonRepository personRepository;
-
-                            @GetMapping("mvc")
-                            public String mvc(Model model) {
-                                model.addAttribute("persons", personRepository.findAll());
-                                model.addAttribute("department", departmentRepository.findByNo("RD"));
-                                return "mvc";
-                            }
-
-                        }
-                    </code>
-            </pre>
-            <pre>
-                <code data-language="html">
-                    <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>帳戶名稱</th>
-                        <th>部門名稱</th>
-                        <th>身分</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        ${r"<#list persons as item>"}<tr>
-                            <td>${r"${item.username}"}</td>
-                            <td>${r"${item.department.name}"}</td>
-                            <td>${r"<#list item.roles as role>"}
-                                ${r"${role.name}<#sep>, </#sep>"}
-                                ${r"</#list>"}
-                            </td>
-                        </tr> ${r"</#list>"}
-                    </tbody>
-                </table>
-                </code>
-            </pre>
+            <p>使用Line掃描以下QR code進行體驗
+            </p>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>指令 : </h5>
+                    <div class="list-group">
+                        <a href="#ask" class="list-group-item list-group-item-action flex-column align-items-start ">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">!你會甚麼</h5>
+                            </div>
+                            <p class="mb-1">基本功能說明</p>
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="#cwb" class="list-group-item list-group-item-action flex-column align-items-start ">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">!天氣</h5>
+                            </div>
+                            <p class="mb-1">透過網頁爬蟲將氣象局首頁資訊透過Line bot回應</p>
+                        </a>
+                    </div>
+                    <h5>排程 : </h5>
+                    <div class="list-group">
+                        <a href="#dokodemo"
+                           class="list-group-item list-group-item-action flex-column align-items-start ">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">排程推播</h5>
+                            </div>
+                            <p class="mb-1">透過GCP Cloud scheduler排程, 自動定時去取得某代購網站當日特賣商品訊息</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <img class="img-fluid" src="/img/612libxu.png"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><span class="badge badge-light" id="ask">!你會甚麼</span></h5>
+                    <img class="img-fluid " src="/img/1685341398391.jpg"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><span class="badge badge-light" id="cwb">!天氣</span></h5>
+                    <img class="img-fluid " src="/img/1685338997236.jpg"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><span class="badge badge-light" id="dokodemo">排程推播</span></h5>
+                    <img class="img-fluid" src="/img/1685339038707.jpg"/>
+                </div>
+            </div>
         </main>
     </div>
 </div>
