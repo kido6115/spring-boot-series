@@ -3,6 +3,7 @@ package com.sungyeh.security;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.web.util.UrlUtils;
 import org.springframework.security.web.util.matcher.RequestMatcher;
+import org.springframework.util.AntPathMatcher;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,6 +27,11 @@ public class CsrfRequestMatcher implements RequestMatcher {
     private List<String> excludeUrls = new ArrayList<>();
 
     /**
+     * 排除的路徑
+     */
+    private List<String> excludePaths = new ArrayList<>();
+
+    /**
      * {@inheritDoc}
      * <p>
      * 過濾網址
@@ -34,6 +40,12 @@ public class CsrfRequestMatcher implements RequestMatcher {
     public boolean matches(HttpServletRequest request) {
         if (excludeUrls.contains(UrlUtils.buildRequestUrl(request))) {
             return false;
+        }
+        for (String excludePath : excludePaths) {
+            AntPathMatcher antPathMatcher = new AntPathMatcher();
+            if (antPathMatcher.match(excludePath, UrlUtils.buildRequestUrl(request))) {
+                return false;
+            }
         }
         return !allowedMethods.matcher(request.getMethod()).matches();
     }
@@ -50,14 +62,15 @@ public class CsrfRequestMatcher implements RequestMatcher {
     }
 
     /**
-     * 移除排除網址
+     * 新增排除路徑
      *
-     * @param urls 網址
-     * @return 排除urls
+     * @param paths 路徑
+     * @return 排除paths
      */
-    public List<String> removeExcludeUrl(String... urls) {
-        excludeUrls.removeAll(Arrays.asList(urls));
-        return excludeUrls;
+    public List<String> addExcludePath(String... paths) {
+        excludePaths.addAll(Arrays.asList(paths));
+        return excludePaths;
     }
+
 
 }

@@ -47,6 +47,7 @@
                 <li>意圖 : 擅長的領域</li>
                 <li>線性對話 : 還沒作</li>
                 <li>Web Hook : 還沒作</li>
+                <li>Line整合 : 還沒作</li>
 
             </ul>
             <df-messenger

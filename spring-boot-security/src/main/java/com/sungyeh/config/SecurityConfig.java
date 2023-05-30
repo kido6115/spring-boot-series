@@ -42,7 +42,7 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         CsrfRequestMatcher csrfRequestMatcher = new CsrfRequestMatcher();
         csrfRequestMatcher.addExcludeUrl("/google/gsi");
-
+        csrfRequestMatcher.addExcludePath("/text-ccs/**");
         http.authorizeHttpRequests(a -> a.requestMatchers("/auth/**").authenticated()
                         .anyRequest().permitAll())
                 .formLogin()

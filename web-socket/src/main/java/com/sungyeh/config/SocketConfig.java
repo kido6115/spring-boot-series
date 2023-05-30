@@ -38,7 +38,7 @@ public class SocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
         registry.addEndpoint("/text-ccs");
-        registry.addEndpoint("/text-ccs").withSockJS();
+        registry.addEndpoint("/text-ccs").setAllowedOriginPatterns("*").withSockJS();
     }
 
     /**
