@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <h2>Spring Websocket</h2>
+            <h5>Spring Websocket</h5>
             <p>使用Spring Websocket實作一對一聊天以及廣播</p>
             <div class="row">
                 <div class="col-md-4">
@@ -96,7 +96,7 @@
                     </div>
                 </div>
             </div>
-            <h2>MessageQueue</h2>
+            <h5>MessageQueue</h5>
             <p>若讓一台AP擔任Socket收發有過載問題, 可以將訊息收取的部分轉由MQ負責, 在由AP訂閱MQ進行訊息的拉取,
                 訊息由MQ承擔也可降低DB負擔並可在未有socket session建立前先保留訊息
             </p>
@@ -106,13 +106,13 @@
             <p>
                 在面對大量流入的Request MQ會有較好的表現, 且能分攤伺服器壓力, 參考以下架構</p>
             <br/>
-            <h5>架構圖</h5><a href="/auth/asciidoc" class="badge badge-info">PlantUML產製</a>
+            <h6>架構圖</h6><a href="/auth/asciidoc" class="badge badge-info">PlantUML產製</a>
             <div class="row">
                 <img class="col-md-6" src="/img/websocket-mq.png"/>
             </div>
             <br/>
 
-            <h5>流程圖</h5><a href="/auth/asciidoc" class="badge badge-info">PlantUML產製</a>
+            <h6>流程圖</h6><a href="/auth/asciidoc" class="badge badge-info">PlantUML產製</a>
             <div class="row">
                 <img class="col-md-6" src="/img/websocket-mq-flow.png"/>
             </div>

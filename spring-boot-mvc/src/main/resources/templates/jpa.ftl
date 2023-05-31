@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <h2>Repository</h2>
+            <h5>Repository</h5>
             <p>使用Spring Data Jpa當作主要DAO層, 節省基礎SQL需求</p>
             <pre>
                 <code data-language="java">
@@ -49,7 +49,7 @@
                 }
                 </code>
             </pre>
-            <h2>ManyToOne</h2>
+            <h5>ManyToOne</h5>
             <p>使用ManyToOne進行外鍵關聯, 透過A關聯至B取得資料</p>
             <pre>
                 <code data-language="java">
@@ -93,7 +93,7 @@
                     </tbody>
                 </table>
             </div>
-            <h2>ManyToMany</h2>
+            <h5>ManyToMany</h5>
             <p>透過中繼表關聯複數資料, 透過關聯取得所有屬於A的B資料</p>
 
             <pre>
@@ -120,7 +120,7 @@
                                 joinColumns = @JoinColumn(name = "person_id"),
                                 inverseJoinColumns = @JoinColumn(name = "role_id"),
                                 uniqueConstraints = @UniqueConstraint(columnNames = {"person_id", "role_id"}))
-                        private List<Role> roles;
+                        private List&lt;Role&gt; roles;
 
                     }
 
@@ -150,7 +150,7 @@
                     </tbody>
                 </table>
             </div>
-            <h2>OneToMany</h2>
+            <h5>OneToMany</h5>
             <p>透過雙向關聯反關聯</p>
             <pre>
                 <code data-language="java">
@@ -169,7 +169,7 @@
                     private String no;
 
                     @OneToMany(mappedBy = "department")
-                    private List<Person> persons;
+                    private List&lt;Person&gt; persons;
                 }
                 </code>
             </pre>
@@ -195,10 +195,10 @@
                     </tbody>
                 </table>
             </div>
-            <h2>Criteria Api</h2>
+            <h5>Criteria Api</h5>
             <p>若有複雜關聯情況透過Criteria API撰寫語法, 與SQL相比較容易DEBUG及追蹤</p>
 
-            <h2>Pageable</h2>
+            <h5>Pageable</h5>
             <p>Spring Data幾乎有此介面, 有效分頁提升查詢效率</p>
         </main>
     </div>

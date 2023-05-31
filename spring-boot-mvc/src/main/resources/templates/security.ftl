@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <h2>Config</h2>
+            <h5>Config</h5>
             <p>配置config即可迅速作出需要登入驗證網站, 以下為此站所使用並含有以下功能
             </p>
             <ol>

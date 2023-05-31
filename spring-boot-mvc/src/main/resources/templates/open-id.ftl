@@ -47,7 +47,7 @@
             </div>
             <p>整合Google新的GSI來取得使用者資訊, 以及傳統的Oauth2.0進行登入獲得access token來取得基本資訊</p>
 
-            <h1>GSI</h1>
+            <h5>GSI</h5>
             <div id="g_id_onload"
                  data-client_id="${clientId}"
                  data-context="signin"
@@ -64,7 +64,7 @@
                  data-size="large"
                  data-logo_alignment="left">
             </div>
-            <h1>Google OpenID Connect</h1>
+            <h5>Google OpenID Connect</h5>
             <div class="row">
                 <div class="col-md-3">
                     <a class="btn btn-outline-dark"
@@ -76,7 +76,7 @@
                     </a>
                 </div>
             </div>
-            <h1>Line OpenID Connect</h1>
+            <h5>Line OpenID Connect</h5>
             <a href="https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${lineClientId}&redirect_uri=${lineRedirect}&state=${state}&scope=profile openid&nonce=${nonce}">
                 <img src="<@spring.url '/img/btn_login_base.png' />"/></a>
 

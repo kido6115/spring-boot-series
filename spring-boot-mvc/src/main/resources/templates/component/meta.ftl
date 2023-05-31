@@ -26,6 +26,12 @@
 <script src="/js/rainbow-custom.min.js"></script>
 <link rel="stylesheet" href="/css/style.css">
 <style>
+    @import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+
+    body {
+        font-family: 'cwlexYen', sans-serif;
+    }
+
     .tag.close {
         float: unset;
         font-size: unset;

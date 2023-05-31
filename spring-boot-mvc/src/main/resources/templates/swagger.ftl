@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-            <h2>SpringDoc</h2>
+            <h5>SpringDoc</h5>
             <p>SpringFox接班人, 透過在Controller上進行註解來自動產生OAS及整合Swagger介面
             </p>
             <pre>
@@ -140,12 +140,12 @@
                     }
                 </code>
             </pre>
-            <h1>Swagger</h1>
+            <h5>Swagger</h5>
             <p><a target="_blank" href="/swagger-ui/index.html">試用Swagger</a>, 參考<a
                         href="<@spring.url '/auth/authorization' />">
                     Authorization Server</a>取得access token進行Authorize
             </p>
-            <h1>OAS</h1>
+            <h5>OAS</h5>
             <p>透過SpringDoc產生出的OAS文檔</p>
             <ul>
                 <li><a href="/v3/api-docs/sungyeh-api" download>JSON</a></li>

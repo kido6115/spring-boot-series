@@ -106,7 +106,7 @@
                     </div>
                 </div>
             </div>
-            <p>使用jitsi遷入搭建Web RTX服務, jitsi有提供映像檔可自架來使用, 以下使用官方提供的server進行測試</p>
+            <p>使用Jitsi遷入搭建WebRTC服務, jitsi有提供映像檔可自架來使用, 以下使用官方提供的server進行測試</p>
             <div id="jaas-container"></div>
 
         </main>

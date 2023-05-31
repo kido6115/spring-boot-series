@@ -45,10 +45,10 @@
                     </div>
                 </div>
             </div>
-            <h2>重新定義Spring Security Provider Manager及AuthenticationDetails</h2>
+            <h5>重新定義Spring Security Provider Manager及AuthenticationDetails</h5>
             <p>自訂義驗證流程加強原security僅驗證使用者帳號密碼, 達到多因子驗證</p>
 
-            <h3>自訂義AuthenticationProvider</h3>
+            <h5>自訂義AuthenticationProvider</h5>
             <pre>
                 <code data-language="java">
             @Component
@@ -99,7 +99,7 @@
             }
                 </code>
             </pre>
-            <h3>自訂義AuthenticationDetailsSource</h3>
+            <h5>自訂義AuthenticationDetailsSource</h5>
             <pre>
                 <code data-language="java">
         @Component
@@ -113,7 +113,7 @@
         }
                 </code>
             </pre>
-            <h3>自訂義AuthenticationDetails</h3>
+            <h5>自訂義AuthenticationDetails</h5>
             <pre>
                 <code data-language="java">
         @EqualsAndHashCode(callSuper = true, doNotUseGetters = true)

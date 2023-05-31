@@ -47,7 +47,8 @@
             </div>
             <p>使用Dialogflow平台製作簡易任務型機器人, 透過平台NLP處理來找出意圖, 並回答定義內容或者Webhook :
             </p>
-            <h5>意圖判斷 : 可自定義關鍵字、同義詞, 有NLP處理具一定程度處理錯別字以及文法問題</h5>
+            <h5>意圖判斷</h5>
+            <p>可自定義關鍵字、同義詞, 有NLP處理具一定程度處理錯別字以及文法問題</p>
             <div class="list-group">
                 <a class="list-group-item list-group-item-action flex-column align-items-start ">
                     <div class="d-flex w-100 justify-content-between">
@@ -64,7 +65,9 @@
                     <p class="mb-1">過去曾經接觸過的領域</p>
                 </a>
             </div>
-            <h5>線性對話 : 透過傳遞context保存對話收集的數據達到完成一系列的對話收集</h5>
+            <br/>
+            <h5>線性對話</h5>
+            <p>透過傳遞context保存對話收集的數據達到完成一系列的對話收集</p>
             <div class="list-group">
                 <a class="list-group-item list-group-item-action flex-column align-items-start ">
                     <div class="d-flex w-100 justify-content-between">
@@ -77,6 +80,7 @@
 
                 </a>
             </div>
+            <br/>
             <h5>Webhook</h5>
             <div class="list-group">
                 <a class="list-group-item list-group-item-action flex-column align-items-start ">

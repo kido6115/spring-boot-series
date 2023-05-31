@@ -43,11 +43,12 @@
             </div>
             <p>透過Spring Security/Spring Authorization Server自訂符合OAuth2.0伺服器以及相關的grant flow
             </p>
-            <h1>Authorization Code</h1>
-            <a target="_blank"
+            <h5>Authorization Code</h5>
+
+            <a target="_blank" class="btn btn-outline-primary"
                href="${authorizationServer}/oauth2/authorize?client_id=client&response_type=code&redirect_uri=${redirect}">認證伺服器登入</a>
-            <p>一樣使用 user/1111 進行登入</p>
-            <p>獲取access token</p>
+            <p>使用 user/1111 進行登入</p>
+            <h6>獲取access token</h6>
             <pre>
                 <code data-language="shell">
             curl --location --request POST '${authorizationServer}/oauth2/token' \
@@ -57,8 +58,8 @@
             --form 'redirect_uri="${redirect}"'
                 </code>
             </pre>
-            <h1>Client Credentials</h1>
-            <p>獲取access token</p>
+            <h5>Client Credentials</h5>
+            <h6>獲取access token</h6>
             <pre>
                 <code data-language="shell">
             curl --location --request POST '${authorizationServer}/oauth2/token' \

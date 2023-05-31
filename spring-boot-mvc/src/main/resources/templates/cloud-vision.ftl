@@ -45,11 +45,11 @@
                     </div>
                 </div>
             </div>
-            <h2>視訊鏡頭圖片文字辨識</h2>
+            <h5>視訊鏡頭圖片文字辨識</h5>
             <div class="content-area row">
                 <div class="camera col-md-4">
                     <video id="video">Video stream not available.</video>
-                    <button class="btn btn-danger" id="start-button">擷取畫面</button>
+                    <button class="btn btn-success" id="start-button">擷取畫面</button>
                 </div>
                 <canvas hidden id="canvas"></canvas>
                 <div class="output col-md-4">
@@ -59,11 +59,11 @@
                 <textarea id="text" rows="5" cols="33" class="col-md-4">
                 </textarea>
             </div>
-            <h2>上傳圖片文字辨識</h2>
+            <h5>上傳圖片文字辨識</h5>
             <div class="row">
                 <div class="col-md-4">
                     <p>圖片請勿超過75M pixels</p>
-                    <input id="file" type="file"/>
+                    <input class="btn btn-light" id="file" type="file"/>
                 </div>
                 <div class="output col-md-4">
                     <img id="preview"/>

@@ -10,16 +10,16 @@
     </style>
     <script>
         $(function () {
-            $('.badge').hide();
+            $('.alert').hide();
             $('#totp-check').click(function () {
                 if ($('#totp').val()) {
                     $.getJSON('/auth/totp-check/' + $('#totp').val(), function (data) {
                         if (data) {
-                            $('.badge-success').show();
-                            $('.badge-danger').hide();
+                            $('.alert-success').show();
+                            $('.alert-danger').hide();
                         } else {
-                            $('.badge-success').hide();
-                            $('.badge-danger').show();
+                            $('.alert-success').hide();
+                            $('.alert-danger').show();
                         }
                     });
                 }
@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </div>
-            <h2>下載 iOS/Android Google Authenticator</h2>
+            <h5>下載 iOS/Android Google Authenticator</h5>
             <p>選擇掃描QR圖碼, 並掃描右方QRcode, 於下方驗證sungyeh-tech-note下方數字是否有效</p>
             <div class="row">
                 <div class="col-md-3">
@@ -75,15 +75,20 @@
                     <img class="img" src="${qrcode}"/>
                 </div>
             </div>
-            <h2>Google Authenticator 驗證</h2>
+            <h5>Google Authenticator 驗證</h5>
             <div class="row">
-                <label for="totp">
-                    請輸入Google Authenticator APP中6位數字驗證碼 :
-                </label>
-                <input id="totp">
-                <button id="totp-check" class="btn btn-primary" type="button">驗證</button>
-                <span class="badge  badge-success">驗證成功</span>
-                <span class="badge  badge-danger">驗證失敗</span>
+                <div class="input-group mb-3 col-md-6">
+                    <input type="text" class="form-control"
+                           id="totp"
+                           placeholder="請輸入Google Authenticator APP中6位數字驗證碼"
+                           aria-label="totp" aria-describedby="totp-check">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-primary" type="button" id="totp-check">驗證</button>
+                    </div>
+
+                </div>
+                <span class="alert alert-success">驗證成功</span>
+                <span class="alert alert-danger">驗證失敗</span>
             </div>
         </main>
     </div>

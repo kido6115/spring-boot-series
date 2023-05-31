@@ -39,14 +39,14 @@
                     </div>
                 </div>
             </div>
-            <h2>Line bot</h2>
+            <h5>Line bot</h5>
             <p>透過Line Messaging API 來實作Line bot進行訊息的收發
             </p>
             <p>使用Line掃描以下QR code進行體驗
             </p>
             <div class="row">
                 <div class="col-md-6">
-                    <h5>指令 : </h5>
+                    <h5>指令 </h5>
                     <div class="list-group">
                         <a href="#ask" class="list-group-item list-group-item-action flex-column align-items-start ">
                             <div class="d-flex w-100 justify-content-between">
@@ -63,7 +63,7 @@
                             <p class="mb-1">透過網頁爬蟲將氣象局首頁資訊透過Line bot回應</p>
                         </a>
                     </div>
-                    <h5>排程 : </h5>
+                    <h5>排程 </h5>
                     <div class="list-group">
                         <a href="#dokodemo"
                            class="list-group-item list-group-item-action flex-column align-items-start ">

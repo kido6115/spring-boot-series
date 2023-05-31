@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <h2>Controller</h2>
+            <h5>Controller</h5>
             <p>透過SpringMVC註解快速註冊Controller並以Freemarker進行頁面渲染, 選擇Freemarker則是因其支援embedded Tomcat,
                 除輕量化在分散式或者容器化上較易應用
             </p>
