@@ -65,11 +65,20 @@
                  data-logo_alignment="left">
             </div>
             <h1>Google OpenID Connect</h1>
-            <a href="https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${clientId}&scope=openid email&redirect_uri=${redirect}&state=${state}&nonce=${nonce}">Google
-                登入</a>
+            <div class="row">
+                <div class="col-md-3">
+                    <a class="btn btn-outline-dark"
+                       href="https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=${clientId}&scope=openid email&redirect_uri=${redirect}&state=${state}&nonce=${nonce}"
+                       role="button" style="text-transform:none">
+                        <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in"
+                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"/>
+                        Login with Google
+                    </a>
+                </div>
+            </div>
             <h1>Line OpenID Connect</h1>
-            <a href="https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${lineClientId}&redirect_uri=${lineRedirect}&state=${state}&scope=profile openid&nonce=${nonce}">Line
-                登入</a>
+            <a href="https://access.line.me/oauth2/v2.1/authorize?response_type=code&client_id=${lineClientId}&redirect_uri=${lineRedirect}&state=${state}&scope=profile openid&nonce=${nonce}">
+                <img src="<@spring.url '/img/btn_login_base.png' />"/></a>
 
         </main>
     </div>

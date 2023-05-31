@@ -43,6 +43,9 @@ public class SecurityConfig {
         CsrfRequestMatcher csrfRequestMatcher = new CsrfRequestMatcher();
         csrfRequestMatcher.addExcludeUrl("/google/gsi");
         csrfRequestMatcher.addExcludePath("/text-ccs/**");
+        csrfRequestMatcher.addExcludePath("/dialogflow/**");
+        csrfRequestMatcher.addExcludePath("/h2/**");
+
         http.authorizeHttpRequests(a -> a.requestMatchers("/auth/**").authenticated()
                         .anyRequest().permitAll())
                 .formLogin()

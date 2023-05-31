@@ -27,7 +27,7 @@
 [
 {"title":"OpenID","path":"/auth/open-id"},
 {"title":"Line","path":"/auth/line"},
-{"title":"分析文件","path":"/auth/static"},
+{"title":"分析文件","path":"/auth/static-analysis"},
 {"title":"Asciidoc","path":"/auth/asciidoc"},
 {"title":"TOTP","path":"/auth/authenticator"},
 {"title":"WebRTC","path":"/auth/rtc"}

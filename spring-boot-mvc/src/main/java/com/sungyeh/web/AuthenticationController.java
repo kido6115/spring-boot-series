@@ -10,6 +10,7 @@ import com.sungyeh.config.GoogleConfig;
 import com.sungyeh.config.LineConfig;
 import com.sungyeh.config.OauthConfig;
 import com.sungyeh.config.SystemConfig;
+import com.sungyeh.repository.BookingRepository;
 import com.sungyeh.repository.DepartmentRepository;
 import com.sungyeh.repository.PersonRepository;
 import com.sungyeh.service.CloudVisionService;
@@ -83,6 +84,12 @@ public class AuthenticationController {
      */
     @Resource
     private SystemConfig systemConfig;
+
+    /**
+     * 訂房repository
+     */
+    @Resource
+    private BookingRepository bookingRepository;
 
     /**
      * JPA頁面
@@ -205,10 +212,12 @@ public class AuthenticationController {
     /**
      * Dialogflow頁面
      *
+     * @param model 注入modelandview
      * @return dialogflow.ftl
      */
     @GetMapping("dialogflow")
-    public String dialogflow() {
+    public String dialogflow(Model model) {
+        model.addAttribute("list", bookingRepository.findAll());
         return "dialogflow";
     }
 
