@@ -9,6 +9,4 @@ line:
       path: /callback
   custom:
     channel-token: ${LINE_CUSTOM_CHANNEL_TOKEN}
-firebase:
-  key: ${FIREBASE_API_KEY}
-  service-account: D:\\sungyeh-tech-note-35913de65507.json
+

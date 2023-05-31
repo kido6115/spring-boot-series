@@ -15,6 +15,10 @@ import java.util.*;
  */
 final public class DialogflowUtil {
 
+    /**
+     * @param richContents richContents
+     * @return DialogResponse
+     */
     public static DialogResponse createFulfillmentCustomPayload(List<RichContent> richContents) {
         DialogResponse dialogResponse = new DialogResponse();
         Text text = new Text();
@@ -25,6 +29,10 @@ final public class DialogflowUtil {
         return dialogResponse;
     }
 
+    /**
+     * @param text text
+     * @return DialogResponse
+     */
     public static DialogResponse createFulfillmentText(List<String> text) {
         DialogResponse dialogResponse = new DialogResponse();
         List<Text> fulfillmentMessages = new ArrayList<>();

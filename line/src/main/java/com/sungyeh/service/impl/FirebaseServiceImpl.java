@@ -31,7 +31,13 @@ import java.util.*;
 @Slf4j
 public class FirebaseServiceImpl implements FirebaseService {
 
+    /**
+     * restTemplate
+     */
     private final RestTemplate restTemplate = new RestTemplate();
+    /**
+     * firebase設定
+     */
     @Resource
     private FirebaseInfoConfig firebaseInfoConfig;
 

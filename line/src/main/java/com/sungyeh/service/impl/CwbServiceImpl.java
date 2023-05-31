@@ -1,6 +1,5 @@
 package com.sungyeh.service.impl;
 
-import com.sungyeh.config.LineCustomConfig;
 import com.sungyeh.service.CwbImageAlt;
 import com.sungyeh.service.CwbService;
 import com.sungyeh.service.FirebaseService;
@@ -23,11 +22,14 @@ import java.util.List;
 @Slf4j
 public class CwbServiceImpl implements CwbService {
 
+    /**
+     * 氣象局網址
+     */
     private final static String URL = "https://www.cwb.gov.tw";
 
-    @Resource
-    private LineCustomConfig lineCustomConfig;
-
+    /**
+     * firebase服務
+     */
     @Resource
     private FirebaseService firebaseService;
 
@@ -48,6 +50,13 @@ public class CwbServiceImpl implements CwbService {
         );
     }
 
+    /**
+     * 取得圖片
+     *
+     * @param document Jsoup Document
+     * @param alt      alt
+     * @return 圖片網址
+     */
 
     private String getImageByAlt(Document document, CwbImageAlt alt) {
         String target = String.format("img[alt=\"%s\"]", alt.getAlt());

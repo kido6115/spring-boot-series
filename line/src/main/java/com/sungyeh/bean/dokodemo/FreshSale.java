@@ -13,6 +13,9 @@ import java.util.List;
 @Data
 public class FreshSale {
 
+    /**
+     * 商品集
+     */
     @JsonProperty("data")
     List<FreshSaleData> data;
 

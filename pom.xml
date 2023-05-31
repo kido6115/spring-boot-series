@@ -25,6 +25,7 @@
         <module>springdoc</module>
         <module>web-socket</module>
         <module>line</module>
+        <module>dialogflow</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -76,6 +77,11 @@
             <dependency>
                 <groupId>com.sungyeh</groupId>
                 <artifactId>line</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sungyeh</groupId>
+                <artifactId>dialogflow</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

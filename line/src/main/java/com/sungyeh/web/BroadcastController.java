@@ -13,9 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BroadcastController {
 
+    /**
+     * DokodemoService
+     */
     @Resource
     private DokodemoService dokodemoService;
 
+    /**
+     * 推撥
+     */
     @GetMapping("/broadcast")
     public void broadcast() {
         dokodemoService.broadcast();

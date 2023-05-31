@@ -27,9 +27,19 @@ import java.util.Collections;
 @RestController("com.sungyeh.web.DialogflowController")
 public class DialogflowController {
 
+    /**
+     * 訂房 Repository
+     */
     @Resource
     private BookingRepository bookingRepository;
 
+    /**
+     * Dialogflow Hook
+     *
+     * @param json hook request
+     * @return DialogResponse
+     * @throws JsonProcessingException json exception
+     */
     @PostMapping("/dialogflow/hook")
     public DialogResponse hook(@RequestBody String json) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();

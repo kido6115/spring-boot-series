@@ -19,9 +19,18 @@ import java.util.Map;
 @Service("com.sungyeh.service.impl.TextContentServiceImpl")
 public class TextContentServiceImpl implements TextContentService {
 
+    /**
+     * 文字服務列表
+     */
     private final List<TextContentResponseService> responseServiceList;
+    /**
+     * 根據意圖對應的文字服務列表
+     */
     private Map<String, TextContentResponseService> responseServiceMap;
 
+    /**
+     * @param responseServiceList 回應服務列表
+     */
     public TextContentServiceImpl(List<TextContentResponseService> responseServiceList) {
         this.responseServiceList = responseServiceList;
         this.responseServiceMap = new HashMap<>();
@@ -30,6 +39,12 @@ public class TextContentServiceImpl implements TextContentService {
         }
     }
 
+    /**
+     * 根據意圖選擇文字服務
+     *
+     * @param messageContent 傳入content
+     * @return Message
+     */
     @Override
     public Message dispatch(MessageContent messageContent) {
         if (messageContent instanceof TextMessageContent) {

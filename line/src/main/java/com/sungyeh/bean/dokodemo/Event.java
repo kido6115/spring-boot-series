@@ -13,6 +13,9 @@ import java.util.List;
 @Data
 public class Event {
 
+    /**
+     * 事件集
+     */
     @JsonProperty("data")
     private List<EventData> eventData;
 }

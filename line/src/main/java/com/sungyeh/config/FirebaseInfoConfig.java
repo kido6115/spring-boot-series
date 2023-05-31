@@ -14,7 +14,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class FirebaseInfoConfig {
 
+    /**
+     * firebase key
+     */
     private String key;
-
+    /**
+     * serviceAccount Path
+     */
     private String serviceAccount;
 }

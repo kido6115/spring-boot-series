@@ -26,6 +26,9 @@ import java.util.List;
 @Slf4j
 public class CwbIntentService implements TextContentResponseService {
 
+    /**
+     * 氣象服務
+     */
     @Resource
     private CwbService cwbService;
 

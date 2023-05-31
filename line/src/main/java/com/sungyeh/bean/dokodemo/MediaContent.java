@@ -10,12 +10,21 @@ import lombok.Data;
  */
 @Data
 public class MediaContent {
+    /**
+     * 識別碼
+     */
     @JsonProperty("id")
     private Integer id;
 
+    /**
+     * fileTypeId
+     */
     @JsonProperty("file_type_id")
     private Integer fileTypeId;
 
+    /**
+     * 圖片路徑
+     */
     @JsonProperty("path")
     private String path;
 }

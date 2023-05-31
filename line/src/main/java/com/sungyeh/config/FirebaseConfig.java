@@ -17,10 +17,19 @@ import java.io.IOException;
  */
 @Configuration
 public class FirebaseConfig {
+    /**
+     * firebase設定
+     */
     @Resource
     private FirebaseInfoConfig firebaseInfoConfig;
 
 
+    /**
+     * 註冊firebaseApp
+     *
+     * @return FirebaseApp
+     * @throws IOException IOException
+     */
     @Bean
     FirebaseApp firebaseApp() throws IOException {
         FileInputStream serviceAccount =

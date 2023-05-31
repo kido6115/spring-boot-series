@@ -40,10 +40,19 @@ import java.util.concurrent.ExecutionException;
 @Slf4j
 public class DokodemoServiceImpl implements DokodemoService {
 
+    /**
+     * restTemplate
+     */
     private final RestTemplate restTemplate = new RestTemplate();
+    /**
+     * firebase服務
+     */
     @Resource
     private FirebaseService firebaseService;
 
+    /**
+     * line設定
+     */
     @Resource
     private LineCustomConfig lineCustomConfig;
 
@@ -88,7 +97,11 @@ public class DokodemoServiceImpl implements DokodemoService {
         }
     }
 
-
+    /**
+     * 取得優惠
+     *
+     * @return 優惠資訊
+     */
     private List<FreshSaleData> getFreshSale() {
         ResponseEntity<Event> event = restTemplate.getForEntity("https://dem-api.dokodemo.world/events?language_id=3", Event.class);
         log.info("event: {}", event.getBody());
@@ -105,6 +118,12 @@ public class DokodemoServiceImpl implements DokodemoService {
                 .toList();
     }
 
+    /**
+     * 轉換時間
+     *
+     * @param dateTimeString 時間字串
+     * @return 轉換後時間
+     */
     private String reformatTime(String dateTimeString) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         LocalDateTime dateTime = LocalDateTime.parse(dateTimeString, formatter);

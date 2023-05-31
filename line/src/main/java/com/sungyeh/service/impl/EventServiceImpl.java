@@ -18,23 +18,29 @@ import java.util.Map;
 
 @Service("com.sungyeh.service.impl.EventServiceImpl")
 public class EventServiceImpl implements EventService {
-    private Map<Class<? extends MessageContent>, ContentService> map;
 
-    private TextContentService textContentService;
+    /**
+     * 服務對應表
+     */
+    private final Map<Class<? extends MessageContent>, ContentService> serviceMap;
 
+    /**
+     * @param textContentService 文字內容服務
+     */
     public EventServiceImpl(TextContentService textContentService) {
-        this.map = new HashMap<>();
-        this.map.put(AudioMessageContent.class, null);
-        this.map.put(FileMessageContent.class, null);
-        this.map.put(LocationMessageContent.class, null);
-        this.map.put(StickerMessageContent.class, null);
-        this.map.put(TextMessageContent.class, textContentService);
-        this.map.put(UnknownMessageContent.class, null);
-        this.map.put(VideoMessageContent.class, null);
+        Map<Class<? extends MessageContent>, ContentService> map = new HashMap<>();
+        map.put(AudioMessageContent.class, null);
+        map.put(FileMessageContent.class, null);
+        map.put(LocationMessageContent.class, null);
+        map.put(StickerMessageContent.class, null);
+        map.put(TextMessageContent.class, textContentService);
+        map.put(UnknownMessageContent.class, null);
+        map.put(VideoMessageContent.class, null);
+        serviceMap = map;
     }
 
     @Override
     public Message execute(MessageContent content) {
-        return map.get(content.getClass()).dispatch(content);
+        return this.serviceMap.get(content.getClass()).dispatch(content);
     }
 }

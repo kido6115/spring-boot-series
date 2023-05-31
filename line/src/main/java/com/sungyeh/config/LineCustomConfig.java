@@ -14,5 +14,8 @@ import org.springframework.stereotype.Component;
 @Data
 public class LineCustomConfig {
 
+    /**
+     * channelToken
+     */
     private String channelToken;
 }

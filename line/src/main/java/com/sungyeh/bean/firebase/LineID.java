@@ -11,5 +11,8 @@ import java.util.List;
  */
 @Data
 public class LineID {
+    /**
+     * documents
+     */
     List<LineIDDocument> documents;
 }

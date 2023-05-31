@@ -11,5 +11,8 @@ import java.util.List;
  */
 @Data
 public class DokodemoPrefer {
+    /**
+     * documents
+     */
     List<DokodemoPreferDocument> documents;
 }
