@@ -803,27 +803,8 @@
                         type: 'folder'
                     },
                     {
-                        id: 2,
-                        parentId: 1,
-                        name: '觀光景點環斑',
-                        fusionId: '1012',
-                        kmlWms: '',
-                        seq: 0,
-                        type: 'object',
-                        subtype: 'ringspot'
-                    },
-                    {
-                        id: 3,
-                        parentId: 0,
-                        name: '動態資料',
-                        fusionId: '',
-                        kmlWms: '',
-                        seq: 0,
-                        type: 'folder'
-                    },
-                    {
                         id: 4,
-                        parentId: 3,
+                        parentId: 1,
                         name: 'WMS縣市分界',
                         fusionId: 'wms_01',
                         kmlWms: 'http://maps.nlsc.gov.tw/S_Maps/wms?VERSION=1.1.1&VERSION=1.1.1&REQUEST=GetMap' +
@@ -833,13 +814,22 @@
                     },
                     {
                         id: 9,
-                        parentId: 3,
+                        parentId: 1,
                         name: 'WMS通用版電子地圖',
                         fusionId: 'wms_02',
                         kmlWms: 'https://wms.nlsc.gov.tw/wms?VERSION=1.1.1&VERSION=1.1.1&REQUEST=GetMap' +
                             '&SRS=EPSG:4326&WIDTH=512&HEIGHT=512&LAYERS=EMAP6&STYLES=default&TRANSPARENT=TRUE&FORMAT=image/png',
                         seq: 0,
                         type: 'wms'
+                    },
+                    {
+                        id: 3,
+                        parentId: 0,
+                        name: '動態資料',
+                        fusionId: '',
+                        kmlWms: '',
+                        seq: 0,
+                        type: 'folder'
                     },
                     {
                         id: 6,
@@ -873,7 +863,7 @@
                     },
                     {
                         id: 10,
-                        parentId: 1,
+                        parentId: 3,
                         name: '觀光熱像圖',
                         fusionId: '',
                         kmlWms: '',
@@ -890,6 +880,17 @@
                         seq: 5,
                         type: 'object',
                         subtype: 'marker'
+                    },
+
+                    {
+                        id: 2,
+                        parentId: 3,
+                        name: '觀光景點環斑',
+                        fusionId: '1012',
+                        kmlWms: '',
+                        seq: 0,
+                        type: 'object',
+                        subtype: 'ringspot'
                     }
                 ];
                 this.features = [

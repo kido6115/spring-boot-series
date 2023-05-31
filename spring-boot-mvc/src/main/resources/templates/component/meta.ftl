@@ -31,6 +31,11 @@
     body {
         font-family: 'cwlexYen', sans-serif;
     !important;
+
+    }
+
+    h5 {
+        font-weight: bold;
     }
 
     .tag.close {
