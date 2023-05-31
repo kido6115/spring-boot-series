@@ -3,34 +3,34 @@
 {
 "title":"Spring",
 "item":[
-{"title":"MVC","path":"/auth/mvc"},
-{"title":"JPA","path":"/auth/jpa"},
-{"title":"Security","path":"/auth/security"},
-{"title":"Authorization/Resource Server","path":"/auth/authorization"},
-{"title":"Restful/Swagger/SpringDoc","path":"/auth/swagger"},
-{"title":"WebSocket","path":"/auth/web-socket"}
+{"title":"MVC","path":"/auth/mvc","icon":"fa fa-desktop"},
+{"title":"JPA","path":"/auth/jpa","icon":"fa fa-database"},
+{"title":"Security","path":"/auth/security","icon":"fa fa-shield"},
+{"title":"Authorization/Resource Server","path":"/auth/authorization","icon":"fa fa-server"},
+{"title":"Swagger/SpringDoc","path":"/auth/swagger","icon":"fa fa-file-text"},
+{"title":"WebSocket","path":"/auth/web-socket","icon":"fa fa-commenting"}
 ]
 },
 {
 "title":"Google",
 "item":
 [
-{"title":"Goolge Map API","path":"/auth/google-map"},
-{"title":"Cloud Vision API","path":"/auth/cloud-vision"},
-{"title":"Dialogflow","path":"/auth/dialogflow"},
-{"title":"Recaptcha API","path":"/auth/recaptcha"}
+{"title":"Goolge Map API","path":"/auth/google-map","icon":"fa fa-map"},
+{"title":"Cloud Vision API","path":"/auth/cloud-vision","icon":"fa fa-eye"},
+{"title":"Dialogflow","path":"/auth/dialogflow","icon":"fa fa-android"},
+{"title":"Recaptcha API","path":"/auth/recaptcha","icon":"fa fa-check"}
 ]
 },
 {
 "title":"Other",
 "item":
 [
-{"title":"OpenID","path":"/auth/open-id"},
-{"title":"Line","path":"/auth/line"},
-{"title":"分析文件","path":"/auth/static-analysis"},
-{"title":"Asciidoc","path":"/auth/asciidoc"},
-{"title":"TOTP","path":"/auth/authenticator"},
-{"title":"WebRTC","path":"/auth/rtc"}
+{"title":"OpenID","path":"/auth/open-id","icon":"fa fa-cubes"},
+{"title":"Line","path":"/auth/line","icon":"fa fa-comments-o"},
+{"title":"分析文件","path":"/auth/static-analysis","icon":"fa fa-line-chart"},
+{"title":"Asciidoc","path":"/auth/asciidoc","icon":"fa fa-file-code-o"},
+{"title":"TOTP","path":"/auth/authenticator","icon":"fa fa-clock-o"},
+{"title":"WebRTC","path":"/auth/rtc","icon":"fa fa-comments"}
 ]
 }
 ]
@@ -69,19 +69,9 @@
                 <ul class="sub-menu collapse show " id="${title.title}">
                     <#list title.item as topic>
                         <li class="nav-item">
-                            <a class="nav-link <#if springMacroRequestContext.requestUri==topic.path>active</#if>"
+                            <a class="nav-link  <#if springMacroRequestContext.requestUri==topic.path>active</#if>"
                                href="${topic.path}">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                     fill="none"
-                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                     stroke-linejoin="round"
-                                     class="feather feather-users">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                                ${topic.title}
+                                <i class="${topic.icon}"></i> ${topic.title}
                             </a>
                         </li>
                     </#list>

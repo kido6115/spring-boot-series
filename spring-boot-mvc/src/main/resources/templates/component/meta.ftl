@@ -30,6 +30,7 @@
 
     body {
         font-family: 'cwlexYen', sans-serif;
+    !important;
     }
 
     .tag.close {
