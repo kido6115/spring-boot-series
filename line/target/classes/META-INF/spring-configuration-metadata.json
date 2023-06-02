@@ -1,0 +1,35 @@
+{
+  "groups": [
+    {
+      "name": "firebase",
+      "type": "com.sungyeh.config.FirebaseInfoConfig",
+      "sourceType": "com.sungyeh.config.FirebaseInfoConfig"
+    },
+    {
+      "name": "line.custom",
+      "type": "com.sungyeh.config.LineCustomConfig",
+      "sourceType": "com.sungyeh.config.LineCustomConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "firebase.key",
+      "type": "java.lang.String",
+      "description": "firebase key",
+      "sourceType": "com.sungyeh.config.FirebaseInfoConfig"
+    },
+    {
+      "name": "firebase.service-account",
+      "type": "java.lang.String",
+      "description": "serviceAccount Path",
+      "sourceType": "com.sungyeh.config.FirebaseInfoConfig"
+    },
+    {
+      "name": "line.custom.channel-token",
+      "type": "java.lang.String",
+      "description": "channelToken",
+      "sourceType": "com.sungyeh.config.LineCustomConfig"
+    }
+  ],
+  "hints": []
+}

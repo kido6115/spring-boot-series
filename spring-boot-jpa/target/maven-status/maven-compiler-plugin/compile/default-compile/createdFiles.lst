@@ -1,0 +1,17 @@
+com\sungyeh\domain\Person_.class
+com\sungyeh\domain\package-info.class
+com\sungyeh\domain\AbstractEntity.class
+com\sungyeh\domain\AbstractEntity_.class
+com\sungyeh\repository\DepartmentRepository.class
+com\sungyeh\repository\RoleRepository.class
+com\sungyeh\domain\Department.class
+com\sungyeh\domain\Booking_.class
+com\sungyeh\repository\BookingRepository.class
+com\sungyeh\repository\package-info.class
+com\sungyeh\domain\Person.class
+com\sungyeh\repository\PersonRepository.class
+com\sungyeh\domain\Department_.class
+com\sungyeh\domain\Role.class
+com\sungyeh\domain\Booking.class
+com\sungyeh\domain\Role_.class
+com\sungyeh\repository\BaseRepository.class

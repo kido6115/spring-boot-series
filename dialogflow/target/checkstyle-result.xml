@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="D:\Github\spring-boot-series\dialogflow\src\main\java\com\sungyeh\bean\dialogflow\DialogResponse.java">
+</file>
+<file name="D:\Github\spring-boot-series\dialogflow\src\main\java\com\sungyeh\bean\dialogflow\Intent.java">
+</file>
+<file name="D:\Github\spring-boot-series\dialogflow\src\main\java\com\sungyeh\bean\dialogflow\OutputContext.java">
+</file>
+<file name="D:\Github\spring-boot-series\dialogflow\src\main\java\com\sungyeh\bean\dialogflow\package-info.java">
+</file>
+<file name="D:\Github\spring-boot-series\dialogflow\src\main\java\com\sungyeh\bean\dialogflow\QueryResult.java">
+</file>
+<file name="D:\Github\spring-boot-series\dialogflow\src\main\java\com\sungyeh\bean\dialogflow\RichContent.java">
+</file>
+<file name="D:\Github\spring-boot-series\dialogflow\src\main\java\com\sungyeh\bean\dialogflow\Text.java">
+</file>
+<file name="D:\Github\spring-boot-series\dialogflow\src\main\java\com\sungyeh\bean\dialogflow\Texts.java">
+</file>
+<file name="D:\Github\spring-boot-series\dialogflow\src\main\java\com\sungyeh\bean\dialogflow\WebhookRequest.java">
+</file>
+<file name="D:\Github\spring-boot-series\dialogflow\src\main\java\com\sungyeh\utils\DialogflowUtil.java">
+<error line="16" column="7" severity="warning" message="&apos;public&apos; modifier out of order with the JLS suggestions." source="com.puppycrawl.tools.checkstyle.checks.modifier.ModifierOrderCheck"/>
+</file>
+<file name="D:\Github\spring-boot-series\dialogflow\src\main\java\com\sungyeh\utils\package-info.java">
+</file>
+</checkstyle>

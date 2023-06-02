@@ -1,0 +1,14 @@
+server:
+  port: 8081
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+debug: true
+spring:
+  jpa:
+    show-sql: true
+oauth:
+  id: client
+  secret: "$2a$12$AoUjb06SK5KLeGF4EVXsGexdQKYtcDEB8bHLhiTbGTW0FKo7lI9vy"
+  redirect: "http://127.0.0.1:8080/oauth/openid"

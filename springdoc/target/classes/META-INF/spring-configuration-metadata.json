@@ -1,0 +1,30 @@
+{
+  "groups": [
+    {
+      "name": "oas",
+      "type": "com.sungyeh.config.OasConfig",
+      "sourceType": "com.sungyeh.config.OasConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "oas.mail",
+      "type": "java.lang.String",
+      "description": "Swagger 網站擁有者信箱",
+      "sourceType": "com.sungyeh.config.OasConfig"
+    },
+    {
+      "name": "oas.owner",
+      "type": "java.lang.String",
+      "description": "Swagger 網站擁有者",
+      "sourceType": "com.sungyeh.config.OasConfig"
+    },
+    {
+      "name": "oas.url",
+      "type": "java.lang.String",
+      "description": "Swagger 網站URL",
+      "sourceType": "com.sungyeh.config.OasConfig"
+    }
+  ],
+  "hints": []
+}

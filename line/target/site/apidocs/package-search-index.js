@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.sungyeh"},{"l":"com.sungyeh.bean.dokodemo"},{"l":"com.sungyeh.bean.firebase"},{"l":"com.sungyeh.config"},{"l":"com.sungyeh.service"},{"l":"com.sungyeh.service.impl"},{"l":"com.sungyeh.web"}];updateSearchResults();

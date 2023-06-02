@@ -1,0 +1,9 @@
+@startuml
+autonumber
+Client1 -> AP : 進入聊天室建立Socket session
+AP -> MQ : 訂閱Client1-Queue
+Client1 -> MQ : 發布訊息至Client2-Queue
+Client2 -> AP : 進入聊天室建立Socket session
+AP -> MQ : 訂閱Client2-Queue並且拉取訊息
+AP -> Client2 : 將Queue的訊息傳送給Client2
+@enduml

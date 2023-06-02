@@ -1,0 +1,99 @@
+{
+  "groups": [
+    {
+      "name": "google.oauth",
+      "type": "com.sungyeh.config.GoogleConfig",
+      "sourceType": "com.sungyeh.config.GoogleConfig"
+    },
+    {
+      "name": "line.oauth",
+      "type": "com.sungyeh.config.LineConfig",
+      "sourceType": "com.sungyeh.config.LineConfig"
+    },
+    {
+      "name": "oauth",
+      "type": "com.sungyeh.config.OauthConfig",
+      "sourceType": "com.sungyeh.config.OauthConfig"
+    },
+    {
+      "name": "system",
+      "type": "com.sungyeh.config.SystemConfig",
+      "sourceType": "com.sungyeh.config.SystemConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "google.oauth.id",
+      "type": "java.lang.String",
+      "description": "client id",
+      "sourceType": "com.sungyeh.config.GoogleConfig"
+    },
+    {
+      "name": "google.oauth.redirect",
+      "type": "java.lang.String",
+      "description": "重導向URL",
+      "sourceType": "com.sungyeh.config.GoogleConfig"
+    },
+    {
+      "name": "google.oauth.secret",
+      "type": "java.lang.String",
+      "description": "client secret",
+      "sourceType": "com.sungyeh.config.GoogleConfig"
+    },
+    {
+      "name": "line.oauth.id",
+      "type": "java.lang.String",
+      "description": "channel id",
+      "sourceType": "com.sungyeh.config.LineConfig"
+    },
+    {
+      "name": "line.oauth.redirect",
+      "type": "java.lang.String",
+      "description": "重導向URL",
+      "sourceType": "com.sungyeh.config.LineConfig"
+    },
+    {
+      "name": "line.oauth.secret",
+      "type": "java.lang.String",
+      "description": "channel secret",
+      "sourceType": "com.sungyeh.config.LineConfig"
+    },
+    {
+      "name": "oauth.authorization-endpoint",
+      "type": "java.lang.String",
+      "description": "認證端點",
+      "sourceType": "com.sungyeh.config.OauthConfig"
+    },
+    {
+      "name": "oauth.authorization-server",
+      "type": "java.lang.String",
+      "description": "認證伺服器",
+      "sourceType": "com.sungyeh.config.OauthConfig"
+    },
+    {
+      "name": "oauth.id",
+      "type": "java.lang.String",
+      "description": "client id",
+      "sourceType": "com.sungyeh.config.OauthConfig"
+    },
+    {
+      "name": "oauth.redirect",
+      "type": "java.lang.String",
+      "description": "重導向URL",
+      "sourceType": "com.sungyeh.config.OauthConfig"
+    },
+    {
+      "name": "oauth.secret",
+      "type": "java.lang.String",
+      "description": "client secret",
+      "sourceType": "com.sungyeh.config.OauthConfig"
+    },
+    {
+      "name": "system.url",
+      "type": "java.lang.String",
+      "description": "系統網址",
+      "sourceType": "com.sungyeh.config.SystemConfig"
+    }
+  ],
+  "hints": []
+}

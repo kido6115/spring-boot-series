@@ -1,0 +1,4 @@
+oauth:
+  id: client
+  secret: "$2a$12$AoUjb06SK5KLeGF4EVXsGexdQKYtcDEB8bHLhiTbGTW0FKo7lI9vy"
+  redirect: "https://spring-boot-series-4vuktvrsua-de.a.run.app/oauth/openid"

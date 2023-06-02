@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="D:\Github\spring-boot-series\totp-authenticator\src\main\java\com\sungyeh\service\impl\package-info.java">
+</file>
+<file name="D:\Github\spring-boot-series\totp-authenticator\src\main\java\com\sungyeh\service\impl\TotpAuthenticatorServiceImpl.java">
+<error line="18" column="5" severity="warning" message="Must include @java.lang.Override annotation when &apos;@inheritDoc&apos; Javadoc tag exists." source="com.puppycrawl.tools.checkstyle.checks.annotation.MissingOverrideCheck"/>
+<error line="40" column="5" severity="warning" message="Must include @java.lang.Override annotation when &apos;@inheritDoc&apos; Javadoc tag exists." source="com.puppycrawl.tools.checkstyle.checks.annotation.MissingOverrideCheck"/>
+</file>
+<file name="D:\Github\spring-boot-series\totp-authenticator\src\main\java\com\sungyeh\service\package-info.java">
+</file>
+<file name="D:\Github\spring-boot-series\totp-authenticator\src\main\java\com\sungyeh\service\TotpAuthenticatorService.java">
+</file>
+</checkstyle>

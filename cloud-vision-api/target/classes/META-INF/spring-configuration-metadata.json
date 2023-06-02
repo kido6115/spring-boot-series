@@ -1,0 +1,18 @@
+{
+  "groups": [
+    {
+      "name": "google.vision",
+      "type": "com.sungyeh.config.VisionConfig",
+      "sourceType": "com.sungyeh.config.VisionConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "google.vision.key",
+      "type": "java.lang.String",
+      "description": "api key",
+      "sourceType": "com.sungyeh.config.VisionConfig"
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.sungyeh.service","l":"CloudVisionService"},{"p":"com.sungyeh.service.impl","l":"CloudVisionServiceImpl"},{"p":"com.sungyeh.config","l":"VisionConfig"}];updateSearchResults();

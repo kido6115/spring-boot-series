@@ -1,0 +1,4 @@
+com\sungyeh\repository\PersonRepositoryTest.class
+com\sungyeh\SpringTestConfig.class
+com\sungyeh\repository\DepartmentRepositoryTest.class
+com\sungyeh\repository\BookingRepositoryTest.class

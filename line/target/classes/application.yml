@@ -1,0 +1,12 @@
+spring:
+  profiles:
+    active: product
+line:
+  bot:
+    channel-token: ${LINE_BOT_CHANNEL_TOKEN}
+    channel-secret: ${LINE_BOT_CHANNEL_SECRET}
+    handler:
+      path: /callback
+  custom:
+    channel-token: ${LINE_CUSTOM_CHANNEL_TOKEN}
+

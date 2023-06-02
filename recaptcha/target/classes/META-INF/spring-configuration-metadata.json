@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "name": "google.recaptcha",
+      "type": "com.sungyeh.config.CaptchaConfig",
+      "sourceType": "com.sungyeh.config.CaptchaConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "google.recaptcha.secret",
+      "type": "java.lang.String",
+      "description": "secret key",
+      "sourceType": "com.sungyeh.config.CaptchaConfig"
+    },
+    {
+      "name": "google.recaptcha.site",
+      "type": "java.lang.String",
+      "description": "site key",
+      "sourceType": "com.sungyeh.config.CaptchaConfig"
+    }
+  ],
+  "hints": []
+}

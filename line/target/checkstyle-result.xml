@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="9.3">
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\bean\dokodemo\Brand.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\bean\dokodemo\Event.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\bean\dokodemo\EventData.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\bean\dokodemo\FreshSale.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\bean\dokodemo\FreshSaleData.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\bean\dokodemo\MediaContent.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\bean\firebase\DokodemoPrefer.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\bean\firebase\DokodemoPreferDocument.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\bean\firebase\IdTokenResponse.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\bean\firebase\LineID.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\bean\firebase\LineIDDocument.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\config\FirebaseConfig.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\config\FirebaseInfoConfig.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\config\LineCustomConfig.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\LineApplication.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\ContentService.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\CwbImageAlt.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\CwbService.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\DokodemoService.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\EventService.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\FirebaseService.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\impl\AskIntentService.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\impl\CwbIntentService.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\impl\CwbServiceImpl.java">
+<error line="28" column="19" severity="warning" message="&apos;static&apos; modifier out of order with the JLS suggestions." source="com.puppycrawl.tools.checkstyle.checks.modifier.ModifierOrderCheck"/>
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\impl\DokodemoServiceImpl.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\impl\EventServiceImpl.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\impl\FirebaseServiceImpl.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\impl\package-info.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\impl\TextContentServiceImpl.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\LineIntent.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\ResponseService.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\TextContentResponseService.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\service\TextContentService.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\web\BroadcastController.java">
+</file>
+<file name="D:\Github\spring-boot-series\line\src\main\java\com\sungyeh\web\LineController.java">
+</file>
+</checkstyle>

@@ -1,0 +1,11 @@
+com\sungyeh\bean\dialogflow\DialogResponse.class
+com\sungyeh\utils\DialogflowUtil.class
+com\sungyeh\bean\dialogflow\OutputContext.class
+com\sungyeh\bean\dialogflow\Text.class
+com\sungyeh\bean\dialogflow\RichContent.class
+com\sungyeh\bean\dialogflow\WebhookRequest.class
+com\sungyeh\bean\dialogflow\Intent.class
+com\sungyeh\bean\dialogflow\Texts.class
+com\sungyeh\bean\dialogflow\package-info.class
+com\sungyeh\bean\dialogflow\QueryResult.class
+com\sungyeh\utils\package-info.class

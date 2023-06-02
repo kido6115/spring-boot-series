@@ -1,0 +1,19 @@
+#logging:
+#  level:
+#    org.springframework.security: DEBUG
+#    org.springframework.web: DEBUG
+debug: false
+google:
+  oauth:
+    redirect: "http://localhost:8080/google/openid"
+line:
+  oauth:
+    redirect: "http://localhost:8080/line/openid"
+oauth:
+  authorization-server: "http://127.0.0.1:8081"
+  authorization-endpoint: "http://127.0.0.1:8081/oauth2/token"
+  redirect: "http://127.0.0.1:8080/oauth/openid"
+system:
+  url: "http://localhost:8080"
+oas:
+  url: ${system.url}
