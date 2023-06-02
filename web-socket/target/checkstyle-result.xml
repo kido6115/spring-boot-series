@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="9.3">
-<file name="D:\Github\spring-boot-series\web-socket\src\main\java\com\sungyeh\bean\Message.java">
+<file name="D:\var\lib\jenkins\workspace\spring-boot-series\web-socket\src\main\java\com\sungyeh\bean\Message.java">
 </file>
-<file name="D:\Github\spring-boot-series\web-socket\src\main\java\com\sungyeh\bean\OutputMessage.java">
+<file name="D:\var\lib\jenkins\workspace\spring-boot-series\web-socket\src\main\java\com\sungyeh\bean\OutputMessage.java">
 </file>
-<file name="D:\Github\spring-boot-series\web-socket\src\main\java\com\sungyeh\config\SocketConfig.java">
+<file name="D:\var\lib\jenkins\workspace\spring-boot-series\web-socket\src\main\java\com\sungyeh\config\SocketConfig.java">
 </file>
-<file name="D:\Github\spring-boot-series\web-socket\src\main\java\com\sungyeh\endpoint\BroadcastApiController.java">
+<file name="D:\var\lib\jenkins\workspace\spring-boot-series\web-socket\src\main\java\com\sungyeh\endpoint\BroadcastApiController.java">
 </file>
-<file name="D:\Github\spring-boot-series\web-socket\src\main\java\com\sungyeh\event\STOMPConnectEventListener.java">
+<file name="D:\var\lib\jenkins\workspace\spring-boot-series\web-socket\src\main\java\com\sungyeh\event\STOMPConnectEventListener.java">
 </file>
-<file name="D:\Github\spring-boot-series\web-socket\src\main\java\com\sungyeh\event\STOMPDisconnectEventListener.java">
+<file name="D:\var\lib\jenkins\workspace\spring-boot-series\web-socket\src\main\java\com\sungyeh\event\STOMPDisconnectEventListener.java">
 </file>
-<file name="D:\Github\spring-boot-series\web-socket\src\main\java\com\sungyeh\event\WebSocketSessions.java">
+<file name="D:\var\lib\jenkins\workspace\spring-boot-series\web-socket\src\main\java\com\sungyeh\event\WebSocketSessions.java">
 </file>
-<file name="D:\Github\spring-boot-series\web-socket\src\main\java\com\sungyeh\service\MsgTemplate.java">
+<file name="D:\var\lib\jenkins\workspace\spring-boot-series\web-socket\src\main\java\com\sungyeh\service\MsgTemplate.java">
 </file>
 </checkstyle>

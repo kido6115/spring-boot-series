@@ -1,12 +1,12 @@
-#Thu Jun 01 14:23:37 CST 2023
-D\:\\Github\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\Intent.java=1685512441232
-D\:\\Github\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\utils\\package-info.java=1685502806648
-configuration*?=D95DE4C7B05FD3187171B3DCEEA7E21BE451AD0C
-D\:\\Github\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\QueryResult.java=1685512773700
-D\:\\Github\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\OutputContext.java=1685512559314
-D\:\\Github\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\WebhookRequest.java=1685513170857
-D\:\\Github\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\Text.java=1685513162892
-D\:\\Github\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\DialogResponse.java=1685512360203
-D\:\\Github\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\Texts.java=1685513162873
-D\:\\Github\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\package-info.java=1685502806640
-D\:\\Github\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\RichContent.java=1685512953652
+#Fri Jun 02 13:25:12 CST 2023
+configuration*?=1CC14B50A5DC582580C850162F1C22C6D84E8C90
+D\:\\var\\lib\\jenkins\\workspace\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\Text.java=1685513162892
+D\:\\var\\lib\\jenkins\\workspace\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\QueryResult.java=1685512773700
+D\:\\var\\lib\\jenkins\\workspace\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\package-info.java=1685502806640
+D\:\\var\\lib\\jenkins\\workspace\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\DialogResponse.java=1685512360203
+D\:\\var\\lib\\jenkins\\workspace\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\utils\\package-info.java=1685502806648
+D\:\\var\\lib\\jenkins\\workspace\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\Texts.java=1685513162873
+D\:\\var\\lib\\jenkins\\workspace\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\Intent.java=1685512441232
+D\:\\var\\lib\\jenkins\\workspace\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\RichContent.java=1685512953652
+D\:\\var\\lib\\jenkins\\workspace\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\OutputContext.java=1685512559314
+D\:\\var\\lib\\jenkins\\workspace\\spring-boot-series\\dialogflow\\src\\main\\java\\com\\sungyeh\\bean\\dialogflow\\WebhookRequest.java=1685513170857

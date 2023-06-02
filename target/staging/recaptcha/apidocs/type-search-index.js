@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.sungyeh.config","l":"CaptchaConfig"},{"p":"com.sungyeh.bean","l":"CaptchaResult"},{"p":"com.sungyeh.service","l":"RecaptchaService"},{"p":"com.sungyeh.service.impl","l":"RecaptchaServiceImpl"}];updateSearchResults();

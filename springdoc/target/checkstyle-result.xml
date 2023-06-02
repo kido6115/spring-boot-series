@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="9.3">
-<file name="D:\Github\spring-boot-series\springdoc\src\main\java\com\sungyeh\config\OasConfig.java">
+<file name="D:\var\lib\jenkins\workspace\spring-boot-series\springdoc\src\main\java\com\sungyeh\config\OasConfig.java">
 </file>
-<file name="D:\Github\spring-boot-series\springdoc\src\main\java\com\sungyeh\config\package-info.java">
+<file name="D:\var\lib\jenkins\workspace\spring-boot-series\springdoc\src\main\java\com\sungyeh\config\package-info.java">
 </file>
-<file name="D:\Github\spring-boot-series\springdoc\src\main\java\com\sungyeh\config\SpringdocApiInfo.java">
+<file name="D:\var\lib\jenkins\workspace\spring-boot-series\springdoc\src\main\java\com\sungyeh\config\SpringdocApiInfo.java">
 </file>
-<file name="D:\Github\spring-boot-series\springdoc\src\main\java\com\sungyeh\config\SpringdocConfig.java">
+<file name="D:\var\lib\jenkins\workspace\spring-boot-series\springdoc\src\main\java\com\sungyeh\config\SpringdocConfig.java">
 </file>
 </checkstyle>
