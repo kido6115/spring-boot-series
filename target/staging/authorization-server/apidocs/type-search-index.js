@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.sungyeh","l":"AuthorizationServerApplication"},{"p":"com.sungyeh.config","l":"AuthorizationServerConfig"},{"p":"com.sungyeh.web","l":"OauthController"}];updateSearchResults();

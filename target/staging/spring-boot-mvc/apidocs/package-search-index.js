@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.sungyeh"},{"l":"com.sungyeh.bean"},{"l":"com.sungyeh.bean.swagger"},{"l":"com.sungyeh.config"},{"l":"com.sungyeh.interceptor"},{"l":"com.sungyeh.web"},{"l":"com.sungyeh.web.rest"}];updateSearchResults();
