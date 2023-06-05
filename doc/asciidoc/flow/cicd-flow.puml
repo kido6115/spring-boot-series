@@ -1,0 +1,44 @@
+@startuml
+|a| PG
+|#palegreen|b| Git(Gitea/Github/Gitlab)
+|#gold|c| Jenkins
+|#cyan|d| GCP/地端主機
+|a|
+start
+repeat
+repeat
+:發出Pull Request;
+|b|
+repeat while (Code Review) is (不同意)
+:進入開發分支;
+|c|
+:進行靜態分析;
+note left
+    透過Webhook觸發
+    Jenkins自動進行建置作業
+end note
+:部屬測試機;
+repeat while (測試單位(Optional)) is (不同意)
+
+:打包war/容器上傳至正式環境;
+|d|
+switch (啟動部署流程(Optional))
+case ()
+  :透過實體硬碟;
+case ()
+  :透過Jenkins;
+  note right
+  透過Webhook/人工/排程
+  觸發部署
+  end note
+  switch (自動部署)
+  case ()
+    :上傳地端主機;
+  case ()
+    :上傳Artifact Registry;
+    :透過Pub/Sub觸發部署;
+  endswitch
+endswitch
+
+stop
+@enduml

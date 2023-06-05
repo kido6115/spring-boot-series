@@ -19,8 +19,11 @@
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<#--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<link href="/fontawesome-free-6.4.0-web/css/fontawesome.css" rel="stylesheet">
+<link href="/fontawesome-free-6.4.0-web/css/brands.css" rel="stylesheet">
+<link href="/fontawesome-free-6.4.0-web/css/solid.css" rel="stylesheet">
 
 <link rel="stylesheet" href="/css/monokai.css">
 <script src="/js/rainbow-custom.min.js"></script>

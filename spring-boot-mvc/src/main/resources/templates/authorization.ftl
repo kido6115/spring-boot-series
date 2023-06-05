@@ -46,8 +46,8 @@
             <h5>Authorization Code</h5>
 
             <a target="_blank" class="btn btn-outline-primary"
-               href="${authorizationServer}/oauth2/authorize?client_id=client&response_type=code&redirect_uri=${redirect}">認證伺服器登入</a>
-            <p>使用 user/1111 進行登入</p>
+               href="${authorizationServer}/oauth2/authorize?client_id=client&response_type=code&redirect_uri=${redirect}">認證伺服器使用
+                user/1111 進行登入</a>
             <h6>獲取access token</h6>
             <pre>
                 <code data-language="shell">
