@@ -34,6 +34,10 @@
 
     }
 
+    #sidebarMenu ul {
+        list-style: none;
+    }
+
     h5 {
         font-weight: bold;
     }

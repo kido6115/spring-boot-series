@@ -8,7 +8,7 @@
 {"title":"Security","path":"/auth/security","icon":"fa fa-shield"},
 {"title":"Authorization/Resource Server","path":"/auth/authorization","icon":"fa fa-server"},
 {"title":"Swagger/SpringDoc","path":"/auth/swagger","icon":"fa fa-file-text"},
-{"title":"WebSocket","path":"/auth/web-socket","icon":"fa fa-commenting"}
+{"title":"WebSocket","path":"/auth/web-socket","icon":"fa fa-comments-o"}
 ]
 },
 {
@@ -22,12 +22,20 @@
 ]
 },
 {
+"title":"CICD/Testing",
+"item":
+[
+{"title":"靜態分析","path":"/auth/static-analysis","icon":"fa fa-line-chart"},
+{"title":"Jenkins","path":"/auth/cloud-vision","icon":"fa fa-tasks"},
+{"title":"Jmeter","path":"/auth/dialogflow","icon":"fa fa-eyedropper"}
+]
+},
+{
 "title":"Other",
 "item":
 [
 {"title":"OpenID","path":"/auth/open-id","icon":"fa fa-cubes"},
-{"title":"Line","path":"/auth/line","icon":"fa fa-comments-o"},
-{"title":"分析文件","path":"/auth/static-analysis","icon":"fa fa-line-chart"},
+{"title":"Line","path":"/auth/line","icon":"fa fa-commenting-o"},
 {"title":"Asciidoc","path":"/auth/asciidoc","icon":"fa fa-file-code-o"},
 {"title":"TOTP","path":"/auth/authenticator","icon":"fa fa-clock-o"},
 {"title":"WebRTC","path":"/auth/rtc","icon":"fa fa-comments"}
