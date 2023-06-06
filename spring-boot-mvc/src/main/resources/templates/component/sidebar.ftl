@@ -28,8 +28,7 @@
 {"title":"靜態分析","path":"/auth/static-analysis","icon":"fa fa-line-chart"},
 {"title":"Jenkins","path":"/auth/jenkins","icon":"fa-brands fa-jenkins"},
 {"title":"JMeter","path":"/auth/jmeter","icon":"fa-solid fa-thermometer"},
-{"title":"JUnit","path":"/auth/unit-test","icon":"fa fa-eyedropper"},
-{"title":"Doclet","path":"/auth/static-analysis","icon":"fa fa-line-chart"}
+{"title":"JUnit","path":"/auth/unit-test","icon":"fa fa-eyedropper"}
 ]
 },
 {

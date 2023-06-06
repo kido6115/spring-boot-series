@@ -86,7 +86,8 @@
             </div>
             <br/>
             <h5>Jenkins</h5>
-            <p>透過Jenkins觸發壓力測試並呈現報告</p>
+            <p>透過Jenkins觸發壓力測試, 設定threshold來進行監控, e.g. 新功能上線於離峰時間進行壓測,
+                若發現低於標準能主動警示</p>
             <h5>Codegen</h5>
             <p>使用Codegen透過OAS可以自動化產生部分jmx</p>
         </main>
