@@ -28,8 +28,8 @@
 {"title":"靜態分析","path":"/auth/static-analysis","icon":"fa fa-line-chart"},
 {"title":"Jenkins","path":"/auth/jenkins","icon":"fa-brands fa-jenkins"},
 {"title":"JMeter","path":"/auth/jmeter","icon":"fa-solid fa-thermometer"},
-{"title":"JUnit","path":"/auth/unit-test","icon":"fa fa-eyedropper"}
-
+{"title":"JUnit","path":"/auth/unit-test","icon":"fa fa-eyedropper"},
+{"title":"Doclet","path":"/auth/static-analysis","icon":"fa fa-line-chart"}
 ]
 },
 {
@@ -40,7 +40,9 @@
 {"title":"Line","path":"/auth/line","icon":"fa-brands fa-line"},
 {"title":"Asciidoc","path":"/auth/asciidoc","icon":"fa-regular fa-file-code"},
 {"title":"TOTP","path":"/auth/authenticator","icon":"fa-solid fa-clock"},
-{"title":"WebRTC","path":"/auth/rtc","icon":"fa fa-comments"}
+{"title":"WebRTC","path":"/auth/rtc","icon":"fa fa-comments"},
+{"title":"Codegen","path":"/auth/rtc","icon":"fa fa-comments"}
+
 ]
 }
 ]

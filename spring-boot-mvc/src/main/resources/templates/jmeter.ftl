@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="d-flex flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">MVC</h1>
+                <h1 class="h2">JMeter</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="dropdown">
                         <a class="btn btn-sm btn-outline-secondary dropdown-toggle" href="#" role="button"
@@ -41,78 +41,54 @@
                     </div>
                 </div>
             </div>
-            <h5>Controller</h5>
-            <p>透過SpringMVC註解快速註冊Controller並以Freemarker進行頁面渲染, 選擇Freemarker則是因其支援embedded Tomcat,
-                除輕量化在分散式或者容器化上較易應用
+            <h5>GUI</h5>
+            <p>JMeter有提供GUI撰寫壓測計畫, 但是操作上較為繁瑣所以建議安裝Chrome擴充工具BlazeMeter,
+                透過瀏覽器操作來錄製JMeter的壓測計畫
+            </p>
+            <h5>BlazeMeter</h5>
+            <p>安裝好Plugin後免費註冊後登入, BlazeMeter為持續測試平台, 可付費使用,
+                但我們僅需要他幫我們匯出JMeter格式(jmx)的壓測計畫</p>
+            <div class="row">
+                <img class=" col-md-6" src="/img/jmeter-1.png">
+                <img class=" col-md-5" src="/img/jmeter-2.png">
+            </div>
+            <br/>
+            <p>將錄製好的腳本使用JMeter GUI開啟再進行調整, BlazeMeter錄製的腳本相較原生提供的方式較為簡潔且重點,
+                但仍有部分需要自行調整</p>
+            <p>可以注意到BlazeMeter已經自動過濾靜態資源, 但如csrf token是回應後才產生的,
+                所以我們可以透過在 GET-/login 新增後置處理器進行擷取, 透過各式處理器進行參數調整</p>
+            <div class="row">
+                <img class="img-fluid col-md-8" src="/img/jmeter-3.png">
+            </div>
+            <br/>
+            <p>透過後置CSS處理器擷取csrf token, 為方便壓測暫時不使用captcha驗證</p>
+            <div class="row">
+                <img class="img-fluid col-md-6" src="/img/jmeter-4.png">
+                <img class="img-fluid col-md-6" src="/img/jmeter-5.png">
+            </div>
+            <br/>
+            <p>新增Linstener以獲得結果報告</p>
+            <div class="row">
+                <img class="img-fluid col-md-6" src="/img/jmeter-6.png">
+                <img class="img-fluid col-md-3" src="/img/jmeter-7.png">
+            </div>
+            <br/>
+            <h5>CLI</h5>
+            <p>GUI工具目的為調校壓測計畫, 實際上進行壓力測試時仍建議使用CLI, 透過指令執行JMeter
             </p>
             <pre>
-                <code data-language="java">
-                        @Controller
-                        @RequestMapping("/auth")
-                        public class AuthenticationController {
-                            @Resource
-                            private DepartmentRepository departmentRepository;
-
-                            @Resource
-                            private PersonRepository personRepository;
-
-                            @GetMapping("mvc")
-                            public String mvc(Model model) {
-                                model.addAttribute("persons", personRepository.findAll());
-                                model.addAttribute("department", departmentRepository.findByNo("RD"));
-                                return "mvc";
-                            }
-
-                        }
-                    </code>
+                 <code data-language="shell">
+                jmeter -n -t &lt;test JMX file&gt; -l &lt;test log file&gt; -e -o &lt;Path to output folder&gt;
+                 </code>
             </pre>
-            <pre>
-                <code data-language="html">
-                    <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>帳戶名稱</th>
-                        <th>部門名稱</th>
-                        <th>身分</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        ${r"<#list persons as item>"}<tr>
-                            <td>${r"${item.username}"}</td>
-                            <td>${r"${item.department.name}"}</td>
-                            <td>${r"<#list item.roles as role>"}
-                                ${r"${role.name}<#sep>, </#sep>"}
-                                ${r"</#list>"}
-                            </td>
-                        </tr> ${r"</#list>"}
-                    </tbody>
-                </table>
-                </code>
-            </pre>
-            <div class="table-responsive">
-                <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>帳戶名稱</th>
-                        <th>部門名稱</th>
-                        <th>身分</th>
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <#list persons as item>
-                        <tr>
-                            <td>${item.username}</td>
-                            <td>${item.department.name}</td>
-                            <td><#list item.roles as role>
-                                    ${role.name}<#sep>, </#sep>
-                                </#list>
-                            </td>
-                        </tr>
-                    </#list>
-                    </tbody>
-                </table>
+            <div class="row">
+                <img class="img-fluid col-md-10" src="/img/jmeter-8.png">
             </div>
+            <br/>
+            <h5>Jenkins</h5>
+            <p>透過Jenkins觸發壓力測試並呈現報告</p>
+            <h5>Codegen</h5>
+            <p>使用Codegen透過OAS可以自動化產生部分jmx</p>
         </main>
     </div>
 </div>
