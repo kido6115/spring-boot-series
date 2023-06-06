@@ -53,10 +53,10 @@ public class CustomProvider extends AbstractUserDetailsAuthenticationProvider {
                 throw new BadCredentialsException(this.messages.getMessage("AbstractUserDetailsAuthenticationProvider.badCredentials", "Bad credentials"));
             }
             RecaptchaAuthenticationDetails details = (RecaptchaAuthenticationDetails) authentication.getDetails();
-            if (!this.recaptchaService.verify(details.getToken())) {
-                this.logger.debug("Failed to authenticate recaptcha");
-                throw new BadCredentialsException(this.messages.getMessage("AbstractUserDetailsAuthenticationProvider.badCredentials", "Bad credentials"));
-            }
+//            if (!this.recaptchaService.verify(details.getToken())) {
+//                this.logger.debug("Failed to authenticate recaptcha");
+//                throw new BadCredentialsException(this.messages.getMessage("AbstractUserDetailsAuthenticationProvider.badCredentials", "Bad credentials"));
+//            }
         }
     }
 

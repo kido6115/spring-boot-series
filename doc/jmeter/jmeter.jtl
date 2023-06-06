@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="1530" it="0" lt="46" ct="25" ts="1686021507789" s="true" lb="http://localhost:8080/login?" rc="200" rm="" tn="Thread Group 1-1" dt="text" by="662762" sby="7755" ng="1" na="1">
+  <httpSample t="53" it="0" lt="46" ct="25" ts="1686021507789" s="true" lb="http://localhost:8080/login?-0" rc="200" rm="" tn="Thread Group 1-1" dt="text" by="7124" sby="499" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/login</java.net.URL>
+  </httpSample>
+  <httpSample t="8" it="0" lt="8" ct="3" ts="1686021507922" s="true" lb="http://localhost:8080/login?-1" rc="200" rm="" tn="Thread Group 1-1" dt="bin" by="1257" sby="562" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/img/favicon.ico</java.net.URL>
+  </httpSample>
+  <httpSample t="1340" it="0" lt="1249" ct="1211" ts="1686021507920" s="true" lb="http://localhost:8080/login?-2" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="163032" sby="542" ng="1" na="1">
+    <java.net.URL>https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css</java.net.URL>
+  </httpSample>
+  <httpSample t="1399" it="0" lt="1326" ct="1254" ts="1686021507920" s="true" lb="http://localhost:8080/login?-3" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="73161" sby="536" ng="1" na="1">
+    <java.net.URL>https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js</java.net.URL>
+  </httpSample>
+  <httpSample t="1304" it="0" lt="1256" ct="1209" ts="1686021507925" s="true" lb="http://localhost:8080/login?-4" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="84150" sby="547" ng="1" na="1">
+    <java.net.URL>https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js</java.net.URL>
+  </httpSample>
+  <httpSample t="1211" it="0" lt="1187" ct="1177" ts="1686021507925" s="true" lb="http://localhost:8080/login?-5" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="90739" sby="535" ng="1" na="1">
+    <java.net.URL>https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js</java.net.URL>
+  </httpSample>
+  <httpSample t="9" it="0" lt="8" ct="0" ts="1686021507922" s="true" lb="http://localhost:8080/login?-6" rc="200" rm="" tn="Thread Group 1-1" dt="text" by="118117" sby="593" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/fontawesome-free-6.4.0-web/css/fontawesome.css</java.net.URL>
+  </httpSample>
+  <httpSample t="8" it="0" lt="8" ct="0" ts="1686021507933" s="true" lb="http://localhost:8080/login?-7" rc="200" rm="" tn="Thread Group 1-1" dt="text" by="25281" sby="588" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/fontawesome-free-6.4.0-web/css/brands.css</java.net.URL>
+  </httpSample>
+  <httpSample t="6" it="0" lt="6" ct="0" ts="1686021508266" s="true" lb="http://localhost:8080/login?-8" rc="200" rm="" tn="Thread Group 1-1" dt="text" by="1133" sby="587" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/fontawesome-free-6.4.0-web/css/solid.css</java.net.URL>
+  </httpSample>
+  <httpSample t="5" it="0" lt="5" ct="0" ts="1686021508275" s="true" lb="http://localhost:8080/login?-9" rc="200" rm="" tn="Thread Group 1-1" dt="text" by="3622" sby="562" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/css/monokai.css</java.net.URL>
+  </httpSample>
+  <httpSample t="5" it="0" lt="4" ct="0" ts="1686021508291" s="true" lb="http://localhost:8080/login?-10" rc="200" rm="" tn="Thread Group 1-1" dt="text" by="35595" sby="571" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/js/rainbow-custom.min.js</java.net.URL>
+  </httpSample>
+  <httpSample t="4" it="0" lt="4" ct="0" ts="1686021508296" s="true" lb="http://localhost:8080/login?-11" rc="200" rm="" tn="Thread Group 1-1" dt="text" by="2408" sby="560" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/css/style.css</java.net.URL>
+  </httpSample>
+  <httpSample t="806" it="0" lt="806" ct="792" ts="1686021508309" s="true" lb="http://localhost:8080/login?-12" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="1371" sby="510" ng="1" na="1">
+    <java.net.URL>https://www.google.com/recaptcha/api.js</java.net.URL>
+  </httpSample>
+  <httpSample t="4" it="0" lt="4" ct="0" ts="1686021508311" s="true" lb="http://localhost:8080/login?-13" rc="200" rm="" tn="Thread Group 1-1" dt="bin" by="55772" sby="563" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/img/spruce-2.png</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/login</java.net.URL>
+</httpSample>
+<httpSample t="437" it="0" lt="358" ct="0" ts="1686021510524" s="true" lb="http://localhost:8080/login/process" rc="200" rm="" tn="Thread Group 1-1" dt="text" by="120130" sby="9275" ng="1" na="1">
+  <httpSample t="358" it="0" lt="358" ct="0" ts="1686021510524" s="true" lb="http://localhost:8080/login/process-0" rc="302" rm="" tn="Thread Group 1-1" dt="" by="423" sby="761" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/login/process</java.net.URL>
+  </httpSample>
+  <httpSample t="10" it="0" lt="9" ct="0" ts="1686021510882" s="true" lb="http://localhost:8080/login/process-1" rc="200" rm="" tn="Thread Group 1-1" dt="text" by="16145" sby="601" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/index</java.net.URL>
+  </httpSample>
+  <httpSample t="6" it="0" lt="0" ct="0" ts="1686021510917" s="true" lb="http://localhost:8080/login/process-2" rc="304" rm="" tn="Thread Group 1-1" dt="" by="332" sby="661" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/img/favicon.ico</java.net.URL>
+  </httpSample>
+  <httpSample t="44" it="0" lt="0" ct="0" ts="1686021510917" s="true" lb="http://localhost:8080/login/process-3" rc="304" rm="Not Modified" tn="Thread Group 1-1" dt="" by="363" sby="645" ng="1" na="1">
+    <java.net.URL>https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css</java.net.URL>
+  </httpSample>
+  <httpSample t="39" it="0" lt="0" ct="0" ts="1686021510917" s="true" lb="http://localhost:8080/login/process-4" rc="304" rm="Not Modified" tn="Thread Group 1-1" dt="" by="370" sby="639" ng="1" na="1">
+    <java.net.URL>https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js</java.net.URL>
+  </httpSample>
+  <httpSample t="39" it="0" lt="0" ct="0" ts="1686021510917" s="true" lb="http://localhost:8080/login/process-5" rc="304" rm="Not Modified" tn="Thread Group 1-1" dt="" by="370" sby="650" ng="1" na="1">
+    <java.net.URL>https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js</java.net.URL>
+  </httpSample>
+  <httpSample t="7" it="0" lt="0" ct="0" ts="1686021510917" s="true" lb="http://localhost:8080/login/process-6" rc="304" rm="Not Modified" tn="Thread Group 1-1" dt="" by="318" sby="634" ng="1" na="1">
+    <java.net.URL>https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js</java.net.URL>
+  </httpSample>
+  <httpSample t="6" it="0" lt="0" ct="0" ts="1686021510917" s="true" lb="http://localhost:8080/login/process-7" rc="304" rm="" tn="Thread Group 1-1" dt="" by="332" sby="692" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/fontawesome-free-6.4.0-web/css/fontawesome.css</java.net.URL>
+  </httpSample>
+  <httpSample t="3" it="0" lt="0" ct="0" ts="1686021510924" s="true" lb="http://localhost:8080/login/process-8" rc="304" rm="" tn="Thread Group 1-1" dt="" by="332" sby="687" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/fontawesome-free-6.4.0-web/css/brands.css</java.net.URL>
+  </httpSample>
+  <httpSample t="3" it="0" lt="0" ct="0" ts="1686021510924" s="true" lb="http://localhost:8080/login/process-9" rc="304" rm="" tn="Thread Group 1-1" dt="" by="332" sby="686" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/fontawesome-free-6.4.0-web/css/solid.css</java.net.URL>
+  </httpSample>
+  <httpSample t="5" it="0" lt="0" ct="1" ts="1686021510925" s="true" lb="http://localhost:8080/login/process-10" rc="304" rm="" tn="Thread Group 1-1" dt="" by="332" sby="661" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/css/monokai.css</java.net.URL>
+  </httpSample>
+  <httpSample t="4" it="0" lt="0" ct="0" ts="1686021510927" s="true" lb="http://localhost:8080/login/process-11" rc="304" rm="" tn="Thread Group 1-1" dt="" by="332" sby="670" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/js/rainbow-custom.min.js</java.net.URL>
+  </httpSample>
+  <httpSample t="2" it="0" lt="0" ct="0" ts="1686021510928" s="true" lb="http://localhost:8080/login/process-12" rc="304" rm="" tn="Thread Group 1-1" dt="" by="332" sby="659" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/css/style.css</java.net.URL>
+  </httpSample>
+  <httpSample t="4" it="0" lt="3" ct="0" ts="1686021510931" s="true" lb="http://localhost:8080/login/process-13" rc="200" rm="" tn="Thread Group 1-1" dt="bin" by="99817" sby="629" ng="1" na="1">
+    <java.net.URL>http://localhost:8080/img/spruce-3-removebg-preview.png</java.net.URL>
+  </httpSample>
+  <java.net.URL>http://localhost:8080/index</java.net.URL>
+</httpSample>
+<sample t="1967" it="1280" lt="404" ct="25" ts="1686021507720" s="true" lb="Test" rc="200" rm="Number of samples in transaction : 2, number of failing samples : 0" tn="Thread Group 1-1" dt="" by="782892" sby="17030" ng="1" na="1"/>
+
+</testResults>

@@ -1,2 +1,6 @@
 .idea
 site
+jacoco-ut
+staging
+*.jar
+*.jar.original

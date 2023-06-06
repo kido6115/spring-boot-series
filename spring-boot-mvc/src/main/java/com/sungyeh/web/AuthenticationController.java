@@ -318,6 +318,36 @@ public class AuthenticationController {
     }
 
     /**
+     * Jenkins頁面
+     *
+     * @return jenkins.ftl
+     */
+    @GetMapping("jenkins")
+    public String jenkins() {
+        return "jenkins";
+    }
+
+    /**
+     * Jmeter頁面
+     *
+     * @return jmeter.ftl
+     */
+    @GetMapping("jmeter")
+    public String jmeter() {
+        return "jmeter";
+    }
+
+    /**
+     * Unit Test頁面
+     *
+     * @return unit-test.ftl
+     */
+    @GetMapping("unit-test")
+    public String unitTest() {
+        return "unit-test";
+    }
+
+    /**
      * QRCode產生器
      *
      * @param text   文字

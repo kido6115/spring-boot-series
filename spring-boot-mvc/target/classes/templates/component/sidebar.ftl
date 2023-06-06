@@ -3,12 +3,12 @@
 {
 "title":"Spring",
 "item":[
-{"title":"MVC","path":"/auth/mvc","icon":"fa fa-desktop"},
+{"title":"MVC","path":"/auth/mvc","icon":"fa-solid fa-desktop"},
 {"title":"JPA","path":"/auth/jpa","icon":"fa fa-database"},
-{"title":"Security","path":"/auth/security","icon":"fa fa-shield"},
+{"title":"Security","path":"/auth/security","icon":"fa-solid fa-shield-halved"},
 {"title":"Authorization/Resource Server","path":"/auth/authorization","icon":"fa fa-server"},
 {"title":"Swagger/SpringDoc","path":"/auth/swagger","icon":"fa fa-file-text"},
-{"title":"WebSocket","path":"/auth/web-socket","icon":"fa fa-commenting"}
+{"title":"WebSocket","path":"/auth/web-socket","icon":"fa-regular fa-comment-dots"}
 ]
 },
 {
@@ -17,20 +17,32 @@
 [
 {"title":"Goolge Map API","path":"/auth/google-map","icon":"fa fa-map"},
 {"title":"Cloud Vision API","path":"/auth/cloud-vision","icon":"fa fa-eye"},
-{"title":"Dialogflow","path":"/auth/dialogflow","icon":"fa fa-android"},
+{"title":"Dialogflow","path":"/auth/dialogflow","icon":"fa-solid fa-robot"},
 {"title":"Recaptcha API","path":"/auth/recaptcha","icon":"fa fa-check"}
+]
+},
+{
+"title":"CICD/Testing",
+"item":
+[
+{"title":"靜態分析","path":"/auth/static-analysis","icon":"fa fa-line-chart"},
+{"title":"Jenkins","path":"/auth/jenkins","icon":"fa-brands fa-jenkins"},
+{"title":"JMeter","path":"/auth/jmeter","icon":"fa-solid fa-thermometer"},
+{"title":"JUnit","path":"/auth/unit-test","icon":"fa fa-eyedropper"},
+{"title":"Doclet","path":"/auth/static-analysis","icon":"fa fa-line-chart"}
 ]
 },
 {
 "title":"Other",
 "item":
 [
-{"title":"OpenID","path":"/auth/open-id","icon":"fa fa-cubes"},
-{"title":"Line","path":"/auth/line","icon":"fa fa-comments-o"},
-{"title":"分析文件","path":"/auth/static-analysis","icon":"fa fa-line-chart"},
-{"title":"Asciidoc","path":"/auth/asciidoc","icon":"fa fa-file-code-o"},
-{"title":"TOTP","path":"/auth/authenticator","icon":"fa fa-clock-o"},
-{"title":"WebRTC","path":"/auth/rtc","icon":"fa fa-comments"}
+{"title":"OpenID","path":"/auth/open-id","icon":"fa-brands fa-openid"},
+{"title":"Line","path":"/auth/line","icon":"fa-brands fa-line"},
+{"title":"Asciidoc","path":"/auth/asciidoc","icon":"fa-regular fa-file-code"},
+{"title":"TOTP","path":"/auth/authenticator","icon":"fa-solid fa-clock"},
+{"title":"WebRTC","path":"/auth/rtc","icon":"fa fa-comments"},
+{"title":"Codegen","path":"/auth/rtc","icon":"fa fa-comments"}
+
 ]
 }
 ]
@@ -40,12 +52,7 @@
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link <#if springMacroRequestContext.requestUri=='/index'>active</#if>" href="/index">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                         class="feather feather-home">
-                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                    </svg>
+                    <i class="fa-solid fa-house"></i>
                     首頁
                 </a>
             </li>
