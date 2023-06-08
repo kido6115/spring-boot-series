@@ -19,8 +19,9 @@ note left
 end note
 :部屬測試機;
 repeat while (測試單位(Optional)) is (不同意)
-
+:進入產品分支;
 :打包war/容器上傳至正式環境;
+
 |d|
 switch (啟動部署流程(Optional))
 case ()

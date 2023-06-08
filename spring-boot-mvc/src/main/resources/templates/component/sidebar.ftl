@@ -37,11 +37,9 @@
 [
 {"title":"OpenID","path":"/auth/open-id","icon":"fa-brands fa-openid"},
 {"title":"Line","path":"/auth/line","icon":"fa-brands fa-line"},
-{"title":"Asciidoc","path":"/auth/asciidoc","icon":"fa-regular fa-file-code"},
+{"title":"AsciiDoc","path":"/auth/asciidoc","icon":"fa-regular fa-file-code"},
 {"title":"TOTP","path":"/auth/authenticator","icon":"fa-solid fa-clock"},
-{"title":"WebRTC","path":"/auth/rtc","icon":"fa fa-comments"},
-{"title":"Codegen","path":"/auth/rtc","icon":"fa fa-comments"}
-
+{"title":"WebRTC","path":"/auth/rtc","icon":"fa fa-comments"}
 ]
 }
 ]

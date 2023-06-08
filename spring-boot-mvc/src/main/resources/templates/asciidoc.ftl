@@ -21,71 +21,82 @@
                 </div>
             </div>
             <div class="d-flex  flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                <h1 class="h2">MVC</h1>
+                <h1 class="h2">AsciiDoc</h1>
                 <div class="btn-toolbar mb-2 mb-md-0">
                     <div class="dropdown">
                         <a class="btn btn-sm btn-outline-secondary dropdown-toggle" href="#" role="button"
                            id="dropdownMenuLink"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown link
+                            原始碼
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item"
+                               target="_blank"
+                               href="https://github.com/kido6115/spring-boot-series/tree/master/doc/asciidoc">
+                                Ascidoc </a>
+                            <a class="dropdown-item"
+                               target="_blank"
+                               href="https://github.com/kido6115/spring-boot-series/tree/master/doc/asciidoc/flow">
+                                PlantUML </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <h2>Controller</h2>
-            <p>透過SpringMVC註解快速註冊Controller並以Freemarker進行頁面渲染, 選擇Freemarker則是因其支援embedded Tomcat,
-                除輕量化在分散式或者容器化上較易應用
+            <h5>Why Asciidoc</h5>
+            <p> 相較市面上常用的Markdown, Asciidoc有更多功能, 更多的套件可以使用, 此外有官方的支援, 各式的IDE支援,
+                產出的格式相對多樣, 如:HTML, PDF...等
             </p>
-            <pre>
-                <code data-language="java">
-                        @Controller
-                        @RequestMapping("/auth")
-                        public class AuthenticationController {
-                            @Resource
-                            private DepartmentRepository departmentRepository;
+            <p>
+                Asciidoc支援整合PlantUML, 透過標記語言繪製各式UML, 讓Asciidoc不僅僅只是標記語言產出技術文件, 技術規格書,
+                報告書...等都是非常好的選擇
+            </p>
+            <p>
+                由於是標記語言相對於Word, PPT等文件格式, 有著更好的版本控制, 在資安以及統整文件上都有著更好的優勢,
+                且支援Maven及Gradle也能做到一定程度自動化產出
+            </p>
+            <br/>
+            <h5>Who’s using AsciiDoc</h5>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1"> O’Reilly</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1"> GitHub</h6>
+                    </div>
+                    <p class="mb-1">除了README.md, README.adoc已可以再Github進行預覽</p>
 
-                            @Resource
-                            private PersonRepository personRepository;
-
-                            @GetMapping("mvc")
-                            public String mvc(Model model) {
-                                model.addAttribute("persons", personRepository.findAll());
-                                model.addAttribute("department", departmentRepository.findByNo("RD"));
-                                return "mvc";
-                            }
-
-                        }
-                    </code>
-            </pre>
-            <pre>
-                <code data-language="html">
-                    <table class="table table-striped table-sm">
-                    <thead>
-                    <tr>
-                        <th>帳戶名稱</th>
-                        <th>部門名稱</th>
-                        <th>身分</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        ${r"<#list persons as item>"}<tr>
-                            <td>${r"${item.username}"}</td>
-                            <td>${r"${item.department.name}"}</td>
-                            <td>${r"<#list item.roles as role>"}
-                                ${r"${role.name}<#sep>, </#sep>"}
-                                ${r"</#list>"}
-                            </td>
-                        </tr> ${r"</#list>"}
-                    </tbody>
-                </table>
-                </code>
-            </pre>
+                </a>
+            </div>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1"> Hibernate</h6>
+                    </div>
+                </a>
+            </div>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start ">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1"> Spring Framework</h6>
+                    </div>
+                </a>
+            </div>
+            <br/>
+            <h5>範例</h5>
+            <div class="card" style="width: 50rem;">
+                <div class="card-body">
+                    <p class="card-text">透過原始碼生成的簡易規格書, 其中可以將puml產生圖片並嵌入</p>
+                    <a target="_blank"
+                       href="https://drive.google.com/drive/folders/1oPArC63bSChcnbkAYtl5ZNVPdcCfzRoB?usp=sharing"
+                       class="card-link">產生結果</a>
+                </div>
+            </div>
         </main>
     </div>
 </div>

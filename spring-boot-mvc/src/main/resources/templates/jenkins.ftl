@@ -29,7 +29,7 @@
             <p>老牌CICD工具, 除支援中文也有眾多Plugin協助使用, 並且使用Java開發, 提供自行開發Plugin工具客製化使用</p>
 
             <a target="_blank" class="btn btn-outline-primary"
-               href="#">Jenkins 使用 user/1111 登入</a>
+               href="http://104.198.166.226:8080">Jenkins 使用 user/1111 登入</a>
             <h5>CI</h5>
             <p>與Maven結合使用靜態分析工具達到CI之功能, 自動化建置, 測試並產生分析文件, 透過Warnign-Next-Generation
                 Plugin可將分析結果以圖表呈現

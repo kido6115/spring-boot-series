@@ -1,0 +1,25 @@
+@startuml
+驗證會員 -|> 驗證信箱使用者
+會員等級A-|> 驗證信箱使用者
+驗證信箱使用者 -|> 會員等級B
+會員等級B --> (會員中心)
+package 驗證信箱使用者列表{
+usecase "其他功能-待補" as verify1
+}
+驗證信箱使用者 --> verify1
+package 會員等級A功能列表{
+usecase "會員等級A相關功能-待補" as ep1
+}
+會員等級A --> ep1
+
+package 會員等級B功能列表{
+usecase "會員等級B相關功能-待補" as member1
+}
+會員等級B --> member1
+
+package 一般訪客功能列表{
+usecase "註冊/登入" as guest1
+}
+訪客 --> guest1
+
+@enduml

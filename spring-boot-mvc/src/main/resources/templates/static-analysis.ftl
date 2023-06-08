@@ -192,8 +192,11 @@
                     <p class="card-text">原始site報告較適合當作報告繳交, 在日常監督使用較不方便, 可以使用Jenkins內部套件進行觀看,
                         對於日常品質要求較為容易, Jenkins的Warnings Next
                         Generation套件能夠整合百種以上的靜態分析報告</p>
-                    <a href="#" class="card-link">site報告</a>
-                    <a href="#" class="card-link">Jenkins 使用user/1111登入</a>
+                    <a target="_blank"
+                       href="https://drive.google.com/drive/folders/1oPArC63bSChcnbkAYtl5ZNVPdcCfzRoB?usp=sharing"
+                       class="card-link">site報告</a>
+                    <a target="_blank" href="http://104.198.166.226:8080" class="card-link">Jenkins
+                        使用user/1111登入</a>
                 </div>
             </div>
             <pre>

@@ -33,10 +33,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                             <a class="dropdown-item"
                                target="_blank"
-                               href="https://github.com/kido6115/spring-boot-series/blob/master/spring-boot-mvc/src/main/java/com/sungyeh/web/AuthenticationController.java">Controller</a>
-                            <a class="dropdown-item"
-                               target="_blank"
-                               href="https://github.com/kido6115/spring-boot-series/blob/master/spring-boot-mvc/src/main/resources/templates/mvc.ftl">Freemarker</a>
+                               href="https://github.com/kido6115/spring-boot-series/tree/master/doc/jmeter">JTL</a>
                         </div>
                     </div>
                 </div>

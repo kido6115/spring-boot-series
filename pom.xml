@@ -31,6 +31,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>17</java.version>
+        <asciidoctor.maven.plugin.version>2.2.1</asciidoctor.maven.plugin.version>
+        <asciidoctorj.version>2.5.2</asciidoctorj.version>
+        <asciidoctorj.diagram.version>2.1.2</asciidoctorj.diagram.version>
+        <asciidoctorj.pdf.version>1.6.0</asciidoctorj.pdf.version>
+        <jruby.version>9.2.17.0</jruby.version>
+
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -105,6 +111,16 @@
                 <version>1.33.0</version>
             </dependency>
             <dependency>
+                <groupId>com.google.http-client</groupId>
+                <artifactId>google-http-client</artifactId>
+                <version>1.43.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.auth</groupId>
+                <artifactId>google-auth-library-oauth2-http</artifactId>
+                <version>1.16.0</version>
+            </dependency>
+            <dependency>
                 <groupId>org.springdoc</groupId>
                 <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
                 <version>2.1.0</version>
@@ -149,7 +165,11 @@
                 <artifactId>jsoup</artifactId>
                 <version>1.16.1</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>markerclustererplus</artifactId>
+                <version>2.1.2</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>
@@ -214,17 +234,6 @@
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <configuration>
                     <show>private</show>
-                    <!--
-                    <doclet>com.tist.doclet.JpaEntityToSchema</doclet>
-                    <docletArtifacts>
-                        <docletArtifact>
-                            <groupId>com.tist</groupId>
-                            <artifactId>jpa-doclet</artifactId>
-                            <version>1.0-SNAPSHOT</version>
-                        </docletArtifact>
-                    </docletArtifacts>
-                    <useStandardDocletOptions>false</useStandardDocletOptions>
-                    -->
                 </configuration>
                 <executions>
                     <execution>
@@ -306,6 +315,144 @@
                             <outputDirectory>target/jacoco-ut</outputDirectory>
                         </configuration>
                     </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.asciidoctor</groupId>
+                <artifactId>asciidoctor-maven-plugin</artifactId>
+                <version>${asciidoctor.maven.plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj</artifactId>
+                        <version>${asciidoctorj.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-diagram</artifactId>
+                        <version>${asciidoctorj.diagram.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.asciidoctor</groupId>
+                        <artifactId>asciidoctorj-pdf</artifactId>
+                        <version>${asciidoctorj.pdf.version}</version>
+                    </dependency>
+                    <!-- Comment this section to use the default jruby artifact provided by the plugin -->
+                    <dependency>
+                        <groupId>org.jruby</groupId>
+                        <artifactId>jruby-complete</artifactId>
+                        <version>${jruby.version}</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <sourceDirectory>${project.basedir}/doc/asciidoc</sourceDirectory>
+                    <requires>
+                        <require>asciidoctor-diagram</require>
+                    </requires>
+                    <preserveDirectories>true</preserveDirectories>
+                    <attributes>
+                        <!-- Example below shows how to specify in this pom instead of System's PATH, the location of dot command of Graphviz, required by PlantUML libraries -->
+                        <!-- Windows:
+                            <graphvizdot>C:\Program Files (x86)\Graphviz2.38\bin\dot.exe</graphvizdot>
+                        -->
+                        <!-- *nix :
+                            <graphvizdot>/usr/local/bin/dot</graphvizdot>
+                        -->
+                    </attributes>
+                    <resources>
+                        <resource>
+                            <directory>${basedir}/doc/asciidoc/images</directory>
+                            <targetPath>images</targetPath>
+                            <includes>
+                                <include>**/*.png</include>
+                            </includes>
+                        </resource>
+                        <resource>
+                            <directory>${basedir}/doc/asciidoc/usecase</directory>
+                            <targetPath>usecase</targetPath>
+                            <includes>
+                                <include>**/*.puml</include>
+                            </includes>
+                        </resource>
+                        <resource>
+                            <directory>${basedir}/doc/asciidoc/salt</directory>
+                            <targetPath>salt</targetPath>
+                            <includes>
+                                <include>**/*.puml</include>
+                            </includes>
+                        </resource>
+                        <resource>
+                            <directory>${basedir}/doc/asciidoc/flow</directory>
+                            <targetPath>flow</targetPath>
+                            <includes>
+                                <include>**/*.puml</include>
+                            </includes>
+                        </resource>
+                    </resources>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-html-doc</id>
+                        <phase>generate-resources</phase>
+                        <goals>
+                            <goal>process-asciidoc</goal>
+                        </goals>
+                        <configuration>
+                            <backend>html5</backend>
+                            <embedAssets>true</embedAssets>
+                            <attributes>
+                                <experimental/>
+                                <imagesdir>${project.build.directory}/generated-docs/images</imagesdir>
+                                <usecasedir>${project.build.directory}/generated-docs/usecase</usecasedir>
+                                <saltdir>${project.build.directory}/generated-docs/salt</saltdir>
+                                <flowdir>${project.build.directory}/generated-docs/flow</flowdir>
+                                <toc>left</toc>
+                                <toc-title>大綱</toc-title>
+                                <toclevels>5</toclevels>
+                                <icons>font</icons>
+                                <sectanchors>true</sectanchors>
+                                <sectnums/>
+                                <idprefix/>
+                                <data-uri/>
+                                <idseparator>-</idseparator>
+                                <stylesheet>stylesheets/colony.css</stylesheet>
+                            </attributes>
+                        </configuration>
+                    </execution>
+                    <!--                    <execution>-->
+                    <!--                        <id>generate-pdf-cjk-zh_TW-doc</id>-->
+                    <!--                        <phase>generate-resources</phase>-->
+                    <!--                        <goals>-->
+                    <!--                            <goal>process-asciidoc</goal>-->
+                    <!--                        </goals>-->
+                    <!--                        <configuration>-->
+                    <!--                            <backend>pdf</backend>-->
+                    <!--                            <sourceDirectory>${basedir}/docs/asciidoc</sourceDirectory>-->
+                    <!--                            <attributes>-->
+                    <!--                                <experimental/>-->
+                    <!--                                <data-uri/>-->
+                    <!--                                <sectnums/>-->
+                    <!--                                <imagesdir>${project.build.directory}/generated-docs/images</imagesdir>-->
+                    <!--                                <usecasedir>${project.build.directory}/generated-docs/usecase</usecasedir>-->
+                    <!--                                <source-highlighter>coderay</source-highlighter>-->
+                    <!--                                <allow-uri-read/>-->
+                    <!--                                <icons>font</icons>-->
+                    <!--                                <pagenums/>-->
+                    <!--                                <toc>left</toc>-->
+                    <!--                                <toc-title>大綱</toc-title>-->
+                    <!--                                <toclevels>5</toclevels>-->
+                    <!--                                <sectanchors>true</sectanchors>-->
+                    <!--                                <idprefix/>-->
+                    <!--                                <idseparator>-</idseparator>-->
+                    <!--                                &lt;!&ndash; Fixes line wraps formatting inserting zero-width spaces (ZWSP) before CJ characters &ndash;&gt;-->
+                    <!--                                <scripts>cjk</scripts>-->
+                    <!--                                &lt;!&ndash; Set KaiGen Gothic Chinese theme &ndash;&gt;-->
+                    <!--                                <pdf-style>KaiGenGothicTW</pdf-style>-->
+                    <!--                                <pdf-stylesdir>${pdf.cjk.kaigen.download.dir}/themes</pdf-stylesdir>-->
+                    <!--                                <pdf-fontsdir>${pdf.cjk.kaigen.download.dir}/fonts</pdf-fontsdir>-->
+                    <!--                            </attributes>-->
+                    <!--                        </configuration>-->
+                    <!--                    </execution>-->
                 </executions>
             </plugin>
         </plugins>
@@ -401,4 +548,5 @@
             <url>https://github.com/kido6115/spring-boot-series</url>
         </site>
     </distributionManagement>
+
 </project>

@@ -9,6 +9,7 @@ v0.1, yyyy-mm-dd
 :imagesdir: ../../images
 :sourcedir: ../uml
 :saltdir: ../salt
+:usecasedir: ../usecase
 :page-background-image: image:/watermark.png[]
 :stylesheet: ../../stylesheets/colony.css
 == 作業說明
@@ -36,6 +37,18 @@ v0.1, yyyy-mm-dd
 |===
 include::wbs/wbs-template.csv[]
 |===
+
+=== 相關流程
+
+plantuml::{flowdir}/cicd-flow.puml[format = svg]
+
+== 示意圖
+
+plantuml::{saltdir}/member-input.puml[format = svg]
+
+== 使用者案例
+
+plantuml::{usecasedir}/index.puml[format = svg]
 
 == XX畫面
 
