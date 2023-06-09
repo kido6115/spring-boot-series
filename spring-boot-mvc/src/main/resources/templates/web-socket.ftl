@@ -61,8 +61,9 @@
                     <div class="input-group mb-3">
                         <input id="user1-name" type="text" class="form-control">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-primary" id="user1-button"><i class="fa fa-paper-plane-o"
-                                                                                         aria-hidden="true"></i>
+                            <button class="btn btn-outline-primary" id="user1-button"><i
+                                        class="fa-solid fa-paper-plane"
+                                        aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
@@ -75,7 +76,7 @@
                     <div class="input-group mb-3">
                         <input id="user2-name" type="text" class="form-control">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-primary" id="user2-button"><i class="fa fa-paper-plane-o"
+                            <button class="btn btn-outline-primary" id="user2-button"><i class="fa-solid fa-paper-plane"
                                                                                          aria-hidden="true"></i>
                             </button>
                         </div>
@@ -89,7 +90,7 @@
                     <div class="input-group mb-3">
                         <input id="user3-name" type="text" class="form-control">
                         <div class="input-group-append">
-                            <button class="btn btn-outline-primary" id="user3-button"><i class="fa fa-paper-plane-o"
+                            <button class="btn btn-outline-primary" id="user3-button"><i class="fa-solid fa-paper-plane"
                                                                                          aria-hidden="true"></i>
                             </button>
                         </div>
