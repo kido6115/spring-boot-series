@@ -27,7 +27,7 @@ import java.util.function.Supplier;
  *
  * @author sungyeh
  */
-@Component("com.tist.security.access.CustomAuthorizationManager")
+@Component("com.tist.security.CustomAuthorizationManager")
 @Slf4j
 public class CustomAuthorizationManager implements AuthorizationManager<RequestAuthorizationContext> {
 
