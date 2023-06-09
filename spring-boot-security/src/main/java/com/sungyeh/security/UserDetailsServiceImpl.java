@@ -42,7 +42,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
             boolean credentialsNonExpired = true;
             boolean accountNonLocked = true;
 
-            List<String> roles = Arrays.asList("ROLE_ADMIN");
+            List<String> roles = Arrays.asList("ROLE_ADMIN", "ROLE_CUSTOMER");
             return new com.sungyeh.security.UserDetails(user, roles,
                     enable, accountNonExpired, credentialsNonExpired, accountNonLocked);
         }

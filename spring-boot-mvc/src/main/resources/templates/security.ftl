@@ -37,6 +37,9 @@
                             <a class="dropdown-item"
                                target="_blank"
                                href="https://github.com/kido6115/spring-boot-series/tree/master/spring-boot-security/src/main/java/com/sungyeh/security">Security相關</a>
+                            <a class="dropdown-item"
+                               target="_blank"
+                               href="https://github.com/kido6115/spring-boot-series/tree/master/spring-boot-security/src/main/java/com/sungyeh/security/access/CustomAuthorizationManager">ACLs</a>
                         </div>
                     </div>
                 </div>
@@ -49,7 +52,6 @@
                 <li>XSS預防</li>
                 <li>CORS同源設定</li>
                 <li>ACL設定</li>
-                還沒作
                 <li>自訂義多因子驗證 : e.g. <a href="<@spring.url '/auth/recaptcha'/>">recaptcha實作</a></li>
                 <li>資料庫勾稽使用者</li>
                 <li>透過PasswordEncoder hash/crypt使用者密碼</li>

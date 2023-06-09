@@ -6,10 +6,7 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
-import com.sungyeh.bean.GoogleUserInfo;
-import com.sungyeh.bean.LineAuthorizationCodeResponse;
-import com.sungyeh.bean.LineUserinfo;
-import com.sungyeh.bean.OauthAuthorizationCodeResponse;
+import com.sungyeh.bean.*;
 import com.sungyeh.config.CaptchaConfig;
 import com.sungyeh.config.GoogleConfig;
 import com.sungyeh.config.LineConfig;
@@ -92,8 +89,9 @@ public class IndexController {
      */
     @GetMapping("/acl/{user}")
     @ResponseBody
-    public List<String> acl(@PathVariable("user") String user) {
-        List<String> acl = new ArrayList<>();
+    public RoleAcl acl(@PathVariable("user") String user) {
+        RoleAcl roleAcl = new RoleAcl();
+        List<RoleAcl.Acl> acl = new ArrayList<>();
         RequestMapping requestMapping = AuthenticationController.class.getAnnotation(RequestMapping.class);
         String main = requestMapping.value()[0];
 
@@ -102,11 +100,16 @@ public class IndexController {
             if (method.isAnnotationPresent(GetMapping.class) && !method.isAnnotationPresent(ResponseBody.class)) {
                 GetMapping getMapping = method.getAnnotation(GetMapping.class);
                 for (var value : getMapping.value()) {
-                    acl.add(main + "/" + value);
+                    RoleAcl.Acl acl1 = new RoleAcl.Acl();
+                    acl1.setUrl(main + "/" + value + "(\\?[\\w\\.=&\\-\\+@:#;_]+)?");
+                    acl1.setRole("ROLE_CUSTOMER");
+                    acl.add(acl1);
                 }
             }
         }
-        return acl;
+        roleAcl.setAcls(acl);
+
+        return roleAcl;
     }
 
     /**

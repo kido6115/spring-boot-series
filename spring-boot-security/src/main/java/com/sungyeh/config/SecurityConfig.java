@@ -1,6 +1,7 @@
 package com.sungyeh.config;
 
 import com.sungyeh.security.CsrfRequestMatcher;
+import com.sungyeh.security.CustomAuthorizationManager;
 import com.sungyeh.security.CustomProvider;
 import com.sungyeh.security.RecaptchaAuthenticationDetailsSource;
 import jakarta.annotation.Resource;
@@ -31,6 +32,9 @@ public class SecurityConfig {
     @Resource
     private CustomProvider provider;
 
+    @Resource
+    private CustomAuthorizationManager customAuthorizationManager;
+
     /**
      * security filter chain
      *
@@ -46,7 +50,7 @@ public class SecurityConfig {
         csrfRequestMatcher.addExcludePath("/dialogflow/**");
         csrfRequestMatcher.addExcludePath("/h2/**");
 
-        http.authorizeHttpRequests(a -> a.requestMatchers("/auth/**").authenticated()
+        http.authorizeHttpRequests(a -> a.requestMatchers("/auth/**").access(customAuthorizationManager)
                         .anyRequest().permitAll())
                 .formLogin()
                 .loginPage("/login").permitAll()
