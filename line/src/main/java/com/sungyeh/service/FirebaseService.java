@@ -1,5 +1,8 @@
 package com.sungyeh.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.sungyeh.bean.firebase.LocationDocument;
+
 import java.util.List;
 
 /**
@@ -29,4 +32,6 @@ public interface FirebaseService {
      * @return 使用者openid
      */
     List<String> getLineUsers();
+
+    String addLocation(LocationDocument document) throws JsonProcessingException;
 }

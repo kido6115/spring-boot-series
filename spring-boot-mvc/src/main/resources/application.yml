@@ -41,4 +41,4 @@ line:
   oauth:
     id: ${LINE_OAUTH_ID}
     secret: ${LINE_OAUTH_SECRET}
-debug: true
+debug: false

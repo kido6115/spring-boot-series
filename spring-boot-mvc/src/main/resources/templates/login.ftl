@@ -86,6 +86,22 @@
             background-color: #c0392b !important;
         }
     </style>
+    <script>
+        $(function () {
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    var latitude = position.coords.latitude;
+                    var longitude = position.coords.longitude;
+                    $('#lat').val(latitude);
+                    $('#lng').val(longitude);
+                },
+                function (error) {
+                    console.log(error.message);
+                }
+            );
+
+        });
+    </script>
 </head>
 <div class="container h-100">
     <div class="d-flex justify-content-center h-100">
@@ -113,6 +129,8 @@
                         </div>
                         <input type="password" id="password" name="password" class="form-control input_pass" value=""
                                placeholder="password">
+                        <input type="hidden" id="lat" name="lat"/>
+                        <input type="hidden" id="lng" name="lng"/>
                     </div>
                     <div class="form-group">
                         <div id="recaptcha" class="g-recaptcha" data-sitekey="${site}"></div>

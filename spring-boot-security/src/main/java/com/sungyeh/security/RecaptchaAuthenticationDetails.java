@@ -19,6 +19,12 @@ public class RecaptchaAuthenticationDetails extends WebAuthenticationDetails {
     @Getter
     private String token;
 
+    @Getter
+    private String lat;
+
+    @Getter
+    private String lng;
+
 
     /**
      * 建構子
@@ -28,5 +34,7 @@ public class RecaptchaAuthenticationDetails extends WebAuthenticationDetails {
     public RecaptchaAuthenticationDetails(HttpServletRequest request) {
         super(request);
         this.token = request.getParameter("g-recaptcha-response");
+        this.lat = request.getParameter("lat");
+        this.lng = request.getParameter("lng");
     }
 }

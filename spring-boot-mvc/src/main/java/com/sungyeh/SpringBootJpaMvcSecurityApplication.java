@@ -2,6 +2,7 @@ package com.sungyeh;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * <p>SpringBootJpaMvcSecurityApplication class.</p>
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author sungyeh
  */
 @SpringBootApplication
+@EnableAsync
 public class SpringBootJpaMvcSecurityApplication {
 
     /**

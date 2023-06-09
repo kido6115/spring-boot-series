@@ -7,14 +7,12 @@ import com.google.firebase.auth.FirebaseAuthException;
 import com.sungyeh.bean.firebase.DokodemoPrefer;
 import com.sungyeh.bean.firebase.IdTokenResponse;
 import com.sungyeh.bean.firebase.LineID;
+import com.sungyeh.bean.firebase.LocationDocument;
 import com.sungyeh.config.FirebaseInfoConfig;
 import com.sungyeh.service.FirebaseService;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
@@ -105,5 +103,16 @@ public class FirebaseServiceImpl implements FirebaseService {
         }
 
         return users;
+    }
+
+    @Override
+    public String addLocation(LocationDocument document) throws JsonProcessingException {
+        String url = "https://firestore.googleapis.com/v1/projects/sungyeh-tech-note/databases/(default)/documents/location";
+        MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+        headers.add("Authorization", "Bearer " + Objects.requireNonNull(getIdToken()));
+        ObjectMapper objectMapper = new ObjectMapper();
+        HttpEntity<String> request = new HttpEntity<>(objectMapper.writeValueAsString(document), headers);
+        ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, request, String.class);
+        return response.getBody();
     }
 }
