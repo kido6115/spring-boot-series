@@ -39,7 +39,7 @@
                                href="https://github.com/kido6115/spring-boot-series/tree/master/spring-boot-security/src/main/java/com/sungyeh/security">Security相關</a>
                             <a class="dropdown-item"
                                target="_blank"
-                               href="https://github.com/kido6115/spring-boot-series/tree/master/spring-boot-security/src/main/java/com/sungyeh/security/access/CustomAuthorizationManager">ACLs</a>
+                               href="https://github.com/kido6115/spring-boot-series/tree/master/spring-boot-security/src/main/java/com/sungyeh/security/CustomAuthorizationManager">ACLs</a>
                         </div>
                     </div>
                 </div>
