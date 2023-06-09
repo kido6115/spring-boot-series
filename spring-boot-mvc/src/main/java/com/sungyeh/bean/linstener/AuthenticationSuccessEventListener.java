@@ -1,6 +1,7 @@
 package com.sungyeh.bean.linstener;
 
 import com.sungyeh.security.RecaptchaAuthenticationDetails;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationListener;
 import org.springframework.http.HttpEntity;
@@ -13,6 +14,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 @Component
+@Slf4j
 public class AuthenticationSuccessEventListener
         implements ApplicationListener<AuthenticationSuccessEvent> {
 
@@ -25,7 +27,11 @@ public class AuthenticationSuccessEventListener
             String remoteAddress = auth.getRemoteAddress();
             String lat = auth.getLat();
             String lng = auth.getLng();
-            postToLine(remoteAddress, lat, lng);
+            try {
+                postToLine(remoteAddress, lat, lng);
+            } catch (Exception exception) {
+                log.info(exception.getMessage(), exception);
+            }
         }
     }
 
