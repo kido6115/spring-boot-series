@@ -28,7 +28,6 @@ public class AuthenticationSuccessEventListener
             String lng = auth.getLng();
             asyncService.postToLine(remoteAddress, lat, lng);
 
-
         }
 
     }

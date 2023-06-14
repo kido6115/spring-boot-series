@@ -7,16 +7,23 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleTokenResponse;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.gson.GsonFactory;
 import com.sungyeh.bean.*;
-import com.sungyeh.config.CaptchaConfig;
-import com.sungyeh.config.GoogleConfig;
-import com.sungyeh.config.LineConfig;
-import com.sungyeh.config.OauthConfig;
+import com.sungyeh.config.*;
+import com.sungyeh.security.RecaptchaAuthenticationDetails;
 import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.event.AuthenticationSuccessEvent;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.LinkedMultiValueMap;
@@ -63,6 +70,16 @@ public class IndexController {
     @Value("${line.server}")
     private String lineServer;
 
+    @Resource
+    private UserDetailsService userDetailsService;
+
+    @Resource
+    private SystemConfig systemConfig;
+
+    @Resource
+    private ApplicationEventPublisher applicationEventPublisher;
+
+
     /**
      * 首頁
      *
@@ -90,6 +107,9 @@ public class IndexController {
      */
     @GetMapping("/login")
     public String login(Model model) {
+        model.addAttribute("clientId", googleConfig.getId());
+        model.addAttribute("systemUrl", systemConfig.getUrl());
+
         model.addAttribute("site", captchaConfig.getSite());
         return "login";
     }
@@ -172,6 +192,32 @@ public class IndexController {
         model.addAttribute("result", result.getBody());
 
         return "google-openid";
+    }
+
+    @PostMapping("/google/sso")
+    public String googleSso(@RequestParam("credential") String credential, Model model,
+                            HttpServletRequest request, HttpServletResponse response) throws GeneralSecurityException, IOException {
+        GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(new NetHttpTransport(), new GsonFactory())
+                .setAudience(Collections.singletonList(googleConfig.getId()))
+                .build();
+        GoogleIdToken idToken = verifier.verify(credential);
+        if (idToken != null) {
+            UserDetails userDetails =
+                    userDetailsService.loadUserByUsername("user");
+            UsernamePasswordAuthenticationToken authentication =
+                    new UsernamePasswordAuthenticationToken(userDetails, null,
+                            userDetails.getAuthorities());
+            RecaptchaAuthenticationDetails details = new RecaptchaAuthenticationDetails(request);
+            authentication.setDetails(details);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            new HttpSessionSecurityContextRepository().saveContext(SecurityContextHolder.getContext(), request, response);
+
+            AuthenticationSuccessEvent event = new AuthenticationSuccessEvent(authentication);
+            applicationEventPublisher.publishEvent(event);
+            return "redirect:/index";
+        } else {
+            return "redirect:/login";
+        }
     }
 
     /**

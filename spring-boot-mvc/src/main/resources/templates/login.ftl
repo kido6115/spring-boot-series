@@ -5,6 +5,8 @@
 <head>
     <#include "component/meta.ftl" />
     <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
     <style>
         /* Coded with love by Mutiullah Samim */
         body,
@@ -87,13 +89,19 @@
         }
     </style>
     <script>
+        function callback(a) {
+            $('#sso-credential').val(a.credential);
+            $('#sso-form').submit();
+        }
+
         $(function () {
             navigator.geolocation.getCurrentPosition(
                 function (position) {
                     var latitude = position.coords.latitude;
                     var longitude = position.coords.longitude;
-                    $('#lat').val(latitude);
-                    $('#lng').val(longitude);
+                    $('#lat,#sso-lat').val(latitude);
+                    $('#lng,#sso-lng').val(longitude);
+
                 },
                 function (error) {
                     console.log(error.message);
@@ -135,9 +143,34 @@
                     <div class="form-group">
                         <div id="recaptcha" class="g-recaptcha" data-sitekey="${site}"></div>
                     </div>
+
                     <div class="d-flex justify-content-center mt-3 login_container">
                         <button name="button" class="btn btn-info">Sign in</button>
                     </div>
+                    <div class="form-group">
+                        <div id="g_id_onload"
+                             data-client_id="${clientId}"
+                             data-context="signin"
+                             data-ux_mode="popup"
+                             data-callback="callback"
+                             data-auto_prompt="false">
+                        </div>
+                        <div class="g_id_signin"
+                             data-type="standard"
+                             data-shape="rectangular"
+                             data-theme="outline"
+                             data-text="signin_with"
+                             data-size="large"
+                             data-logo_alignment="left">
+                        </div>
+                    </div>
+                </form>
+                <form id="sso-form" method="post" action="/google/sso">
+                    <input type="hidden" name="${(_csrf.parameterName)!}" value="${(_csrf.token)!}"/>
+                    <input hidden id="sso-credential" name="credential"/>
+                    <input hidden id="sso-lat" name="lat"/>
+                    <input hidden id="sso-lng" name="lng"/>
+
                 </form>
             </div>
         </div>

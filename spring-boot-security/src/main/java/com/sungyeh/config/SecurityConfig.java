@@ -45,8 +45,8 @@ public class SecurityConfig {
     @Bean("backendFilterChain")
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         CsrfRequestMatcher csrfRequestMatcher = new CsrfRequestMatcher();
-        csrfRequestMatcher.addExcludeUrl("/google/gsi");
         csrfRequestMatcher.addExcludePath("/text-ccs/**");
+        csrfRequestMatcher.addExcludePath("/google/**");
         csrfRequestMatcher.addExcludePath("/dialogflow/**");
         csrfRequestMatcher.addExcludePath("/h2/**");
 
