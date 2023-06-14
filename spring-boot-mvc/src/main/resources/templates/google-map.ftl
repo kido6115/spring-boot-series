@@ -3,8 +3,6 @@
 <html lang="zh-Hant">
 <head>
     <#include "component/meta.ftl" />
-    <link href="<@spring.url "/webjars/font-awesome/4.7.0/css/font-awesome.min.css" />"
-          rel="stylesheet"/>
 
     <script
             src="https://maps.googleapis.com/maps/api/js?key=${key}&libraries=visualization,drawing,geometry"></script>
@@ -45,7 +43,7 @@
         <div id="collapseOne" class="collapse form-group mb-0 p-3" aria-labelledby="headingOne"
              data-parent="#serviceElement">
             <label for="org"> 起點 : </label>
-            <input id="org" class="form-control mb-3" value="台中市北區太原路一段530號"/>
+            <input id="org" class="form-control mb-3" value="台中市中區臺灣大道一段1號"/>
             <label for="dest"> 終點 : </label>
             <input id="dest" class="form-control mb-3" value="台中勤美"/>
             <div class="text-center mb-1">
@@ -66,7 +64,7 @@
         <div id="collapseTwo" class="collapse form-group mb-0 p-3" aria-labelledby="headingTwo"
              data-parent="#serviceElement">
             <label for="google-geocoding">地名、座標、地址、行政區</label>
-            <input value="台中市北區太原路一段530號" class="form-control mb-3" id="google-geocoding"/>
+            <input value="台中市中區臺灣大道一段1號" class="form-control mb-3" id="google-geocoding"/>
             <div class="text-center mb-1">
                 <button type="button" class="btn btn-outline-success fa-search" id="googleGeocodingSearch"> 查詢
                 </button>
@@ -83,9 +81,7 @@
             <label>起點</label>
             <input value="台中勤美" class="matrix-start form-control mb-3"/>
             <label>起點</label>
-            <input value="台中市北區太原路一段530號" class="matrix-start form-control mb-3"/>
-            <label>迄點</label>
-            <input value="台中科博館" class="matrix-target form-control mb-3"/>
+            <input value="台中科博館" class="matrix-start form-control mb-3"/>
             <label>迄點</label>
             <input value="台中火車站" class="matrix-target form-control mb-3"/>
             <label>迄點</label>

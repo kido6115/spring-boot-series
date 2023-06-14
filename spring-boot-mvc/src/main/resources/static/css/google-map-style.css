@@ -3,7 +3,7 @@
 }
 
 *:before {
-    font-family: 'FontAwesome', '微軟正黑體';
+    /*font-family: 'FontAwesome', '微軟正黑體';*/
     font-style: normal;
 }
 
@@ -177,11 +177,11 @@ body {
     height: 30px;
     background: #6c757d;
     position: absolute;
-    left: 99.5%;
+    left: 100.5%;
     top: 0;
     color: #fff;
     text-align: center;
-    line-height: 1.9;
+    line-height: 2;
     font-family: '微軟正黑體', 'FontAwesome';
 }
 
@@ -192,7 +192,7 @@ body {
 }
 
 #mode-selector label:before {
-    content: '\f058';
+    content: '\f279';
     /*margin-right:.5em;*/
     border: unset;
     background-color: unset;

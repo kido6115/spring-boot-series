@@ -896,12 +896,12 @@
                 this.features = [
                     {
                         title: '查詢條件',
-                        fa: 'fa fa-plus-square-o',
+                        fa: 'fa-regular fa-square-plus',
                         toolType: 'normal'
                     },
                     {
                         title: '定位路線',
-                        fa: 'fa fa-map-marker',
+                        fa: 'fa-solid fa-location-dot',
                         toolType: 'normal'
                     },
                     {
@@ -2121,13 +2121,13 @@
                 //  列印圖資按鈕
                 var featurePrint = document.createElement('button');
                 featurePrint.style.display = orient;
-                featurePrint.setAttribute('class', 'btn-print btn btn-secondary rounded-0  fa-print');
+                featurePrint.setAttribute('class', 'btn-print btn btn-secondary rounded-0  fa-solid fa-print');
                 featurePrint.innerHTML = ' 列印';
                 featurePrint.id = 'print-map';
                 //  摺疊選單按鈕
                 var featureFold = document.createElement('button');
                 featureFold.style.display = orient;
-                featureFold.setAttribute('class', 'sidebar-fold btn btn-secondary rounded-0  fa-caret-up');
+                featureFold.setAttribute('class', 'sidebar-fold btn btn-secondary rounded-0  fa-solid fa-caret-up');
                 var normalCount = 0;
                 this.map.config.features.forEach(function (feat) {
                     var featDiv = document.createElement('div');
@@ -2796,7 +2796,7 @@
                         span.textContent = slayer.name;
                         div.appendChild(span);
                         var icon = document.createElement('i');
-                        icon.className = 'tree-content-icon fa-chevron-down';
+                        icon.className = 'tree-content-icon fa-solid fa-chevron-down';
                         div.appendChild(icon);
                         itemList.appendChild(div);
                     });
