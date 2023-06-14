@@ -4,10 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
-import com.sungyeh.bean.firebase.DokodemoPrefer;
-import com.sungyeh.bean.firebase.IdTokenResponse;
-import com.sungyeh.bean.firebase.LineID;
-import com.sungyeh.bean.firebase.LocationDocument;
+import com.sungyeh.bean.firebase.*;
 import com.sungyeh.config.FirebaseInfoConfig;
 import com.sungyeh.service.FirebaseService;
 import jakarta.annotation.Resource;
@@ -16,9 +13,11 @@ import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
+import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * FirebaseServiceImpl
@@ -106,12 +105,28 @@ public class FirebaseServiceImpl implements FirebaseService {
     }
 
     @Override
-    public String addLocation(LocationDocument document) throws JsonProcessingException {
+    public Map<String, Integer> groupLocation() {
         String url = "https://firestore.googleapis.com/v1/projects/sungyeh-tech-note/databases/(default)/documents/location";
         MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
         headers.add("Authorization", "Bearer " + Objects.requireNonNull(getIdToken()));
+        HttpEntity<String> request = new HttpEntity<>(headers);
+        ResponseEntity<Location> response = restTemplate.exchange(url, org.springframework.http.HttpMethod.GET, request, Location.class);
+
+        return response.getBody().getDocuments().stream()
+                .filter(d -> StringUtils.hasText(d.getFields().getCity().getStringValue())).collect(
+                        Collectors.groupingBy(d -> d.getFields().getCity().getStringValue(), Collectors.summingInt(d -> 1))
+                );
+    }
+
+    @Override
+    public String addLocation(LocationDocument document) throws JsonProcessingException {
+        String url = "https://firestore.googleapis.com/v1/projects/sungyeh-tech-note/databases/(default)/documents/location";
+        MultiValueMap<String, String> headers = new LinkedMultiValueMap<>();
+        headers.add("Content-Type", MediaType.APPLICATION_JSON_UTF8_VALUE);
+        headers.add("Authorization", "Bearer " + Objects.requireNonNull(getIdToken()));
         ObjectMapper objectMapper = new ObjectMapper();
-        HttpEntity<String> request = new HttpEntity<>(objectMapper.writeValueAsString(document), headers);
+        String body = objectMapper.writeValueAsString(document).replaceAll("\\\\\\\"", "");
+        HttpEntity<String> request = new HttpEntity<>(body, headers);
         ResponseEntity<String> response = restTemplate.exchange(url, HttpMethod.POST, request, String.class);
         return response.getBody();
     }

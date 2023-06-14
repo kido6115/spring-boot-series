@@ -19,9 +19,17 @@ public class DokodemoServiceTest {
     @Resource
     private DokodemoService dokodemoService;
 
+    @Resource
+    private FirebaseService firebaseService;
+
     @Test
     public void test() {
         dokodemoService.broadcast();
+    }
+
+    @Test
+    public void token() {
+        System.out.println(firebaseService.getIdToken());
     }
 
 }

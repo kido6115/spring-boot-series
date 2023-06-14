@@ -26,7 +26,7 @@ public class LocationDocument {
      */
     private String updateTime;
 
-    public static LocationDocument builder(String ip, String lat, String lng) {
+    public static LocationDocument builder(String ip, String lat, String lng, String city) {
         LocationDocument document = new LocationDocument();
         Fields fields = new Fields();
         Ip openid = new Ip();
@@ -38,6 +38,9 @@ public class LocationDocument {
         Lng lng1 = new Lng();
         lng1.setStringValue(lng);
         fields.setLng(lng1);
+        City city1 = new City();
+        city1.setStringValue(city);
+        fields.setCity(city1);
         document.setFields(fields);
         return document;
     }
@@ -60,6 +63,12 @@ public class LocationDocument {
          * lng
          */
         private Lng lng;
+
+        /**
+         * city
+         */
+        private City city;
+
     }
 
     /**
@@ -83,6 +92,14 @@ public class LocationDocument {
 
     @Data
     public static class Lng {
+        /**
+         * stringValue
+         */
+        private String stringValue;
+    }
+
+    @Data
+    public static class City {
         /**
          * stringValue
          */

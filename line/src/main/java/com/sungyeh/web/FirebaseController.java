@@ -4,10 +4,9 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.sungyeh.bean.firebase.LocationDocument;
 import com.sungyeh.service.FirebaseService;
 import jakarta.annotation.Resource;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 /**
  * FirebaseController
@@ -24,10 +23,16 @@ public class FirebaseController {
     /**
      * addLocation
      */
-    @PostMapping("/add-location")
+    @PostMapping("add-location")
     public String addLocation(@RequestParam("ip") String ip,
                               @RequestParam("lat") String lat,
-                              @RequestParam("lng") String lng) throws JsonProcessingException {
-        return firebaseService.addLocation(LocationDocument.builder(ip, lat, lng));
+                              @RequestParam("lng") String lng,
+                              @RequestParam("city") String city) throws JsonProcessingException {
+        return firebaseService.addLocation(LocationDocument.builder(ip, lat, lng, city));
+    }
+
+    @GetMapping("group-location")
+    public Map<String, Integer> getGroupLocation() {
+        return firebaseService.groupLocation();
     }
 }

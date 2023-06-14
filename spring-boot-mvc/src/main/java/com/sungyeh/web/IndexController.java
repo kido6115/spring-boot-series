@@ -12,6 +12,7 @@ import com.sungyeh.config.GoogleConfig;
 import com.sungyeh.config.LineConfig;
 import com.sungyeh.config.OauthConfig;
 import jakarta.annotation.Resource;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -25,10 +26,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
-import java.util.ArrayList;
-import java.util.Base64;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * 開放服務
@@ -59,14 +57,29 @@ public class IndexController {
     @Resource
     private OauthConfig oauthConfig;
 
+    @Value("${google.api.key}")
+    private String key;
+
+    @Value("${line.server}")
+    private String lineServer;
+
     /**
      * 首頁
      *
      * @return index.ftl
      */
-    @GetMapping("/index")
-    public String index() {
+    @GetMapping({"/index", "/", ""})
+    public String index(Model model) {
+        model.addAttribute("key", key);
         return "index";
+    }
+
+    @GetMapping("/group-location")
+    @ResponseBody
+    public Map groupLocation() {
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<Map> response = restTemplate.exchange(lineServer + "/firebase/group-location", HttpMethod.GET, null, Map.class);
+        return response.getBody();
     }
 
     /**
