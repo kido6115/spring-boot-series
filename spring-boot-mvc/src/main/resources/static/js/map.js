@@ -6,9 +6,11 @@ $(function () {
     config.mapboxToken = 'pk.eyJ1Ijoia2lkbzYxMTUiLCJhIjoiY2p4azBjNzl2MWp2ODN6bWtiMnBxYnZneiJ9.OI63ByOsO8svoW5A94h8Jw';
     config.tgosAppId = '';
     config.tgosApiKey = '';
+    config.features.splice(0, 1);
     //config for right map
     var config2 = new sungyeh.map.config.Config();
-    config2.features = [config2.features[0], config2.features[1], config2.features[3]];
+    config2.features = [config2.features[3]];
+
     config2.mapName = 'map2';
     config2.mapboxToken = 'pk.eyJ1Ijoia2lkbzYxMTUiLCJhIjoiY2p4azBjNzl2MWp2ODN6bWtiMnBxYnZneiJ9.OI63ByOsO8svoW5A94h8Jw';
     config2.tgosAppId = '';
@@ -28,7 +30,7 @@ $(function () {
     var drawObject = new sungyeh.map.util.DrawObject();
     var tools = {
         normalTool: [
-            leftFeatureTools.insertTool('query-tool', 'searchSettingElement'),
+            // leftFeatureTools.insertTool('query-tool', 'searchSettingElement'),
             leftFeatureTools.insertTool('service-tool', 'serviceElement'),
             layerTool(map, 'layer-tool')
         ],
@@ -42,8 +44,8 @@ $(function () {
     var rightFeatureTools = new sungyeh.map.util.FeatureTools(map2);
     var tools2 = {
         normalTool: [
-            rightFeatureTools.insertTool('query-tool2', 'searchSettingElement2'),
-            rightFeatureTools.insertTool('service-tool2', 'serviceElement2'),
+            // rightFeatureTools.insertTool('query-tool2', 'searchSettingElement2'),
+            // rightFeatureTools.insertTool('service-tool2', 'serviceElement2'),
             layerTool(map2, 'layer-tool2')
         ],
         position: google.maps.ControlPosition.TOP_RIGHT,

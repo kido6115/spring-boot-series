@@ -60,7 +60,7 @@
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">滑曳模式</h5>
                     </div>
-                    <p class="mb-1">以一個中線拖拉比較兩張地圖差異</p>
+                    <p class="mb-1">中間灰色界線進行左右拖拉, 以比較兩張地圖差異</p>
                 </a>
             </div>
             <div class="list-group">
