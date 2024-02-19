@@ -25,7 +25,7 @@ public class CwbServiceImpl implements CwbService {
     /**
      * 氣象局網址
      */
-    private final static String URL = "https://www.cwb.gov.tw";
+    private final static String URL = "https://www.cwa.gov.tw";
 
     /**
      * firebase服務
