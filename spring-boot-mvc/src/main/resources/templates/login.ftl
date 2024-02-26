@@ -147,22 +147,26 @@
                     <div class="d-flex justify-content-center mt-3 login_container">
                         <button name="button" class="btn btn-info">Sign in</button>
                     </div>
-                    <div class="form-group">
-                        <div id="g_id_onload"
-                             data-client_id="${clientId}"
-                             data-context="signin"
-                             data-ux_mode="popup"
-                             data-callback="callback"
-                             data-auto_prompt="false">
+                    <p class="text-center">使用其他帳號登入</p>
+                    <div class="d-flex justify-content-center mt-3 login_container">
+                        <div class="form-group">
+                            <div id="g_id_onload"
+                                 data-client_id="${clientId}"
+                                 data-context="signin"
+                                 data-ux_mode="popup"
+                                 data-callback="callback"
+                                 data-auto_prompt="false">
+                            </div>
+                            <div class="g_id_signin"
+                                 data-type="standard"
+                                 data-shape="rectangular"
+                                 data-theme="outline"
+                                 data-text="signin_with"
+                                 data-size="large"
+                                 data-logo_alignment="left">
+                            </div>
                         </div>
-                        <div class="g_id_signin"
-                             data-type="standard"
-                             data-shape="rectangular"
-                             data-theme="outline"
-                             data-text="signin_with"
-                             data-size="large"
-                             data-logo_alignment="left">
-                        </div>
+
                     </div>
                 </form>
                 <form id="sso-form" method="post" action="/google/sso">
